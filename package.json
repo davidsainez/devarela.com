@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "build": "next build",
+    "export": "next export",
     "clean": "rimraf .next",
     "develop": "next",
     "format": "prettier --write '**/*.{js,md,scss,ts,tsx,yml}' '!**/{build,es,lib,storybook,ts,umd}/**'",
