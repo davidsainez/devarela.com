@@ -1,0 +1,40 @@
+@use '@carbon/react/scss/type' as *;
+@use '@carbon/react/scss/spacing' as *;
+@use '@carbon/react/scss/colors' as *;
+
+.header {
+  padding-top: $spacing-05;
+  padding-bottom: $spacing-05;
+  border-bottom: solid 1px $warm-gray-10;
+}
+
+.header__branding {
+  display: flex;
+  align-items: center;
+}
+
+.header__branding__pre {
+  @include type-style('heading-03');
+
+  color: #000000;
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+.header__branding__post {
+  @include type-style('heading-03');
+
+  color: #000000;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.header__nav {
+  display: flex;
+  align-items: center;
+}
+
+.header__action {
+  display: flex;
+  justify-content: flex-end;
+}

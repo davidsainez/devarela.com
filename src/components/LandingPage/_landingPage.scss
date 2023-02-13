@@ -1,0 +1,78 @@
+@use '@carbon/react/scss/colors' as *;
+@use '@carbon/type';
+@use '@carbon/react/scss/spacing' as *;
+
+/*
+$feature-flags: (   
+  enable-css-custom-properties: true, 
+);
+*/
+
+// Include type reset
+@include type.reset();
+// Include default type styles, targets h1, h2, h3, etc
+@include type.default-type();
+// Include utility classes for type-related properties
+@include type.type-classes();
+
+/*
+@use '@carbon/react/scss/spacing' as *;
+@use '@carbon/react/scss/colors' as *;
+*/
+
+.landing__layout {
+  height: 100vh;
+}
+
+.landing__card {
+  padding: $spacing-12;
+  margin-top: 20vh;
+  backdrop-filter: blur(2px);
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.landing__heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.landing__title {
+  @include type.type-style('fluid-display-03', true);
+}
+
+.landing__branding__pre {
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+.landing__branding__post {
+  font-family: 'IBM Plex Mono', sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.landing__branding__cursor {
+  animation: blinker 1s cubic-bezier(0.2, 0.2, 0.38, 0.9) infinite; /* stylelint-disable-line */
+  color: $blue-60;
+  font-family: 'IBM Plex Sans', sans-serif;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+
+.landing__meta {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-top: $spacing-12;
+}
+
+.landing__link__icon {
+  display: inline-flex;
+  align-self: center;
+  margin-right: 0.5rem;
+}

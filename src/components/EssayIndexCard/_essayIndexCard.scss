@@ -1,0 +1,48 @@
+@use '@carbon/react/scss/colors' as *;
+@use '@carbon/react/scss/spacing' as *;
+@use '@carbon/react/scss/type' as *;
+
+.essay-index-card {
+  padding-top: $spacing-05;
+  padding-bottom: $spacing-05;
+  margin-bottom: $spacing-11;
+}
+
+.essay-index-card__metadata {
+  padding-top: $spacing-03;
+  padding-bottom: $spacing-03;
+  border-top: solid 1px $warm-gray-10;
+  border-bottom: solid 1px $warm-gray-10;
+}
+
+.essay-index-card__tags {
+  padding-left: $spacing-05;
+}
+
+.essay-index-card__date__box {
+  display: flex;
+  align-items: center;
+}
+
+.essay-index-card__date {
+  @include type-style('helper-text-02');
+
+  padding-left: $spacing-05;
+}
+
+.essay-index-card__title {
+  @include type-style('heading-06');
+
+  margin-top: $spacing-05;
+  margin-bottom: $spacing-05;
+}
+
+.essay-index-card__description {
+  @include type-style('body-compact-02');
+
+  margin-bottom: $spacing-05;
+}
+
+.essay-index-card__action {
+  @include type-style('helper-text-02');
+}

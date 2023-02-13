@@ -1,0 +1,22 @@
+@use '@carbon/react/scss/type' as *;
+@use '@carbon/react/scss/spacing' as *;
+@use '@carbon/react/scss/colors' as *;
+
+.essay__date {
+  padding-left: $spacing-05;
+  border-left: solid 1px $blue-50;
+  margin-top: $spacing-07;
+}
+
+.essay__date__text {
+  @include type-style('body-compact-01');
+}
+
+/* TODO use carbon v11 and include fluid-heading-06 */
+.essay__heading {
+  margin-top: $spacing-08;
+}
+
+.essay__heading__text {
+  @include type-style('heading-07');
+}

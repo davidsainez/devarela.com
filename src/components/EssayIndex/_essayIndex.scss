@@ -1,0 +1,18 @@
+@use '@carbon/react/scss/colors' as *;
+@use '@carbon/react/scss/type' as *;
+@use '@carbon/react/scss/spacing' as *;
+
+.essay-index__title {
+  @include type-style('heading-03');
+
+  padding-left: $spacing-05;
+  border-left: solid 1px $blue-50;
+}
+
+.essay-index__header {
+  margin-top: $spacing-08;
+}
+
+.essay-index__tiles {
+  margin-top: $spacing-08;
+}

@@ -1,0 +1,30 @@
+@use '@carbon/react/scss/type' as *;
+@use '@carbon/react/scss/spacing' as *;
+@use '@carbon/react/scss/colors' as *;
+
+.footer {
+  padding-top: $spacing-08;
+  border-top: solid 1px $warm-gray-10;
+  margin-top: $spacing-12;
+  margin-bottom: $spacing-12;
+}
+
+.footer__copy {
+  @include type-style('legal-02');
+}
+
+.footer__branding__pre {
+  @include type-style('heading-03');
+
+  color: $blue-90;
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+.footer__branding__emphasis {
+  @include type-style('heading-03');
+
+  color: $blue-90;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+}
