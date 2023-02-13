@@ -102,9 +102,9 @@ export const LandingPage = () => {
   return (
     <div className="landing__layout">
       <Grid fullWidth>
-        <Column lg={16}>
+        <Column lg={16} sm={4}>
           <Grid fullWidth>
-            <Column lg={{ offset: 4, span: 8 }}>
+            <Column lg={{ offset: 4, span: 8 }} sm={4}>
               <LandingPageCard />
             </Column>
           </Grid>

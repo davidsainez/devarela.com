@@ -1,6 +1,7 @@
 @use '@carbon/react/scss/colors' as *;
 @use '@carbon/type';
 @use '@carbon/react/scss/spacing' as *;
+@use '@carbon/react/scss/breakpoint' as *;
 
 /*
 $feature-flags: (   
@@ -29,16 +30,29 @@ $feature-flags: (
   margin-top: 20vh;
   backdrop-filter: blur(2px);
   background: rgba(255, 255, 255, 0.2);
+
+  @include breakpoint-down(md) {
+    padding: $spacing-05;
+    margin-top: 0;
+  }
 }
 
 .landing__heading {
   display: flex;
   flex-direction: column;
   align-items: center;
+  @include breakpoint-down(md) {
+    align-items: flex-start;
+    padding-top: $spacing-05;
+  }
 }
 
 .landing__title {
   @include type.type-style('fluid-display-03', true);
+
+  @include breakpoint-down(md) {
+    @include type.type-style('fluid-display-01', true);
+  }
 }
 
 .landing__branding__pre {
@@ -69,6 +83,13 @@ $feature-flags: (
   align-items: flex-end;
   justify-content: space-between;
   margin-top: $spacing-12;
+
+  @include breakpoint-down(md) {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: $spacing-08;
+    gap: $spacing-05;
+  }
 }
 
 .landing__link__icon {
