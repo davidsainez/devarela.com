@@ -25,6 +25,17 @@ $feature-flags: (
   height: 100vh;
 }
 
+.landing__grid {
+  height: 100%;
+}
+
+.landing__track {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .landing__card {
   padding: $spacing-12;
   margin-top: 20vh;
@@ -41,10 +52,6 @@ $feature-flags: (
   display: flex;
   flex-direction: column;
   align-items: center;
-  @include breakpoint-down(md) {
-    align-items: flex-start;
-    padding-top: $spacing-05;
-  }
 }
 
 .landing__title {
@@ -88,7 +95,13 @@ $feature-flags: (
     flex-direction: column;
     align-items: flex-start;
     margin-top: $spacing-08;
-    gap: $spacing-05;
+  }
+}
+
+.landing__link {
+  @include breakpoint-down(md) {
+    padding-top: $spacing-04;
+    padding-bottom: $spacing-04;
   }
 }
 

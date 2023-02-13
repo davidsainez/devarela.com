@@ -73,7 +73,7 @@ const LandingPageCard = () => {
         </p>
       </div>
       <div className="landing__meta">
-        <Stack gap={2} className="landing__social">
+        <Stack className="landing__social">
           <SocialLink
             text="de-varela@outlook.com"
             href="mailto:de-varela@outlook.com"
@@ -101,13 +101,9 @@ const LandingPageCard = () => {
 export const LandingPage = () => {
   return (
     <div className="landing__layout">
-      <Grid fullWidth>
-        <Column lg={16} sm={4}>
-          <Grid fullWidth>
-            <Column lg={{ offset: 4, span: 8 }} sm={4}>
-              <LandingPageCard />
-            </Column>
-          </Grid>
+      <Grid fullWidth className="landing__grid">
+        <Column lg={{ offset: 4, span: 8 }} sm={4} className="landing__track">
+          <LandingPageCard />
         </Column>
       </Grid>
     </div>
