@@ -1,11 +1,15 @@
 @use '@carbon/react/scss/colors' as *;
 @use '@carbon/react/scss/spacing' as *;
 @use '@carbon/react/scss/type' as *;
+@use '@carbon/react/scss/breakpoint' as *;
 
 .essay-index-card {
   padding-top: $spacing-05;
   padding-bottom: $spacing-05;
   margin-bottom: $spacing-11;
+  @include breakpoint-down(md) {
+    margin-bottom: $spacing-08;
+  }
 }
 
 .essay-index-card__metadata {
@@ -15,19 +19,17 @@
   border-bottom: solid 1px $warm-gray-10;
 }
 
-.essay-index-card__tags {
-  padding-left: $spacing-05;
-}
-
 .essay-index-card__date__box {
   display: flex;
   align-items: center;
+
+  @include breakpoint-down(md) {
+    justify-content: flex-end;
+  }
 }
 
 .essay-index-card__date {
   @include type-style('helper-text-02');
-
-  padding-left: $spacing-05;
 }
 
 .essay-index-card__title {
@@ -35,6 +37,10 @@
 
   margin-top: $spacing-05;
   margin-bottom: $spacing-05;
+
+  @include breakpoint-down(md) {
+    @include type-style('heading-04');
+  }
 }
 
 .essay-index-card__description {

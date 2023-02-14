@@ -1,12 +1,17 @@
 @use '@carbon/react/scss/colors' as *;
 @use '@carbon/react/scss/type' as *;
 @use '@carbon/react/scss/spacing' as *;
+@use '@carbon/react/scss/breakpoint' as *;
 
 .essay-index__title {
   @include type-style('heading-03');
 
   padding-left: $spacing-05;
   border-left: solid 1px $blue-50;
+
+  @include breakpoint-down(md) {
+    @include type-style('heading-02');
+  }
 }
 
 .essay-index__header {

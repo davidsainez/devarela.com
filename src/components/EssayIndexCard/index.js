@@ -6,8 +6,8 @@ import { formatDate } from '../Utilities';
 export const EssayIndexCard = ({ href, title, date, description }) => {
   return (
     <div className="essay-index-card">
-      <Grid condensed className="essay-index-card__metadata">
-        <Column lg={{ offset: 4, span: 6 }} md={8} sm={4}>
+      <Grid className="essay-index-card__metadata">
+        <Column lg={{ offset: 4, span: 6 }} md={8} sm={2}>
           <div className="essay-index-card__tags">
             <Tag type="blue" size="sm">
               Tech
@@ -20,7 +20,7 @@ export const EssayIndexCard = ({ href, title, date, description }) => {
         <Column
           lg={{ offset: 10, span: 2 }}
           md={8}
-          sm={4}
+          sm={2}
           className="essay-index-card__date__box"
         >
           <p className="essay-index-card__date">{formatDate(date)}</p>

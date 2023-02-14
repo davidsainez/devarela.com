@@ -16,14 +16,14 @@
 .footer__branding__pre {
   @include type-style('heading-03');
 
-  color: $blue-90;
+  color: $black-100;
   font-family: 'IBM Plex Mono', monospace;
 }
 
 .footer__branding__emphasis {
   @include type-style('heading-03');
 
-  color: $blue-90;
+  color: $black-100;
   font-family: 'IBM Plex Sans', sans-serif;
   font-weight: 600;
   text-transform: uppercase;
