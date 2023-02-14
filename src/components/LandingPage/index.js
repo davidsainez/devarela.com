@@ -90,9 +90,11 @@ const LandingPageCard = () => {
             <LogoGithub />
           </SocialLink>
         </Stack>
-        <Link href="/essays" icon={ArrowRight}>
-          Essays
-        </Link>
+        <div className="landing__action">
+          <Link href="/essays" icon={ArrowRight}>
+            Essays
+          </Link>
+        </div>
       </div>
     </div>
   );

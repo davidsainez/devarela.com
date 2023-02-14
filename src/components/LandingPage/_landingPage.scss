@@ -92,16 +92,28 @@ $feature-flags: (
   margin-top: $spacing-12;
 
   @include breakpoint-down(md) {
-    flex-direction: column;
+    flex-direction: column-reverse;
     align-items: flex-start;
     margin-top: $spacing-08;
   }
 }
 
+.landing__action {
+  @include breakpoint-down(md) {
+    @include type.type-style('fluid-paragraph-01', true);
+
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: $spacing-08;
+  }
+}
+
 .landing__link {
   @include breakpoint-down(md) {
-    padding-top: $spacing-04;
-    padding-bottom: $spacing-04;
+    padding-top: $spacing-03;
+    padding-bottom: $spacing-03;
   }
 }
 
