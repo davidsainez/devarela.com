@@ -3,6 +3,7 @@ import Markdoc from '@markdoc/markdoc';
 import yaml from 'js-yaml';
 import path from 'path';
 import { EssayIndex } from '../../components/EssayIndex';
+import { formatDate } from '../../components/Utilities';
 
 const EssayIndexLayout = ({ essays }) => {
   return <EssayIndex essays={essays} />;
@@ -30,6 +31,7 @@ export async function getStaticProps() {
       href: `/essays/${filename.slice(0, -3)}`,
       title: metadata.title,
       date: metadata.date.toJSON(),
+      formated_date: formatDate(metadata.date),
       description: metadata.description,
     };
   });

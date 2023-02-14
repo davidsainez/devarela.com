@@ -1,7 +1,6 @@
 import { Link } from '../Link';
 import { Column, Tag, Grid } from '@carbon/react';
 import { ArrowRight } from '@carbon/icons-react';
-import { formatDate } from '../Utilities';
 
 export const EssayIndexCard = ({ href, title, date, description }) => {
   return (
@@ -23,7 +22,7 @@ export const EssayIndexCard = ({ href, title, date, description }) => {
           sm={2}
           className="essay-index-card__date__box"
         >
-          <p className="essay-index-card__date">{formatDate(date)}</p>
+          <p className="essay-index-card__date">{date}</p>
         </Column>
       </Grid>
       <Grid>

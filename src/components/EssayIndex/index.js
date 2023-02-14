@@ -7,7 +7,7 @@ export const EssayIndex = ({ essays }) => {
       key={essay.href}
       href={essay.href}
       title={essay.title}
-      date={essay.date}
+      date={essay.formated_date}
       description={essay.description}
     />
   ));
