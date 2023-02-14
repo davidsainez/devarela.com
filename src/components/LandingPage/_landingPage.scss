@@ -38,13 +38,11 @@ $feature-flags: (
 
 .landing__card {
   padding: $spacing-12;
-  margin-top: 20vh;
   backdrop-filter: blur(2px);
   background: rgba(255, 255, 255, 0.2);
 
   @include breakpoint-down(md) {
-    padding: $spacing-05;
-    margin-top: 0;
+    padding: 0;
   }
 }
 
@@ -55,20 +53,18 @@ $feature-flags: (
 }
 
 .landing__title {
-  @include type.type-style('fluid-display-03', true);
+  @include type.type-style('fluid-display-02', true);
 
   @include breakpoint-down(md) {
     @include type.type-style('fluid-display-01', true);
   }
 }
 
-.landing__branding__pre {
-  font-family: 'IBM Plex Mono', monospace;
-}
-
-.landing__branding__post {
-  font-family: 'IBM Plex Mono', sans-serif;
-  font-weight: 600;
+.landing__branding {
+  color: $black-100;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 200;
+  letter-spacing: 0.146em;
   text-transform: uppercase;
 }
 
@@ -76,6 +72,9 @@ $feature-flags: (
   animation: blinker 1s cubic-bezier(0.2, 0.2, 0.38, 0.9) infinite; /* stylelint-disable-line */
   color: $blue-60;
   font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 200;
+  letter-spacing: 0.146em;
+  text-transform: uppercase;
 }
 
 @keyframes blinker {
@@ -92,12 +91,11 @@ $feature-flags: (
   margin-top: $spacing-12;
 
   @include breakpoint-down(md) {
-    flex-direction: column-reverse;
-    align-items: flex-start;
     margin-top: $spacing-08;
   }
 }
 
+/*
 .landing__action {
   @include breakpoint-down(md) {
     @include type.type-style('fluid-paragraph-01', true);
@@ -109,6 +107,7 @@ $feature-flags: (
     margin-bottom: $spacing-08;
   }
 }
+*/
 
 .landing__link {
   @include breakpoint-down(md) {

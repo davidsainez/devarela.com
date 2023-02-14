@@ -3,29 +3,23 @@
 @use '@carbon/react/scss/colors' as *;
 
 .header {
-  padding-top: $spacing-05;
-  padding-bottom: $spacing-05;
+  padding-top: $spacing-03;
+  padding-bottom: $spacing-03;
   border-bottom: solid 1px $warm-gray-10;
 }
 
-.header__branding {
+.header__branding__box {
   display: flex;
   align-items: center;
 }
 
-.header__branding__pre {
-  @include type-style('heading-03');
+.header__branding {
+  @include type-style('heading-02');
 
-  color: #000000;
-  font-family: 'IBM Plex Mono', monospace;
-}
-
-.header__branding__post {
-  @include type-style('heading-03');
-
-  color: #000000;
+  color: $black-100;
   font-family: 'IBM Plex Sans', sans-serif;
-  font-weight: 600;
+  font-weight: 400;
+  letter-spacing: 0.146em;
   text-transform: uppercase;
 }
 

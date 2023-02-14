@@ -58,7 +58,11 @@ export const Contact = () => {
         setIsOpen={setIsModalOpen}
         formik={formik}
       />
-      <Button size="md" onClick={() => setIsModalOpen(true)}>
+      <Button
+        size="md"
+        onClick={() => setIsModalOpen(true)}
+        className="contact__button"
+      >
         Contact
       </Button>
       <Layer level={0}>
@@ -85,7 +89,6 @@ const ContactModal = ({ isOpen, setIsOpen, formik }) => {
 
   return (
     <Modal
-      modalHeading="Contact"
       primaryButtonText="Send Message"
       secondaryButtonText="Cancel"
       size="sm"

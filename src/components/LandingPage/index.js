@@ -19,7 +19,7 @@ const SocialLink = ({ href, text, children }) => {
 
 const Typewriter = () => {
   const [index, setIndex] = useState(0);
-  const text = 'D.E.Varela';
+  const text = 'D.E. Varela';
 
   useEffect(() => {
     const interval = setInterval(
@@ -29,36 +29,15 @@ const Typewriter = () => {
     return () => clearInterval(interval);
   }, [index]);
 
-  const visible = text
-    .slice(0, index)
-    .split('')
-    .map((letter, i) => (
-      <span
-        key={i}
-        style={{ color: 'black' }}
-        className={i < 4 ? 'landing__branding__pre' : 'landing__branding__post'}
-      >
-        {letter}
-      </span>
-    ));
-  const invisible = text
-    .slice(index, text.length)
-    .split('')
-    .map((letter, i) => (
-      <span
-        key={index + i}
-        style={{ color: 'white' }}
-        className={i < 4 ? 'landing__branding__pre' : 'landing__branding__post'}
-      >
-        {letter}
-      </span>
-    ));
-
   return (
     <h1 className="landing__title">
-      {visible}
+      <span className="landing__branding" style={{ color: 'black' }}>
+        {text.slice(0, index)}
+      </span>
       <span className="landing__branding__cursor">|</span>
-      {invisible}
+      <span className="landing__branding" style={{ color: 'white' }}>
+        {text.slice(index)}
+      </span>
     </h1>
   );
 };
@@ -75,12 +54,6 @@ const LandingPageCard = () => {
       <div className="landing__meta">
         <Stack className="landing__social">
           <SocialLink
-            text="de-varela@outlook.com"
-            href="mailto:de-varela@outlook.com"
-          >
-            <Email />
-          </SocialLink>
-          <SocialLink
             text="@devarela_com"
             href="https://twitter.com/devarela_com"
           >
@@ -88,6 +61,12 @@ const LandingPageCard = () => {
           </SocialLink>
           <SocialLink text="@de-varela" href="https://github.com/de-varela">
             <LogoGithub />
+          </SocialLink>
+          <SocialLink
+            text="de-varela@outlook.com"
+            href="mailto:de-varela@outlook.com"
+          >
+            <Email />
           </SocialLink>
         </Stack>
         <div className="landing__action">

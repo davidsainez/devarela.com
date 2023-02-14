@@ -1,3 +1,14 @@
+@use '@carbon/react/scss/colors' as *;
+
+.contact__button {
+  width: 100%;
+  background-color: $black-100;
+}
+
+.contact__button:hover {
+  background-color: $gray-90;
+}
+
 .toast-plane {
   position: absolute;
   z-index: 9000;
