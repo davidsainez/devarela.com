@@ -135,6 +135,7 @@ const ContactFormLayout = ({
           onChange={handleChange}
           onBlur={handleBlur}
           value={values.password}
+          className="form__text__input"
         />
         <TextInput
           type="email"
@@ -146,6 +147,7 @@ const ContactFormLayout = ({
           onChange={handleChange}
           onBlur={handleBlur}
           value={values.email}
+          className="form__text__input"
         />
         <TextArea
           type="text"
@@ -157,6 +159,7 @@ const ContactFormLayout = ({
           onChange={handleChange}
           onBlur={handleBlur}
           value={values.password}
+          className="form__text__input"
         />
       </Stack>
     </CarbonForm>

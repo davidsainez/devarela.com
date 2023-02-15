@@ -1,3 +1,4 @@
+@use '@carbon/react/scss/type' as *;
 @use '@carbon/react/scss/colors' as *;
 
 .toast-plane {
@@ -5,4 +6,13 @@
   z-index: 9000;
   top: 0;
   right: 0;
+}
+
+// to prevent zoom on iOS font size needs to be 16px
+.form__text__input input {
+  @include type-style('body-compact-02');
+}
+
+.form__text__input textarea {
+  @include type-style('body-compact-02');
 }
