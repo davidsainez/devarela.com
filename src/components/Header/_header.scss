@@ -1,6 +1,7 @@
 @use '@carbon/react/scss/type' as *;
 @use '@carbon/react/scss/spacing' as *;
 @use '@carbon/react/scss/colors' as *;
+@use '@carbon/react/scss/breakpoint' as *;
 
 .header {
   padding-top: $spacing-03;
@@ -26,9 +27,43 @@
 .header__nav {
   display: flex;
   align-items: center;
+
+  @include breakpoint-down(md) {
+    display: none;
+  }
 }
 
 .header__action {
   display: flex;
   justify-content: flex-end;
+
+  @include breakpoint-down(md) {
+    display: none;
+  }
+}
+
+.header__mobile__menu__column {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  @include breakpoint-up(md) {
+    display: none;
+  }
+}
+
+.header__mobile__menu__button {
+  background-color: $black-100;
+}
+
+.header__mobile__menu__button:hover {
+  background-color: $gray-90;
+}
+
+.header__contact__button {
+  background-color: $black-100;
+}
+
+.header__contact__button:hover {
+  background-color: $gray-90;
 }

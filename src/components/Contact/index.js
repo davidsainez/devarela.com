@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useFormik } from 'formik';
 import {
-  Button,
   Form as CarbonForm,
   TextInput,
   TextArea,
@@ -15,14 +14,13 @@ import {
 
 const FORM_ID = 'contactForm';
 
-export const Contact = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+export const Contact = ({ isOpen, setIsOpen }) => {
   const [messageTimestamps, setMessageTimestamps] = useState([]);
 
   const onValidSubmit = async () => {
     const form = document.getElementById(FORM_ID);
     form.submit();
-    setIsModalOpen(false);
+    setIsOpen(false);
     const timestamp = new Date().toLocaleTimeString();
     setMessageTimestamps([timestamp, ...messageTimestamps]);
   };
@@ -53,18 +51,7 @@ export const Contact = () => {
 
   return (
     <>
-      <ContactModal
-        isOpen={isModalOpen}
-        setIsOpen={setIsModalOpen}
-        formik={formik}
-      />
-      <Button
-        size="md"
-        onClick={() => setIsModalOpen(true)}
-        className="contact__button"
-      >
-        Contact
-      </Button>
+      <ContactModal isOpen={isOpen} setIsOpen={setIsOpen} formik={formik} />
       <Layer level={0}>
         <Grid fullWidth className="toast-plane">
           <Column lg={{ offset: 10, span: 2 }}>
@@ -89,6 +76,7 @@ const ContactModal = ({ isOpen, setIsOpen, formik }) => {
 
   return (
     <Modal
+      modalHeading="Contact"
       primaryButtonText="Send Message"
       secondaryButtonText="Cancel"
       size="sm"
