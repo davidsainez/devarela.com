@@ -37,7 +37,7 @@ $feature-flags: (
 }
 
 .landing__heading {
-  @include type.type-style('heading-06');
+  @include type.type-style('heading-05');
 
   margin-top: $spacing-10;
 }
