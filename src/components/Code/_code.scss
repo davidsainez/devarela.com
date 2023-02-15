@@ -1,14 +1,9 @@
 @use '@carbon/react/scss/spacing' as *;
 @use '@carbon/react/scss/type' as *;
+@use '@carbon/react/scss/breakpoint' as *;
 
 .code__block {
   margin-top: $spacing-05;
-}
-
-.code__block code {
-  @include type-style('body-02');
-
-  font-family: 'IBM Plex Mono', monospace;
 }
 
 .cds--snippet--multi {
