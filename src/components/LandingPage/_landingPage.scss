@@ -25,38 +25,52 @@ $feature-flags: (
   height: 100vh;
 }
 
-.landing__grid {
-  height: 100%;
-}
-
 .landing__track {
   display: flex;
+  width: 100%;
   height: 100%;
   flex-direction: column;
   justify-content: center;
+
+  @include breakpoint-down(md) {
+    justify-content: flex-start;
+  }
+}
+
+.landing__heading {
+  margin-top: $spacing-10;
+}
+
+.landing__copy {
+  @include type.type-style('body-02');
+
+  margin-top: $spacing-07;
+}
+
+.landing__action {
+  @include type.type-style('heading-02');
+
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: $spacing-08;
 }
 
 .landing__card {
   padding: $spacing-12;
-  backdrop-filter: blur(2px);
-  background: rgba(255, 255, 255, 0.2);
 
   @include breakpoint-down(md) {
     padding: 0;
   }
 }
 
-.landing__heading {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
 .landing__title {
   @include type.type-style('fluid-display-02', true);
 
   @include breakpoint-down(md) {
-    @include type.type-style('fluid-display-01', true);
+    @include type.type-style('fluid-heading-04', true);
   }
 }
 

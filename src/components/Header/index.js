@@ -4,7 +4,7 @@ import { Link } from '../Link';
 import { Button, IconButton, Column, Grid } from '@carbon/react';
 import { Contact } from '../Contact';
 import { MenuModal } from '../MenuModal';
-import { Collaborate, Book, Menu } from '@carbon/icons-react';
+import { Idea, Collaborate, Book, Menu } from '@carbon/icons-react';
 
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -38,7 +38,10 @@ export const Header = () => {
             className="header__branding__box"
           >
             <Link href="/">
-              <span className="header__branding">D.E. Varela</span>
+              <div className="header__branding">
+                <Idea />
+                <span>D.E. Varela</span>
+              </div>
             </Link>
           </Column>
           <Column lg={{ offset: 6, span: 4 }} sm={0} className="header__nav">
