@@ -6,7 +6,7 @@ const Socials = () => {
   return (
     <Stack>
       <CarbonLink
-        href="https://twitter.com/devarela_com"
+        href="https://twitter.com/_de_varela"
         className="footer__social__link"
       >
         <LogoTwitter />
