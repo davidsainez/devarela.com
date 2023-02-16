@@ -162,7 +162,7 @@ const ContactFormLayout = ({
           className="form__text__input"
         />
         <div>
-          Or <a href="mailto:de-varela@outlook.com">email me</a> directly
+          Or <a href="mailto:de-varela@outlook.com">email me</a> directly.
         </div>
       </Stack>
     </CarbonForm>
