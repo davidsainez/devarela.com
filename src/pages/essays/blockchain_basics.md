@@ -2,6 +2,7 @@
 title: What is the Blockchain?
 date: 2022-08-12
 description: The blockchain is dope as fuck.
+tags: blockchain
 ---
 
 The blockchain is a **distributed**, trustless store of information. Let's

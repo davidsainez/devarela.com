@@ -4,7 +4,8 @@ import { Link } from '../Link';
 import { Button, IconButton, Column, Grid } from '@carbon/react';
 import { Contact } from '../Contact';
 import { MenuModal } from '../MenuModal';
-import { Idea, Collaborate, Book, Menu } from '@carbon/icons-react';
+import { AssemblyCluster, Forum, Book, Menu } from '@carbon/icons-react';
+//branding icons: Idea, ModelAlt
 
 const MobileMenu = ({ isOpen, setIsOpen, setIsContactOpen }) => {
   const router = useRouter();
@@ -19,7 +20,7 @@ const MobileMenu = ({ isOpen, setIsOpen, setIsContactOpen }) => {
         },
         {
           text: 'Contact',
-          icon: Collaborate,
+          icon: Forum,
           onClick: () => setIsContactOpen(true),
         },
       ]}
@@ -33,7 +34,7 @@ const Branding = () => {
   return (
     <Link href="/">
       <div className="header__branding">
-        <Idea />
+        <AssemblyCluster />
         <span>D.E. Varela</span>
       </div>
     </Link>
@@ -46,7 +47,7 @@ const ContactButton = ({ setIsContactOpen }) => {
       size="md"
       onClick={() => setIsContactOpen(true)}
       className="header__contact__button"
-      renderIcon={Collaborate}
+      renderIcon={Forum}
     >
       Contact
     </Button>

@@ -5,6 +5,7 @@ export const EssayIndex = ({ essays }) => {
   const cards = essays.map((essay) => (
     <EssayIndexCard
       key={essay.href}
+      tags={essay.tags}
       href={essay.href}
       title={essay.title}
       date={essay.formated_date}

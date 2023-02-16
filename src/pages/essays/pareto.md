@@ -2,6 +2,7 @@
 title: Principled Creativity
 date: 2022-12-22
 description: The pareto principle can help us work more efficiently.
+tags: design,systems
 ---
 
 To create is to bring into existence. It is a human endeavor which — by

@@ -2,7 +2,7 @@ import { Link } from '../Link';
 import { Column, Tag, Grid } from '@carbon/react';
 import { ArrowRight } from '@carbon/icons-react';
 
-export const EssayIndexCard = ({ href, title, date, description }) => {
+export const EssayIndexCard = ({ href, title, date, description, tags }) => {
   return (
     <div className="essay-index-card">
       <Grid className="essay-index-card__metadata">
@@ -14,12 +14,11 @@ export const EssayIndexCard = ({ href, title, date, description }) => {
           max={{ offset: 5, span: 4 }}
         >
           <div className="essay-index-card__tags">
-            <Tag type="blue" size="sm">
-              Tech
-            </Tag>
-            <Tag type="blue" size="sm">
-              Design
-            </Tag>
+            {tags.map((x) => (
+              <Tag key={x} type="gray" size="sm">
+                {x}
+              </Tag>
+            ))}
           </div>
         </Column>
         <Column
