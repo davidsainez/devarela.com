@@ -20,6 +20,7 @@ const Template = ({ children }) => {
 export const Layout = ({ path, markdoc, children }) => {
   const isEssay = path.startsWith('/essays/');
   const isEssayIndex = path.startsWith('/essays');
+  const isMe = path === '/me';
   const isLandingPage = path === '/';
 
   if (isEssay) {
@@ -44,6 +45,8 @@ export const Layout = ({ path, markdoc, children }) => {
   } else if (isEssayIndex) {
     return <Template>{children}</Template>;
   } else if (isLandingPage) {
+    return <Template>{children}</Template>;
+  } else if (isMe) {
     return <Template>{children}</Template>;
   }
 
