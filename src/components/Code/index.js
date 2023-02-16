@@ -22,7 +22,13 @@ export const InlineCode = ({ content }) => {
 export const Code = ({ children }) => {
   return (
     <Grid>
-      <Column lg={{ offset: 4, span: 8 }} sm={4}>
+      <Column
+        sm={4}
+        md={8}
+        lg={{ offset: 4, span: 8 }}
+        xlg={{ offset: 4, span: 8 }}
+        max={{ offset: 5, span: 6 }}
+      >
         <Theme theme="g100">
           <Highlight
             {...defaultProps}

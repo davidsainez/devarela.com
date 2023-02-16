@@ -18,7 +18,7 @@
 .footer__copy {
   @include type-style('legal-02');
 
-  @include breakpoint-down(md) {
+  @include breakpoint-down(lg) {
     margin-top: $spacing-05;
   }
 }

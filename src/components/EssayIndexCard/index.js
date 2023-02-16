@@ -6,7 +6,13 @@ export const EssayIndexCard = ({ href, title, date, description }) => {
   return (
     <div className="essay-index-card">
       <Grid className="essay-index-card__metadata">
-        <Column lg={{ offset: 4, span: 6 }} md={8} sm={2}>
+        <Column
+          sm={2}
+          md={6}
+          lg={{ offset: 4, span: 6 }}
+          xlg={{ offset: 4, span: 6 }}
+          max={{ offset: 5, span: 4 }}
+        >
           <div className="essay-index-card__tags">
             <Tag type="blue" size="sm">
               Tech
@@ -17,17 +23,35 @@ export const EssayIndexCard = ({ href, title, date, description }) => {
           </div>
         </Column>
         <Column
-          lg={{ offset: 10, span: 2 }}
-          md={8}
-          sm={2}
           className="essay-index-card__date__box"
+          sm={2}
+          md={2}
+          lg={{ offset: 10, span: 2 }}
+          xlg={{ offset: 10, span: 2 }}
+          max={{ offset: 9, span: 2 }}
         >
           <p className="essay-index-card__date">{date}</p>
         </Column>
       </Grid>
       <Grid>
-        <Column lg={{ offset: 4, span: 6 }} md={8} sm={4}>
+        <Column
+          sm={4}
+          md={6}
+          lg={{ offset: 4, span: 6 }}
+          xlg={{ offset: 4, span: 6 }}
+          max={{ offset: 5, span: 6 }}
+        >
           <h2 className="essay-index-card__title">{title}</h2>
+        </Column>
+      </Grid>
+      <Grid>
+        <Column
+          sm={4}
+          md={6}
+          lg={{ offset: 4, span: 6 }}
+          xlg={{ offset: 4, span: 6 }}
+          max={{ offset: 5, span: 4 }}
+        >
           <p className="essay-index-card__description">{description}</p>
           <Link
             href={href}

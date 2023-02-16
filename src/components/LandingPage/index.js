@@ -1,8 +1,6 @@
 import * as NextLink from 'next/link';
 //import { useState, useEffect } from 'react';
 import { Theme, ClickableTile, Grid, Column } from '@carbon/react';
-import { Header } from '../Header';
-import { Footer } from '../Footer';
 import { ArrowRight } from '@carbon/icons-react';
 
 /*
@@ -80,32 +78,52 @@ const LandingPageCard = () => {
 
 export const LandingPage = () => {
   return (
-    <>
-      <Header />
-      <div className="landing__layout">
-        <Grid fullWidth className="landing__grid">
-          <Column lg={{ offset: 4, span: 8 }} sm={4}>
-            <h1 className="landing__heading">
-              A collection of essays exploring software design, web technology,
-              and communication.
-            </h1>
-            <p className="landing__copy">
-              Nothing drives clarity of thought more deeply than communication.
-              I welcome you to join me in this pursuit.
-            </p>
-          </Column>
-          <Column lg={{ offset: 4, span: 8 }} sm={4}>
-            <Theme theme="g100">
-              <NextLink href="/essays" legacyBehavior passHref>
-                <ClickableTile className="landing__action">
-                  Continue to essays <ArrowRight />
-                </ClickableTile>
-              </NextLink>
-            </Theme>
-          </Column>
-        </Grid>
-      </div>
-      <Footer />
-    </>
+    <Column sm={4} md={8} lg={16} xlg={16} max={16}>
+      <Grid>
+        <Column
+          sm={4}
+          md={6}
+          lg={{ offset: 4, span: 6 }}
+          xlg={{ offset: 4, span: 6 }}
+          max={{ offset: 5, span: 6 }}
+        >
+          <h1 className="landing__heading">
+            A collection of essays exploring software design, web technology,
+            and communication.
+          </h1>
+        </Column>
+      </Grid>
+      <Grid>
+        <Column
+          sm={4}
+          md={4}
+          lg={{ offset: 4, span: 6 }}
+          xlg={{ offset: 4, span: 6 }}
+          max={{ offset: 5, span: 4 }}
+        >
+          <p className="landing__copy">
+            Nothing drives clarity of thought more deeply than communication. I
+            welcome you to join me in this pursuit.
+          </p>
+        </Column>
+      </Grid>
+      <Grid>
+        <Column
+          sm={4}
+          md={4}
+          lg={{ offset: 4, span: 4 }}
+          xlg={{ offset: 4, span: 4 }}
+          max={{ offset: 5, span: 2 }}
+        >
+          <Theme theme="g100">
+            <NextLink href="/essays" legacyBehavior passHref>
+              <ClickableTile className="landing__action">
+                Continue to essays <ArrowRight />
+              </ClickableTile>
+            </NextLink>
+          </Theme>
+        </Column>
+      </Grid>
+    </Column>
   );
 };

@@ -36,7 +36,7 @@ export const Layout = ({ path, markdoc, children }) => {
   } else if (isEssayIndex) {
     return <Template>{children}</Template>;
   } else if (isLandingPage) {
-    return children;
+    return <Template>{children}</Template>;
   }
 
   return (

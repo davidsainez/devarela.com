@@ -6,68 +6,117 @@ import { Contact } from '../Contact';
 import { MenuModal } from '../MenuModal';
 import { Idea, Collaborate, Book, Menu } from '@carbon/icons-react';
 
+const MobileMenu = ({ isOpen, setIsOpen, setIsContactOpen }) => {
+  const router = useRouter();
+
+  return (
+    <MenuModal
+      items={[
+        {
+          text: 'Essays',
+          icon: Book,
+          onClick: () => router.push('/essays'),
+        },
+        {
+          text: 'Contact',
+          icon: Collaborate,
+          onClick: () => setIsContactOpen(true),
+        },
+      ]}
+      isOpen={isOpen}
+      setIsOpen={setIsOpen}
+    />
+  );
+};
+
+const Branding = () => {
+  return (
+    <Link href="/">
+      <div className="header__branding">
+        <Idea />
+        <span>D.E. Varela</span>
+      </div>
+    </Link>
+  );
+};
+
+const ContactButton = ({ setIsContactOpen }) => {
+  return (
+    <Button
+      size="md"
+      onClick={() => setIsContactOpen(true)}
+      className="header__contact__button"
+      renderIcon={Collaborate}
+    >
+      Contact
+    </Button>
+  );
+};
+
+const MobileMenuButton = ({ setIsMenuOpen }) => {
+  return (
+    <IconButton
+      onClick={() => setIsMenuOpen(true)}
+      className="header__mobile__menu__button"
+    >
+      <Menu />
+    </IconButton>
+  );
+};
+
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isContactOpen, setIsContactOpen] = useState(false);
-  const router = useRouter();
 
   return (
     <>
       <Contact isOpen={isContactOpen} setIsOpen={setIsContactOpen} />
-      <MenuModal
-        items={[
-          {
-            text: 'Essays',
-            icon: Book,
-            onClick: () => router.push('/essays'),
-          },
-          {
-            text: 'Contact',
-            icon: Collaborate,
-            onClick: () => setIsContactOpen(true),
-          },
-        ]}
+      <MobileMenu
         isOpen={isMenuOpen}
         setIsOpen={setIsMenuOpen}
+        setIsContactOpen={setIsContactOpen}
       />
-      <Column lg={16} md={8} sm={4} className="header">
+      <Column className="header" sm={4} md={8} lg={16} xlg={16} max={16}>
         <Grid>
           <Column
-            lg={{ offset: 4, span: 2 }}
+            className="header__branding__track"
             sm={2}
-            className="header__branding__box"
+            md={2}
+            lg={{ offset: 4, span: 2 }}
+            xlg={{ offset: 4, span: 2 }}
+            max={{ offset: 5, span: 2 }}
           >
-            <Link href="/">
-              <div className="header__branding">
-                <Idea />
-                <span>D.E. Varela</span>
-              </div>
-            </Link>
+            <Branding />
           </Column>
-          <Column lg={{ offset: 6, span: 4 }} sm={0} className="header__nav">
+          <Column
+            className="header__nav"
+            sm={0}
+            md={4}
+            lg={{ offset: 6, span: 4 }}
+            xlg={{ offset: 6, span: 4 }}
+            max={{ offset: 7, span: 2 }}
+          >
             <Link href="/essays">Essays</Link>
           </Column>
           <Column
-            lg={{ offset: 10, span: 2 }}
-            sm={0}
             className="header__action"
+            sm={0}
+            md={2}
+            lg={{ offset: 10, span: 2 }}
+            xlg={{ offset: 10, span: 2 }}
+            max={{ offset: 9, span: 2 }}
           >
-            <Button
-              size="md"
-              onClick={() => setIsContactOpen(true)}
-              className="header__contact__button"
-              renderIcon={Collaborate}
-            >
-              Contact
-            </Button>
+            <ContactButton setIsContactOpen={setIsContactOpen} />
           </Column>
-          <Column lg={0} sm={2} className="header__mobile__menu__column">
-            <IconButton
-              onClick={() => setIsMenuOpen(true)}
-              className="header__mobile__menu__button"
-            >
-              <Menu />
-            </IconButton>
+          <Column
+            className="header__mobile__menu__column"
+            sm={2}
+            md={2}
+            lg={0}
+            xlg={0}
+            max={0}
+          >
+            <MobileMenuButton setIsMenuOpen={setIsMenuOpen} />
           </Column>
         </Grid>
       </Column>

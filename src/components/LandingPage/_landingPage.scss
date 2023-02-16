@@ -21,10 +21,6 @@ $feature-flags: (
 @use '@carbon/react/scss/colors' as *;
 */
 
-.landing__layout {
-  margin-bottom: $spacing-12;
-}
-
 .landing__track {
   display: flex;
   width: 100%;
@@ -38,6 +34,10 @@ $feature-flags: (
 
 .landing__heading {
   @include type.type-style('heading-05');
+
+  @include breakpoint(md) {
+    @include type.type-style('heading-06');
+  }
 
   margin-top: $spacing-10;
 }
