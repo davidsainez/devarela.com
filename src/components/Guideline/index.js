@@ -13,7 +13,7 @@ export const Guideline = () => {
       />
       <Column
         className="guideline__column__center"
-        sm={{ offset: 2, span: 2 }}
+        sm={0}
         md={2}
         lg={{ offset: 6, span: 2 }}
         xlg={{ offset: 6, span: 2 }}
