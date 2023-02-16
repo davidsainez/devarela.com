@@ -10,7 +10,7 @@ const Socials = () => {
         className="footer__social__link"
       >
         <LogoTwitter />
-        @devarela_com
+        @_de_varela
       </CarbonLink>
       <CarbonLink
         href="https://github.com/de-varela"

@@ -2,6 +2,9 @@
 title: Get started with Markdoc
 date: 2023-02-02
 description:
+  A markdoc tutorial which covers the basics and gets you up to speed quickly.
+tags: markdoc
+summary:
   Do you wonder how to get started with Markdoc? This tutorial will show you how
   to install and configure Markdoc. Markdoc is a cool motherfucking tool and you
   should use it.

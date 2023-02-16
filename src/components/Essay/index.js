@@ -1,9 +1,55 @@
+import { NextSeo, ArticleJsonLd, BreadcrumbJsonLd } from 'next-seo';
+
 import { Grid, Column } from '@carbon/react';
 import { formatDate } from '../Utilities';
 
-export const Essay = ({ title, date, children }) => {
+export const Essay = ({ url, title, description, tags, date, children }) => {
+  const timestamp = new Date(date).toISOString();
+
   return (
     <>
+      <NextSeo
+        title={`${title} | D.E. Varela`}
+        description={description}
+        openGraph={{
+          url: url,
+          title: title,
+          description: description,
+          type: 'article',
+          article: {
+            authors: ['D.E. Varela'],
+            tags: tags,
+            publishedTime: timestamp,
+          },
+        }}
+      />
+      <ArticleJsonLd
+        url={url}
+        title={title}
+        datePublished={timestamp}
+        authorName={[
+          {
+            name: 'D.E. Varela',
+            url: 'https://devarela.com/me',
+          },
+        ]}
+        description={description}
+        isAccessibleForFree={true}
+      />
+      <BreadcrumbJsonLd
+        itemListElements={[
+          {
+            position: 1,
+            name: 'Essays',
+            item: 'https://devarela.com/essays',
+          },
+          {
+            position: 2,
+            name: title,
+            item: url,
+          },
+        ]}
+      />
       <Column
         className="essay__heading"
         sm={4}

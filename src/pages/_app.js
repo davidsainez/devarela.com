@@ -1,7 +1,8 @@
-import '../scss/index.scss';
 import { useRouter } from 'next/router';
+import { DefaultSeo } from 'next-seo';
 import { Layout } from '../components/Layout';
 import Head from 'next/head';
+import '../scss/index.scss';
 
 export default function App({ Component, pageProps }) {
   const router = useRouter();
@@ -10,11 +11,6 @@ export default function App({ Component, pageProps }) {
   return (
     <Layout path={path} markdoc={pageProps.markdoc}>
       <Head>
-        <title>D.E. Varela</title>
-        <meta
-          name="description"
-          content="D.E. Varela's collection of essays on web technology, design, software principles, and entrepreneurship."
-        ></meta>
         <link
           rel="icon"
           type="image/png"
@@ -22,6 +18,16 @@ export default function App({ Component, pageProps }) {
           href="/favicon-32x32.png"
         />
       </Head>
+      <DefaultSeo
+        themeColor="#ffffff"
+        openGraph={{
+          locale: 'en_US',
+        }}
+        twitter={{
+          handle: '@_de_varela',
+          cardType: 'summary',
+        }}
+      />
       <Component {...pageProps} />
     </Layout>
   );

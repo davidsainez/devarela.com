@@ -1,5 +1,10 @@
+import { NextSeo, BreadcrumbJsonLd } from 'next-seo';
 import { Grid, Column } from '@carbon/react';
 import { EssayIndexCard } from '../EssayIndexCard';
+
+const DESCRIPTION = `
+D.E. Varela's collection of essays exploring mental models, software design, and web technology.
+`;
 
 export const EssayIndex = ({ essays }) => {
   const cards = essays.map((essay) => (
@@ -9,12 +14,30 @@ export const EssayIndex = ({ essays }) => {
       href={essay.href}
       title={essay.title}
       date={essay.formated_date}
-      description={essay.description}
+      summary={essay.summary}
     />
   ));
 
   return (
     <>
+      <NextSeo
+        title="Essays | D.E. Varela"
+        description={DESCRIPTION}
+        openGraph={{
+          url: 'https://devarela.com/essays',
+          title: 'Essays | D.E. Varela',
+          description: DESCRIPTION,
+        }}
+      />
+      <BreadcrumbJsonLd
+        itemListElements={[
+          {
+            position: 1,
+            name: 'Essays',
+            item: 'https://devarela.com/essays',
+          },
+        ]}
+      />
       <Column
         className="essay-index__header"
         sm={4}

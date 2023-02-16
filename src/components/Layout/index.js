@@ -22,11 +22,19 @@ export const Layout = ({ path, markdoc, children }) => {
   const isEssayIndex = path.startsWith('/essays');
   const isLandingPage = path === '/';
 
+  const tags =
+    markdoc.frontmatter.tags === undefined
+      ? undefined
+      : markdoc.frontmatter.tags.split(',');
+
   if (isEssay) {
     return (
       <Template>
         <Essay
+          url={`https://devarela.com${path}`}
           title={markdoc.frontmatter.title}
+          description={markdoc.frontmatter.description}
+          tags={tags}
           date={markdoc.frontmatter.date}
         >
           {children}

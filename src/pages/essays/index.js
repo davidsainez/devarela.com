@@ -33,7 +33,7 @@ export async function getStaticProps() {
       date: metadata.date.toJSON(),
       formated_date: formatDate(metadata.date),
       tags: metadata.tags === undefined ? [] : metadata.tags.split(','),
-      description: metadata.description,
+      summary: metadata.summary,
     };
   });
 

@@ -2,7 +2,7 @@ import { Link } from '../Link';
 import { Column, Tag, Grid } from '@carbon/react';
 import { ArrowRight } from '@carbon/icons-react';
 
-export const EssayIndexCard = ({ href, title, date, description, tags }) => {
+export const EssayIndexCard = ({ href, title, date, summary, tags }) => {
   return (
     <div className="essay-index-card">
       <Grid className="essay-index-card__metadata">
@@ -51,7 +51,7 @@ export const EssayIndexCard = ({ href, title, date, description, tags }) => {
           xlg={{ offset: 4, span: 6 }}
           max={{ offset: 5, span: 4 }}
         >
-          <p className="essay-index-card__description">{description}</p>
+          <p className="essay-index-card__description">{summary}</p>
           <Link
             href={href}
             className="essay-index-card__action"
