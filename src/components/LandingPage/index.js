@@ -1,8 +1,8 @@
 import * as NextLink from 'next/link';
-import { useState, useEffect } from 'react';
 import { NextSeo } from 'next-seo';
 import { Theme, ClickableTile, Grid, Column } from '@carbon/react';
 import { ArrowRight } from '@carbon/icons-react';
+import { Typewriter } from '../Typewriter';
 
 /*
 const SocialLink = ({ href, text, children }) => {
@@ -52,27 +52,6 @@ const LandingPageCard = () => {
 };
 */
 
-const Typewriter = () => {
-  const [index, setIndex] = useState(0);
-  const text = 'web technology.';
-
-  useEffect(() => {
-    const interval = setInterval(
-      () => setIndex(index === text.length ? text.length : index + 1),
-      100 + Math.floor(Math.random() * 300)
-    );
-    return () => clearInterval(interval);
-  }, [index]);
-
-  return (
-    <>
-      <span style={{ color: 'black' }}>{text.slice(0, index)}</span>
-      <span className="landing__cursor">|</span>
-      <span style={{ color: 'white' }}>{text.slice(index)}</span>
-    </>
-  );
-};
-
 const TITLE = 'D.E. Varela';
 const URL = 'devarela.com';
 const DESCRIPTION = `
@@ -102,7 +81,7 @@ export const LandingPage = () => {
           >
             <h1 className="landing__heading">
               A collection of essays exploring mental models, software design,
-              and {<Typewriter />}
+              and {<Typewriter text="web technology." />}
             </h1>
           </Column>
         </Grid>

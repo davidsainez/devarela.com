@@ -83,17 +83,6 @@ $feature-flags: (
   text-transform: uppercase;
 }
 
-.landing__cursor {
-  animation: blinker 1s cubic-bezier(0.2, 0.2, 0.38, 0.9) infinite; /* stylelint-disable-line */
-  color: $blue-60;
-}
-
-@keyframes blinker {
-  50% {
-    opacity: 0;
-  }
-}
-
 .landing__meta {
   display: flex;
   flex-direction: row;
