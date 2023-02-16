@@ -22,12 +22,12 @@ export const Layout = ({ path, markdoc, children }) => {
   const isEssayIndex = path.startsWith('/essays');
   const isLandingPage = path === '/';
 
-  const tags =
-    markdoc.frontmatter.tags === undefined
-      ? undefined
-      : markdoc.frontmatter.tags.split(',');
-
   if (isEssay) {
+    const tags =
+      markdoc.frontmatter.tags === undefined
+        ? undefined
+        : markdoc.frontmatter.tags.split(',');
+
     return (
       <Template>
         <Essay
