@@ -83,13 +83,9 @@ $feature-flags: (
   text-transform: uppercase;
 }
 
-.landing__branding__cursor {
+.landing__cursor {
   animation: blinker 1s cubic-bezier(0.2, 0.2, 0.38, 0.9) infinite; /* stylelint-disable-line */
   color: $blue-60;
-  font-family: 'IBM Plex Sans', sans-serif;
-  font-weight: 200;
-  letter-spacing: 0.146em;
-  text-transform: uppercase;
 }
 
 @keyframes blinker {

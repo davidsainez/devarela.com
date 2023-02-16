@@ -1,5 +1,5 @@
 import * as NextLink from 'next/link';
-//import { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Theme, ClickableTile, Grid, Column } from '@carbon/react';
 import { ArrowRight } from '@carbon/icons-react';
 
@@ -10,31 +10,6 @@ const SocialLink = ({ href, text, children }) => {
       <span className="landing__link__icon">{children}</span>
       {text}
     </a>
-  );
-};
-
-const Typewriter = () => {
-  const [index, setIndex] = useState(0);
-  const text = 'D.E. Varela';
-
-  useEffect(() => {
-    const interval = setInterval(
-      () => setIndex(index === text.length ? text.length : index + 1),
-      250 + Math.floor(Math.random() * 300)
-    );
-    return () => clearInterval(interval);
-  }, [index]);
-
-  return (
-    <h1 className="landing__title">
-      <span className="landing__branding" style={{ color: 'black' }}>
-        {text.slice(0, index)}
-      </span>
-      <span className="landing__branding__cursor">|</span>
-      <span className="landing__branding" style={{ color: 'white' }}>
-        {text.slice(index)}
-      </span>
-    </h1>
   );
 };
 
@@ -76,6 +51,27 @@ const LandingPageCard = () => {
 };
 */
 
+const Typewriter = () => {
+  const [index, setIndex] = useState(0);
+  const text = 'web technology.';
+
+  useEffect(() => {
+    const interval = setInterval(
+      () => setIndex(index === text.length ? text.length : index + 1),
+      100 + Math.floor(Math.random() * 300)
+    );
+    return () => clearInterval(interval);
+  }, [index]);
+
+  return (
+    <>
+      <span style={{ color: 'black' }}>{text.slice(0, index)}</span>
+      <span className="landing__cursor">|</span>
+      <span style={{ color: 'white' }}>{text.slice(index)}</span>
+    </>
+  );
+};
+
 export const LandingPage = () => {
   return (
     <Column sm={4} md={8} lg={16} xlg={16} max={16}>
@@ -88,8 +84,8 @@ export const LandingPage = () => {
           max={{ offset: 5, span: 6 }}
         >
           <h1 className="landing__heading">
-            A collection of essays exploring software design, web technology,
-            and communication.
+            A collection of essays exploring mental models, software design, and{' '}
+            {<Typewriter />}
           </h1>
         </Column>
       </Grid>
