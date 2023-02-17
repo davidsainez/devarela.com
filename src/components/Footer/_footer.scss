@@ -3,20 +3,27 @@
 @use '@carbon/react/scss/colors' as *;
 @use '@carbon/react/scss/breakpoint' as *;
 
-.footer {
+.footer__top {
   padding-top: $spacing-08;
   border-top: solid 1px $warm-gray-10;
   margin-top: $spacing-12;
-  margin-bottom: $spacing-12;
 
   @include breakpoint-down(md) {
     margin-top: $spacing-08;
+  }
+}
+
+.footer__bottom {
+  margin-bottom: $spacing-12;
+  @include breakpoint-down(md) {
     margin-bottom: $spacing-10;
   }
 }
 
 .footer__copy {
   @include type-style('legal-02');
+
+  margin-top: $spacing-08;
 
   @include breakpoint-down(lg) {
     margin-top: $spacing-05;

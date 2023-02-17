@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import { useRouter } from 'next/router';
-import { Link } from '../Link';
 import { Button, IconButton, Column, Grid } from '@carbon/react';
-import { Contact } from '../Contact';
-import { MenuModal } from '../MenuModal';
 import { AssemblyCluster, Forum, Book, Menu } from '@carbon/icons-react';
+import { Link } from '~/components/Link';
+import { Contact } from '~/components/Contact';
+import { MenuModal } from '~/components/MenuModal';
 //branding icons: Idea, ModelAlt
 
 const MobileMenu = ({ isOpen, setIsOpen, setIsContactOpen }) => {
@@ -57,8 +57,9 @@ const ContactButton = ({ setIsContactOpen }) => {
 const MobileMenuButton = ({ setIsMenuOpen }) => {
   return (
     <IconButton
+      label="menu"
+      kind="secondary"
       onClick={() => setIsMenuOpen(true)}
-      className="header__mobile__menu__button"
     >
       <Menu />
     </IconButton>

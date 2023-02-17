@@ -1,5 +1,4 @@
-import { createElement } from 'react';
-import { Modal, Stack, ClickableTile } from '@carbon/react';
+import { Button, Modal, Stack } from '@carbon/react';
 
 export const MenuModal = ({ isOpen, setIsOpen, items }) => {
   const onRequestClose = () => setIsOpen(false);
@@ -21,18 +20,15 @@ export const MenuModal = ({ isOpen, setIsOpen, items }) => {
     >
       <Stack>
         {wrappedItems.map((x) => (
-          <ClickableTile
-            className="menu-modal__tile"
+          <Button
+            className="menu-modal__button"
             key={x.text}
             onClick={x.onClick}
+            kind="secondary"
+            renderIcon={x.icon}
           >
-            {createElement(
-              x.icon,
-              { className: 'menu-modal__icon' },
-              undefined
-            )}
             {x.text}
-          </ClickableTile>
+          </Button>
         ))}
       </Stack>
     </Modal>
