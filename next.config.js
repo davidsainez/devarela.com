@@ -9,7 +9,6 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 
 module.exports = withBundleAnalyzer(
   withMarkdoc({ schemaPath: './src/markdoc' })({
-    distDir: 'build',
     pageExtensions: ['md', 'mdoc', 'js', 'jsx', 'ts', 'tsx'],
     sassOptions: {
       includePaths: [path.join(__dirname, 'node_modules')],
