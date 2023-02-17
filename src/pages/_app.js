@@ -4,6 +4,12 @@ import Head from 'next/head';
 import { Layout } from '~/components/Layout';
 import '~/scss/index.scss';
 
+/*
+export function reportWebVitals(metric) {
+  console.log(metric);
+}
+*/
+
 export default function App({ Component, pageProps }) {
   const router = useRouter();
   const path = router.asPath;
