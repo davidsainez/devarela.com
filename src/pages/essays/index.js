@@ -2,8 +2,8 @@ import { promises as fs } from 'fs';
 import Markdoc from '@markdoc/markdoc';
 import yaml from 'js-yaml';
 import path from 'path';
-import { EssayIndex } from '../../components/EssayIndex';
-import { formatDate } from '../../components/Utilities';
+import { EssayIndex } from '~/components/EssayIndex';
+import { formatDate } from '~/components/Utilities';
 
 const EssayIndexLayout = ({ essays }) => {
   return <EssayIndex essays={essays} />;

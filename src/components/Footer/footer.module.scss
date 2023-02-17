@@ -3,7 +3,7 @@
 @use '@carbon/react/scss/colors' as *;
 @use '@carbon/react/scss/breakpoint' as *;
 
-.footer__top {
+.top {
   padding-top: $spacing-08;
   border-top: solid 1px $warm-gray-10;
   margin-top: $spacing-12;
@@ -13,14 +13,14 @@
   }
 }
 
-.footer__bottom {
+.bottom {
   margin-bottom: $spacing-12;
   @include breakpoint-down(md) {
     margin-bottom: $spacing-10;
   }
 }
 
-.footer__copy {
+.copy {
   @include type-style('legal-02');
 
   margin-top: $spacing-08;
@@ -30,14 +30,14 @@
   }
 }
 
-.footer__social__link {
+.social_link {
   display: flex;
   padding-top: $spacing-03;
   padding-bottom: $spacing-03;
   gap: $spacing-03;
 }
 
-.footer__branding {
+.branding {
   @include type-style('heading-02');
 
   color: $black-100;

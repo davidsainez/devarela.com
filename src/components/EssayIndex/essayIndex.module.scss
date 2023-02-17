@@ -3,7 +3,7 @@
 @use '@carbon/react/scss/spacing' as *;
 @use '@carbon/react/scss/breakpoint' as *;
 
-.essay-index__title {
+.title {
   @include type-style('heading-03');
 
   padding-left: $spacing-05;
@@ -14,10 +14,10 @@
   }
 }
 
-.essay-index__header {
+.title_row {
   margin-top: $spacing-08;
 }
 
-.essay-index__tiles {
+.card_row {
   margin-top: $spacing-08;
 }

@@ -1,13 +1,13 @@
 @use '@carbon/react/scss/type' as *;
 @use '@carbon/react/scss/spacing' as *;
 
-.article__heading {
+.heading {
   @include type-style('heading-05');
 
   margin-top: $spacing-08;
 }
 
-.article__paragraph {
+.paragraph {
   @include type-style('body-02');
 
   margin-top: $spacing-05;

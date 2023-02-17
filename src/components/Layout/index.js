@@ -1,8 +1,8 @@
 import { Grid, Column } from '@carbon/react';
-import { Footer } from '../Footer';
-import { Header } from '../Header';
-import { Guideline } from '../Guideline';
-import { Essay } from '../Essay';
+import { Footer } from '~/components/Footer';
+import { Header } from '~/components/Header';
+import { Guideline } from '~/components/Guideline';
+import { Essay } from '~/components/Essay';
 
 const Template = ({ children }) => {
   return (

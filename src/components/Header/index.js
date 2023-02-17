@@ -5,6 +5,7 @@ import { AssemblyCluster, Forum, Book, Menu } from '@carbon/icons-react';
 import { Link } from '~/components/Link';
 import { Contact } from '~/components/Contact';
 import { MenuModal } from '~/components/MenuModal';
+import styles from './header.module.scss';
 //branding icons: Idea, ModelAlt
 
 const MobileMenu = ({ isOpen, setIsOpen, setIsContactOpen }) => {
@@ -33,7 +34,7 @@ const MobileMenu = ({ isOpen, setIsOpen, setIsContactOpen }) => {
 const Branding = () => {
   return (
     <Link href="/">
-      <div className="header__branding">
+      <div className={styles.branding}>
         <AssemblyCluster />
         <span>D.E. Varela</span>
       </div>
@@ -46,7 +47,7 @@ const ContactButton = ({ setIsContactOpen }) => {
     <Button
       size="md"
       onClick={() => setIsContactOpen(true)}
-      className="header__contact__button"
+      kind="secondary"
       renderIcon={Forum}
     >
       Contact
@@ -78,10 +79,10 @@ export const Header = () => {
         setIsOpen={setIsMenuOpen}
         setIsContactOpen={setIsContactOpen}
       />
-      <Column className="header" sm={4} md={8} lg={16} xlg={16} max={16}>
+      <Column className={styles.box} sm={4} md={8} lg={16} xlg={16} max={16}>
         <Grid>
           <Column
-            className="header__branding__track"
+            className={styles.branding_track}
             sm={2}
             md={2}
             lg={{ offset: 4, span: 2 }}
@@ -91,7 +92,7 @@ export const Header = () => {
             <Branding />
           </Column>
           <Column
-            className="header__nav"
+            className={styles.nav_track}
             sm={0}
             md={4}
             lg={{ offset: 6, span: 4 }}
@@ -101,7 +102,7 @@ export const Header = () => {
             <Link href="/essays">Essays</Link>
           </Column>
           <Column
-            className="header__action"
+            className={styles.contact_track}
             sm={0}
             md={2}
             lg={{ offset: 10, span: 2 }}
@@ -111,7 +112,7 @@ export const Header = () => {
             <ContactButton setIsContactOpen={setIsContactOpen} />
           </Column>
           <Column
-            className="header__mobile__menu__column"
+            className={styles.mobile_menu_track}
             sm={2}
             md={2}
             lg={0}

@@ -1,6 +1,6 @@
 @use '@carbon/react/scss/colors' as *;
 
-.typewriter__cursor {
+.cursor {
   animation: blinker 1s cubic-bezier(0.2, 0.2, 0.38, 0.9) infinite; /* stylelint-disable-line */
   color: $blue-60;
 }

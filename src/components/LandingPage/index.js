@@ -2,7 +2,8 @@ import * as NextLink from 'next/link';
 import { NextSeo } from 'next-seo';
 import { Theme, ClickableTile, Grid, Column } from '@carbon/react';
 import { ArrowRight } from '@carbon/icons-react';
-import { Typewriter } from '../Typewriter';
+import { Typewriter } from '~/components/Typewriter';
+import styles from './landingPage.module.scss';
 
 const TITLE = 'D.E. Varela';
 const URL = 'devarela.com';
@@ -31,7 +32,7 @@ export const LandingPage = () => {
             xlg={{ offset: 4, span: 6 }}
             max={{ offset: 5, span: 6 }}
           >
-            <h1 className="landing__heading">
+            <h1 className={styles.heading}>
               A collection of essays exploring mental models, software design,
               and {<Typewriter text="web technology." />}
             </h1>
@@ -45,7 +46,7 @@ export const LandingPage = () => {
             xlg={{ offset: 4, span: 6 }}
             max={{ offset: 5, span: 4 }}
           >
-            <p className="landing__copy">
+            <p className={styles.copy}>
               Nothing drives clarity of thought more deeply than communication.
               I welcome you to join me in this pursuit.
             </p>
@@ -61,8 +62,8 @@ export const LandingPage = () => {
           >
             <Theme theme="g100">
               <NextLink href="/essays" legacyBehavior passHref>
-                <ClickableTile className="landing__action">
-                  Continue to essays <ArrowRight />
+                <ClickableTile className={styles.cta}>
+                  Essays <ArrowRight />
                 </ClickableTile>
               </NextLink>
             </Theme>

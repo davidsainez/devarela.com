@@ -2,7 +2,7 @@
 @use '@carbon/react/scss/type' as *;
 @use '@carbon/react/scss/colors' as *;
 
-.menu-modal h3 {
+.box h3 {
   @include type-style('heading-02');
 
   color: $black-100;
@@ -12,15 +12,12 @@
   text-transform: uppercase;
 }
 
-.menu-modal__icon {
-  margin-right: $spacing-03;
-}
-
-button.menu-modal__button {
+button.menu_button {
   width: 100%;
   margin-bottom: $spacing-05;
 }
 
+/* TODO fix this */
 button.cds--btn {
   max-width: 100%;
 }

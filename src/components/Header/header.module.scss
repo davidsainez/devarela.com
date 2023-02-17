@@ -3,18 +3,18 @@
 @use '@carbon/react/scss/colors' as *;
 @use '@carbon/react/scss/breakpoint' as *;
 
-.header {
+.box {
   padding-top: $spacing-03;
   padding-bottom: $spacing-03;
   border-bottom: solid 1px $warm-gray-10;
 }
 
-.header__branding__track {
+.branding_track {
   display: flex;
   align-items: center;
 }
 
-.header__branding {
+.branding {
   @include type-style('heading-02');
 
   display: flex;
@@ -28,7 +28,7 @@
   text-transform: uppercase;
 }
 
-.header__nav {
+.nav_track {
   display: flex;
   align-items: center;
 
@@ -37,7 +37,7 @@
   }
 }
 
-.header__action {
+.contact_track {
   display: flex;
   justify-content: flex-end;
 
@@ -46,7 +46,7 @@
   }
 }
 
-.header__mobile__menu__column {
+.mobile_menu_track {
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -54,20 +54,4 @@
   @include breakpoint-up(md) {
     display: none;
   }
-}
-
-.header__mobile__menu__button {
-  background-color: $black-100;
-}
-
-.header__mobile__menu__button:hover {
-  background-color: $gray-90;
-}
-
-.header__contact__button {
-  background-color: $black-100;
-}
-
-.header__contact__button:hover {
-  background-color: $gray-90;
 }

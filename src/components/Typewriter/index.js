@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import styles from './typewriter.module.scss';
 
 export const Typewriter = ({ text }) => {
   const [index, setIndex] = useState(0);
@@ -14,7 +15,7 @@ export const Typewriter = ({ text }) => {
   return (
     <>
       <span>{text.slice(0, index)}</span>
-      <span className="typewriter__cursor">|</span>
+      <span className={styles.cursor}>|</span>
       <span style={{ opacity: 0 }}>{text.slice(index)}</span>
     </>
   );

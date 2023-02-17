@@ -1,7 +1,7 @@
 import { NextSeo, ArticleJsonLd, BreadcrumbJsonLd } from 'next-seo';
-
 import { Grid, Column } from '@carbon/react';
-import { formatDate } from '../Utilities';
+import { formatDate } from '~/components/Utilities';
+import styles from './essay.module.scss';
 
 export const Essay = ({ url, title, description, tags, date, children }) => {
   const timestamp = new Date(date).toISOString();
@@ -51,7 +51,7 @@ export const Essay = ({ url, title, description, tags, date, children }) => {
         ]}
       />
       <Column
-        className="essay__heading"
+        className={styles.heading_row}
         sm={4}
         md={8}
         lg={16}
@@ -66,21 +66,21 @@ export const Essay = ({ url, title, description, tags, date, children }) => {
             xlg={{ offset: 4, span: 6 }}
             max={{ offset: 5, span: 6 }}
           >
-            <h1 className="essay__heading__text">{title}</h1>
+            <h1 className={styles.heading}>{title}</h1>
           </Column>
         </Grid>
       </Column>
       <Column sm={4} md={8} lg={16} xlg={16} max={16}>
         <Grid fullWidth condensed>
           <Column
-            className="essay__date"
+            className={styles.date_track}
             sm={4}
             md={8}
             lg={{ offset: 4, span: 6 }}
             xlg={{ offset: 4, span: 6 }}
             max={{ offset: 5, span: 2 }}
           >
-            <p className="essay__date__text">{formatDate(date)}</p>
+            <p className={styles.date}>{formatDate(date)}</p>
           </Column>
         </Grid>
       </Column>

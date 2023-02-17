@@ -1,10 +1,11 @@
 import { Grid, Column } from '@carbon/react';
+import styles from './guideline.module.scss';
 
 export const Guideline = () => {
   return (
-    <Grid fullWidth condensed className="guideline__container">
+    <Grid fullWidth condensed className={styles.box}>
       <Column
-        className="guideline__column__edge"
+        className={styles.edge}
         sm={2}
         md={2}
         lg={{ offset: 4, span: 2 }}
@@ -12,7 +13,7 @@ export const Guideline = () => {
         max={{ offset: 5, span: 2 }}
       />
       <Column
-        className="guideline__column__center"
+        className={styles.inside}
         sm={0}
         md={2}
         lg={{ offset: 6, span: 2 }}
@@ -20,7 +21,7 @@ export const Guideline = () => {
         max={{ offset: 7, span: 2 }}
       />
       <Column
-        className="guideline__column__center"
+        className={styles.inside}
         sm={0}
         md={2}
         lg={{ offset: 8, span: 2 }}
@@ -28,7 +29,7 @@ export const Guideline = () => {
         max={{ offset: 9, span: 2 }}
       />
       <Column
-        className="guideline__column__center"
+        className={styles.inside}
         sm={0}
         md={2}
         lg={{ offset: 10, span: 2 }}
@@ -36,7 +37,7 @@ export const Guideline = () => {
         max={0}
       />
       <Column
-        className="guideline__column__edge"
+        className={styles.edge}
         sm={{ offset: 4, span: 1 }}
         md={{ offset: 8, span: 1 }}
         lg={{ offset: 12, span: 1 }}

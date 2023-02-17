@@ -2,6 +2,7 @@ import React from 'react';
 import { CodeSnippet, Theme, Grid, Column } from '@carbon/react';
 import Highlight, { defaultProps } from 'prism-react-renderer';
 import oceanicNext from 'prism-react-renderer/themes/oceanicNext';
+import styles from './code.module.scss';
 
 const getText = (children) => {
   let text = '';
@@ -37,7 +38,10 @@ export const Code = ({ children }) => {
             language="jsx"
           >
             {({ className, tokens, getLineProps, getTokenProps }) => (
-              <CodeSnippet type="multi" className={`code__block ${className}`}>
+              <CodeSnippet
+                type="multi"
+                className={`${styles.block} ${className}`}
+              >
                 {tokens.map((line, i) => (
                   <div key={i} {...getLineProps({ line, key: i })}>
                     {line.map((token, key) => (

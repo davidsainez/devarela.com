@@ -1,8 +1,8 @@
-import { useRouter } from 'next/router';
 import { DefaultSeo } from 'next-seo';
-import { Layout } from '../components/Layout';
+import { useRouter } from 'next/router';
 import Head from 'next/head';
-import '../scss/index.scss';
+import { Layout } from '~/components/Layout';
+import '~/scss/index.scss';
 
 export default function App({ Component, pageProps }) {
   const router = useRouter();

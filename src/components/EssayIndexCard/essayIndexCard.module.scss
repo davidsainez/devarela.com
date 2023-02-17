@@ -3,7 +3,7 @@
 @use '@carbon/react/scss/type' as *;
 @use '@carbon/react/scss/breakpoint' as *;
 
-.essay-index-card {
+.box {
   padding-top: $spacing-05;
   padding-bottom: $spacing-05;
   margin-bottom: $spacing-11;
@@ -12,11 +12,11 @@
   }
 }
 
-.essay-index-card__metadata {
+.metadata_row {
   margin-bottom: $spacing-05;
 }
 
-.essay-index-card__date__box {
+.date_track {
   display: flex;
   align-items: center;
 
@@ -25,11 +25,11 @@
   }
 }
 
-.essay-index-card__date {
+.date {
   @include type-style('label-02');
 }
 
-.essay-index-card__title {
+.title {
   @include type-style('heading-06');
 
   margin-bottom: $spacing-05;
@@ -39,12 +39,12 @@
   }
 }
 
-.essay-index-card__description {
+.summary {
   @include type-style('body-compact-02');
 
   margin-bottom: $spacing-05;
 }
 
-.essay-index-card__action {
+.read {
   @include type-style('helper-text-02');
 }

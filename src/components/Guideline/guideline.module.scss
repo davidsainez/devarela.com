@@ -1,16 +1,16 @@
 @use '@carbon/react/scss/colors' as *;
 
-.guideline__container {
+.box {
   position: fixed;
   z-index: -1;
   top: 0;
   height: 100%;
 }
 
-.guideline__column__edge {
+.edge {
   border-left: solid 1px $blue-10;
 }
 
-.guideline__column__center {
+.inside {
   border-left: solid 1px $warm-gray-10;
 }

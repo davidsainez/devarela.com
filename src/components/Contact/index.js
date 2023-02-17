@@ -11,6 +11,7 @@ import {
   Layer,
   ToastNotification,
 } from '@carbon/react';
+import styles from './contact.module.scss';
 
 const FORM_ID = 'contactForm';
 
@@ -53,7 +54,7 @@ export const Contact = ({ isOpen, setIsOpen }) => {
     <>
       <ContactModal isOpen={isOpen} setIsOpen={setIsOpen} formik={formik} />
       <Layer level={0}>
-        <Grid fullWidth className="toast-plane">
+        <Grid fullWidth className={styles.toast_plane}>
           <Column lg={{ offset: 10, span: 2 }}>
             {messageTimestamps.map((timestamp) => (
               <ToastNotification
@@ -135,7 +136,7 @@ const ContactFormLayout = ({
           onChange={handleChange}
           onBlur={handleBlur}
           value={values.password}
-          className="form__text__input"
+          className={styles.text_input}
         />
         <TextInput
           type="email"
@@ -147,7 +148,7 @@ const ContactFormLayout = ({
           onChange={handleChange}
           onBlur={handleBlur}
           value={values.email}
-          className="form__text__input"
+          className={styles.text_input}
         />
         <TextArea
           type="text"
@@ -159,7 +160,7 @@ const ContactFormLayout = ({
           onChange={handleChange}
           onBlur={handleBlur}
           value={values.password}
-          className="form__text__input"
+          className={styles.text_input}
         />
         <div>
           Or <a href="mailto:de-varela@outlook.com">email me</a> directly.

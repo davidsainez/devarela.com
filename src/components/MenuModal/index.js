@@ -1,4 +1,5 @@
 import { Button, Modal, Stack } from '@carbon/react';
+import styles from './menuModal.module.scss';
 
 export const MenuModal = ({ isOpen, setIsOpen, items }) => {
   const onRequestClose = () => setIsOpen(false);
@@ -12,7 +13,7 @@ export const MenuModal = ({ isOpen, setIsOpen, items }) => {
 
   return (
     <Modal
-      className="menu-modal"
+      className={styles.box}
       modalHeading="D.E. Varela"
       passiveModal
       onRequestClose={onRequestClose}
@@ -21,7 +22,7 @@ export const MenuModal = ({ isOpen, setIsOpen, items }) => {
       <Stack>
         {wrappedItems.map((x) => (
           <Button
-            className="menu-modal__button"
+            className={styles.menu_button}
             key={x.text}
             onClick={x.onClick}
             kind="secondary"
