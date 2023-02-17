@@ -1,7 +1,6 @@
 @use '@carbon/type';
 @use '@carbon/grid';
-@use '@carbon/react/scss/colors' as *;
-@use '@carbon/react/scss/spacing' as *;
+@use '@carbon/layout';
 
 .heading {
   @include type.type-style('heading-05');
@@ -10,13 +9,13 @@
     @include type.type-style('heading-06');
   }
 
-  margin-top: $spacing-10;
+  margin-top: layout.$spacing-10;
 }
 
 .copy {
   @include type.type-style('body-02');
 
-  margin-top: $spacing-07;
+  margin-top: layout.$spacing-07;
 }
 
 .cta {
@@ -27,5 +26,5 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  margin-top: $spacing-08;
+  margin-top: layout.$spacing-08;
 }

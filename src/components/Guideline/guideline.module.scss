@@ -1,4 +1,4 @@
-@use '@carbon/react/scss/colors' as *;
+@use '@carbon/colors';
 
 .box {
   position: fixed;
@@ -8,9 +8,9 @@
 }
 
 .edge {
-  border-left: solid 1px $blue-10;
+  border-left: solid 1px colors.$blue-10;
 }
 
 .inside {
-  border-left: solid 1px $warm-gray-10;
+  border-left: solid 1px colors.$warm-gray-10;
 }

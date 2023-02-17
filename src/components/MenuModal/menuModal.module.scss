@@ -1,11 +1,11 @@
-@use '@carbon/react/scss/spacing' as *;
-@use '@carbon/react/scss/type' as *;
-@use '@carbon/react/scss/colors' as *;
+@use '@carbon/type';
+@use '@carbon/layout';
+@use '@carbon/colors';
 
 .box h3 {
-  @include type-style('heading-02');
+  @include type.type-style('heading-02');
 
-  color: $black-100;
+  color: colors.$black-100;
   font-family: 'IBM Plex Sans', sans-serif;
   font-weight: 400;
   letter-spacing: 0.146em;
@@ -14,7 +14,7 @@
 
 button.menu_button {
   width: 100%;
-  margin-bottom: $spacing-05;
+  margin-bottom: layout.$spacing-05;
 }
 
 /* TODO fix this */

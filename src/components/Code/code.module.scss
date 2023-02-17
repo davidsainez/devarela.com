@@ -1,9 +1,7 @@
-@use '@carbon/react/scss/spacing' as *;
-@use '@carbon/react/scss/type' as *;
-@use '@carbon/react/scss/breakpoint' as *;
+@use '@carbon/layout';
 
 .block {
-  margin-top: $spacing-05;
+  margin-top: layout.$spacing-05;
 }
 
 .cds--snippet--multi {

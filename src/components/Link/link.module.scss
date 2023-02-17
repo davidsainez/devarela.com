@@ -1,9 +1,9 @@
-@use '@carbon/react/scss/breakpoint' as *;
-@use '@carbon/react/scss/spacing' as *;
+@use '@carbon/layout';
+@use '@carbon/grid';
 
 .hitbox {
-  @include breakpoint-down(md) {
-    padding-top: $spacing-04;
-    padding-bottom: $spacing-04;
+  @include grid.breakpoint-down(md) {
+    padding-top: layout.$spacing-04;
+    padding-bottom: layout.$spacing-04;
   }
 }

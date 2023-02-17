@@ -1,12 +1,12 @@
-@use '@carbon/react/scss/type' as *;
-@use '@carbon/react/scss/spacing' as *;
-@use '@carbon/react/scss/colors' as *;
-@use '@carbon/react/scss/breakpoint' as *;
+@use '@carbon/layout';
+@use '@carbon/grid';
+@use '@carbon/type';
+@use '@carbon/colors';
 
 .box {
-  padding-top: $spacing-03;
-  padding-bottom: $spacing-03;
-  border-bottom: solid 1px $warm-gray-10;
+  padding-top: layout.$spacing-03;
+  padding-bottom: layout.$spacing-03;
+  border-bottom: solid 1px colors.$warm-gray-10;
 }
 
 .branding_track {
@@ -15,15 +15,15 @@
 }
 
 .branding {
-  @include type-style('heading-02');
+  @include type.type-style('heading-02');
 
   display: flex;
   flex-direction: row;
   align-items: center;
-  color: $black-100;
+  color: colors.$black-100;
   font-family: 'IBM Plex Sans', sans-serif;
   font-weight: 400;
-  gap: $spacing-04;
+  gap: layout.$spacing-04;
   letter-spacing: 0.146em;
   text-transform: uppercase;
 }
@@ -32,7 +32,7 @@
   display: flex;
   align-items: center;
 
-  @include breakpoint-down(md) {
+  @include grid.breakpoint-down(md) {
     display: none;
   }
 }
@@ -41,7 +41,7 @@
   display: flex;
   justify-content: flex-end;
 
-  @include breakpoint-down(md) {
+  @include grid.breakpoint-down(md) {
     display: none;
   }
 }
@@ -51,7 +51,7 @@
   align-items: center;
   justify-content: flex-end;
 
-  @include breakpoint-up(md) {
+  @include grid.breakpoint-up(md) {
     display: none;
   }
 }

@@ -1,23 +1,23 @@
-@use '@carbon/react/scss/colors' as *;
-@use '@carbon/react/scss/type' as *;
-@use '@carbon/react/scss/spacing' as *;
-@use '@carbon/react/scss/breakpoint' as *;
+@use '@carbon/layout';
+@use '@carbon/type';
+@use '@carbon/colors';
+@use '@carbon/grid';
 
 .title {
-  @include type-style('heading-03');
+  @include type.type-style('heading-03');
 
-  padding-left: $spacing-05;
-  border-left: solid 1px $blue-50;
+  padding-left: layout.$spacing-05;
+  border-left: solid 1px colors.$blue-50;
 
-  @include breakpoint-down(md) {
-    @include type-style('heading-02');
+  @include grid.breakpoint-down(md) {
+    @include type.type-style('heading-02');
   }
 }
 
 .title_row {
-  margin-top: $spacing-08;
+  margin-top: layout.$spacing-08;
 }
 
 .card_row {
-  margin-top: $spacing-08;
+  margin-top: layout.$spacing-08;
 }

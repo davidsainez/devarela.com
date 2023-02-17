@@ -1,46 +1,46 @@
-@use '@carbon/react/scss/type' as *;
-@use '@carbon/react/scss/spacing' as *;
-@use '@carbon/react/scss/colors' as *;
-@use '@carbon/react/scss/breakpoint' as *;
+@use '@carbon/layout';
+@use '@carbon/grid';
+@use '@carbon/type';
+@use '@carbon/colors';
 
 .top {
-  padding-top: $spacing-08;
-  border-top: solid 1px $warm-gray-10;
-  margin-top: $spacing-12;
+  padding-top: layout.$spacing-08;
+  border-top: solid 1px colors.$warm-gray-10;
+  margin-top: layout.$spacing-12;
 
-  @include breakpoint-down(md) {
-    margin-top: $spacing-08;
+  @include grid.breakpoint-down(md) {
+    margin-top: layout.$spacing-08;
   }
 }
 
 .bottom {
-  margin-bottom: $spacing-12;
-  @include breakpoint-down(md) {
-    margin-bottom: $spacing-10;
+  margin-bottom: layout.$spacing-12;
+  @include grid.breakpoint-down(md) {
+    margin-bottom: layout.$spacing-10;
   }
 }
 
 .copy {
-  @include type-style('legal-02');
+  @include type.type-style('legal-02');
 
-  margin-top: $spacing-08;
+  margin-top: layout.$spacing-08;
 
-  @include breakpoint-down(lg) {
-    margin-top: $spacing-05;
+  @include grid.breakpoint-down(lg) {
+    margin-top: layout.$spacing-05;
   }
 }
 
 .social_link {
   display: flex;
-  padding-top: $spacing-03;
-  padding-bottom: $spacing-03;
-  gap: $spacing-03;
+  padding-top: layout.$spacing-03;
+  padding-bottom: layout.$spacing-03;
+  gap: layout.$spacing-03;
 }
 
 .branding {
-  @include type-style('heading-02');
+  @include type.type-style('heading-02');
 
-  color: $black-100;
+  color: colors.$black-100;
   font-family: 'IBM Plex Sans', sans-serif;
   font-weight: 400;
   letter-spacing: 0.146em;

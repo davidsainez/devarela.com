@@ -1,50 +1,49 @@
-@use '@carbon/react/scss/colors' as *;
-@use '@carbon/react/scss/spacing' as *;
-@use '@carbon/react/scss/type' as *;
-@use '@carbon/react/scss/breakpoint' as *;
+@use '@carbon/layout';
+@use '@carbon/type';
+@use '@carbon/grid';
 
 .box {
-  padding-top: $spacing-05;
-  padding-bottom: $spacing-05;
-  margin-bottom: $spacing-11;
-  @include breakpoint-down(md) {
-    margin-bottom: $spacing-08;
+  padding-top: layout.$spacing-05;
+  padding-bottom: layout.$spacing-05;
+  margin-bottom: layout.$spacing-11;
+  @include grid.breakpoint-down(md) {
+    margin-bottom: layout.$spacing-08;
   }
 }
 
 .metadata_row {
-  margin-bottom: $spacing-05;
+  margin-bottom: layout.$spacing-05;
 }
 
 .date_track {
   display: flex;
   align-items: center;
 
-  @include breakpoint-down(md) {
+  @include grid.breakpoint-down(md) {
     justify-content: flex-end;
   }
 }
 
 .date {
-  @include type-style('label-02');
+  @include type.type-style('label-02');
 }
 
 .title {
-  @include type-style('heading-06');
+  @include type.type-style('heading-06');
 
-  margin-bottom: $spacing-05;
+  margin-bottom: layout.$spacing-05;
 
-  @include breakpoint-down(md) {
-    @include type-style('heading-04');
+  @include grid.breakpoint-down(md) {
+    @include type.type-style('heading-04');
   }
 }
 
 .summary {
-  @include type-style('body-compact-02');
+  @include type.type-style('body-compact-02');
 
-  margin-bottom: $spacing-05;
+  margin-bottom: layout.$spacing-05;
 }
 
 .read {
-  @include type-style('helper-text-02');
+  @include type.type-style('helper-text-02');
 }
