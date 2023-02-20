@@ -1,3 +1,5 @@
-@use '@carbon/react';
+@use '@carbon/styles/scss/reset';
+@use '@carbon/grid';
+@include grid.css-grid();
 
 /* this file is needed for @carbon/react styles */

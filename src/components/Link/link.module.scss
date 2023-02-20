@@ -1,9 +1,28 @@
-@use '@carbon/layout';
-@use '@carbon/grid';
+@use '~/scss/main.scss';
 
-.hitbox {
-  @include grid.breakpoint-down(md) {
-    padding-top: layout.$spacing-04;
-    padding-bottom: layout.$spacing-04;
+@mixin link-base {
+  color: main.color(main.$blue, 5);
+  font-family: main.$sans;
+  font-size: main.font-size(1);
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
   }
+}
+
+.link {
+  @include link-base;
+}
+
+.icon_link {
+  @include link-base;
+
+  display: inline-flex;
+  align-items: center;
+  gap: main.space(1);
+}
+
+.icon_link__icon {
+  flex-shrink: 0;
 }

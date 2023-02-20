@@ -1,12 +1,14 @@
 import { useState } from 'react';
 import { useRouter } from 'next/router';
-import { Button, IconButton, Column, Grid } from '@carbon/react';
-import { AssemblyCluster, Forum, Book, Menu } from '@carbon/icons-react';
+import { IconButton } from '@carbon/react';
+import { IconButton as UIIconButton } from '~/components/Button';
+import { RiChat2Line, RiArticleLine, RiMenuLine } from 'react-icons/ri';
 import { Link } from '~/components/Link';
 import { Contact } from '~/components/Contact';
 import { MenuModal } from '~/components/MenuModal';
+import { Grid, Column } from '~/components/Grid';
 import styles from './header.module.scss';
-//branding icons: Idea, ModelAlt
+//branding icons: AssemblyCluster
 
 const MobileMenu = ({ isOpen, setIsOpen, setIsContactOpen }) => {
   const router = useRouter();
@@ -16,12 +18,12 @@ const MobileMenu = ({ isOpen, setIsOpen, setIsContactOpen }) => {
       items={[
         {
           text: 'Essays',
-          icon: Book,
+          icon: RiArticleLine,
           onClick: () => router.push('/essays'),
         },
         {
           text: 'Contact',
-          icon: Forum,
+          icon: RiChat2Line,
           onClick: () => setIsContactOpen(true),
         },
       ]}
@@ -35,7 +37,6 @@ const Branding = () => {
   return (
     <Link href="/">
       <div className={styles.branding}>
-        <AssemblyCluster />
         <span>D.E. Varela</span>
       </div>
     </Link>
@@ -44,14 +45,9 @@ const Branding = () => {
 
 const ContactButton = ({ setIsContactOpen }) => {
   return (
-    <Button
-      size="md"
-      onClick={() => setIsContactOpen(true)}
-      kind="secondary"
-      renderIcon={Forum}
-    >
+    <UIIconButton icon={RiChat2Line} onPress={() => setIsContactOpen(true)}>
       Contact
-    </Button>
+    </UIIconButton>
   );
 };
 
@@ -62,7 +58,7 @@ const MobileMenuButton = ({ setIsMenuOpen }) => {
       kind="secondary"
       onClick={() => setIsMenuOpen(true)}
     >
-      <Menu />
+      <RiMenuLine />
     </IconButton>
   );
 };
@@ -79,7 +75,7 @@ export const Header = () => {
         setIsOpen={setIsMenuOpen}
         setIsContactOpen={setIsContactOpen}
       />
-      <Column className={styles.box} sm={4} md={8} lg={16} xlg={16} max={16}>
+      <div className={styles.box}>
         <Grid>
           <Column
             className={styles.branding_track}
@@ -122,7 +118,7 @@ export const Header = () => {
             <MobileMenuButton setIsMenuOpen={setIsMenuOpen} />
           </Column>
         </Grid>
-      </Column>
+      </div>
     </>
   );
 };

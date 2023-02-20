@@ -1,6 +1,7 @@
 import { Link } from '~/components/Link';
-import { Column, Tag, Grid } from '@carbon/react';
-import { ArrowRight } from '@carbon/icons-react';
+import { Tag } from '~/components/Tag';
+import { Grid, Column } from '~/components/Grid';
+import { RiArrowRightLine } from 'react-icons/ri';
 import styles from './essayIndexCard.module.scss';
 
 export const EssayIndexCard = ({ href, title, date, summary, tags }) => {
@@ -53,7 +54,7 @@ export const EssayIndexCard = ({ href, title, date, summary, tags }) => {
           max={{ offset: 5, span: 4 }}
         >
           <p className={styles.summary}>{summary}</p>
-          <Link href={href} className={styles.read} icon={ArrowRight}>
+          <Link href={href} className={styles.read} icon={RiArrowRightLine}>
             Read
           </Link>
         </Column>

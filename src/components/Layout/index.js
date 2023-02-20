@@ -1,4 +1,3 @@
-import { Grid, Column } from '@carbon/react';
 import { Footer } from '~/components/Footer';
 import { Header } from '~/components/Header';
 import { Guideline } from '~/components/Guideline';
@@ -7,11 +6,9 @@ import { Essay } from '~/components/Essay';
 const Template = ({ children }) => {
   return (
     <>
-      <Grid fullWidth>
-        <Header />
-        {children}
-        <Footer />
-      </Grid>
+      <Header />
+      {children}
+      <Footer />
       <Guideline />
     </>
   );
@@ -52,11 +49,7 @@ export const Layout = ({ path, markdoc, children }) => {
 
   return (
     <Template>
-      <Grid fullWidth>
-        <Column lg={{ offset: 4, span: 8 }}>
-          <h1>Something went wrong.</h1>
-        </Column>
-      </Grid>
+      <h1>Something went wrong.</h1>
     </Template>
   );
 };

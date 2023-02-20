@@ -1,0 +1,11 @@
+@use '~/scss/main.scss';
+
+.tag {
+  display: inline-flex;
+  padding: main.space-smaller(3) main.space(1);
+  background-color: main.gray(1);
+  border-radius: main.space(2);
+  color: main.gray(8);
+  font-family: main.$sans;
+  font-size: main.font-size-smaller(1);
+}

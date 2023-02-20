@@ -1,0 +1,82 @@
+/*************************************************
+ * Utilities
+ ************************************************/
+// @function pow($base, $exponents)
+// Helper: Raise a number the power of another number
+// Adapted from: https://gist.github.com/hail2u/1964056
+//
+// @param {number} $base — The base number
+// @param {number} $exponents — The exponent to which to raise $base
+@function pow($base, $exponents) {
+  @if $exponents == 0 {
+    @return 1;
+  }
+
+  $raised: 1;
+  @for $i from 1 through $exponents {
+    $raised: $raised * $base;
+  }
+  @return $raised;
+}
+
+/*************************************************
+ * Color
+ ************************************************/
+$transparent: hsla(0, 0%, 0%, 0);
+
+// grayscale
+$black: #000000;
+$white: #ffffff;
+
+@function gray($step) {
+  @return hsla(0, 0%, 100 - 10 * $step);
+}
+
+// colors
+$blue: 221;
+$green: 140;
+
+@function color($base-color, $step) {
+  @return hsla($base-color, 70%, calc(100 - $step * 10), 1);
+}
+
+/*************************************************
+ * Typography
+ ************************************************/
+
+// families
+$sans: 'IBM Plex Sans', sans-serif;
+$serif: 'IBM Plex Serif', serif;
+$mono: IBM Plex Mono, monospaced;
+
+// scales
+$base-font-size: 16px;
+$font-ratio: 1.333;
+$font-smaller-step: 2;
+
+@function font-size($step) {
+  @return $base-font-size * pow($font-ratio, $step - 1);
+}
+
+@function font-size-smaller($step) {
+  @return $base-font-size - 2 * $step;
+}
+
+// weight
+$font-weight-200: 200;
+$font-weight-400: 400;
+$font-weight-600: 600;
+
+/*************************************************
+ * Spacing
+ ************************************************/
+
+// 8px space scale
+$base-space-unit: 8px;
+@function space($step) {
+  @return $base-space-unit * $step;
+}
+
+@function space-smaller($step) {
+  @return $base-space-unit - 2 * $step;
+}

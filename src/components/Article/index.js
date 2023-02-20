@@ -1,4 +1,4 @@
-import { Grid, Column } from '@carbon/react';
+import { Grid, Column } from '~/components/Grid';
 import styles from './article.module.scss';
 
 export const Heading = ({ children }) => {

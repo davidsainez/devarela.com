@@ -1,13 +1,19 @@
 import * as NextLink from 'next/link';
-import { Link as CarbonLink } from '@carbon/react';
+import { iconBox } from '~/components/Utilities';
 import styles from './link.module.scss';
 
 export const Link = ({ href, icon, children }) => {
+  let className = styles.link;
+  let boxedIcon;
+  if (icon) {
+    className = styles.icon_link;
+    boxedIcon = iconBox(icon, styles.icon_link__icon);
+  }
+
   return (
-    <NextLink href={href} legacyBehavior passHref>
-      <CarbonLink renderIcon={icon} className={styles.hitbox}>
-        {children}
-      </CarbonLink>
+    <NextLink href={href} className={className}>
+      {children}
+      {boxedIcon}
     </NextLink>
   );
 };
