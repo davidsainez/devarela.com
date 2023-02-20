@@ -15,7 +15,7 @@ export default EssayIndexLayout;
 // It won't be called on client-side, so you can even do
 // direct database queries.
 export async function getStaticProps() {
-  const postsDirectory = path.join(process.cwd(), 'src/pages/essays');
+  const postsDirectory = path.join(process.cwd(), 'essays');
   const filenames = await fs.readdir(postsDirectory);
   const markdownFiles = filenames.filter((file) => file.endsWith('.md'));
 

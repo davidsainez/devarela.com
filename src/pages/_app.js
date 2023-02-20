@@ -1,7 +1,6 @@
 import { DefaultSeo } from 'next-seo';
-import { useRouter } from 'next/router';
+//import { useRouter } from 'next/router';
 import Head from 'next/head';
-import { Layout } from '~/components/Layout';
 import '~/scss/index.scss';
 
 /*
@@ -11,11 +10,11 @@ export function reportWebVitals(metric) {
 */
 
 export default function App({ Component, pageProps }) {
-  const router = useRouter();
-  const path = router.asPath;
+  //const router = useRouter();
+  //const path = router.asPath;
 
   return (
-    <Layout path={path} markdoc={pageProps.markdoc}>
+    <div>
       <Head>
         <link
           rel="icon"
@@ -35,6 +34,6 @@ export default function App({ Component, pageProps }) {
         }}
       />
       <Component {...pageProps} />
-    </Layout>
+    </div>
   );
 }
