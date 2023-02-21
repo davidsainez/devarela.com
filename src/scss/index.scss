@@ -1,5 +1,108 @@
 @use '@carbon/styles/scss/reset';
 @use '@carbon/grid';
+@use '@carbon/colors';
 @include grid.css-grid();
 
 /* this file is needed for @carbon/react styles */
+
+/*************************************************
+ * Code blocks
+ ************************************************/
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: #586e75;
+}
+
+.token.punctuation {
+  color: colors.$blue-30;
+}
+
+.namespace {
+  opacity: 0.7;
+}
+
+.token.property,
+.token.keyword,
+.token.tag {
+  color: colors.$purple-30;
+}
+
+.token.class-name {
+  color: #ffffb6;
+  text-decoration: underline;
+}
+
+.token.boolean,
+.token.constant {
+  color: #b58900;
+}
+
+.token.symbol,
+.token.deleted {
+  color: #dc322f;
+}
+
+.token.number {
+  color: #859900;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+  color: colors.$orange-30;
+}
+
+.token.variable {
+  color: #268bd2;
+}
+
+.token.operator {
+  color: #ededed;
+}
+
+.token.function {
+  color: colors.$teal-30;
+  font-weight: 600;
+}
+
+.token.regex {
+  color: #e9c062;
+}
+
+.token.important {
+  color: #fd971f;
+}
+
+.token.entity {
+  color: #ffffb6;
+  cursor: help;
+}
+
+.token.url {
+  color: #96cbfe;
+}
+
+.language-css .token.string,
+.style .token.string {
+  color: #87c38a;
+}
+
+.token.important,
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+.token.atrule,
+.token.attr-value {
+  color: #f9ee98;
+}

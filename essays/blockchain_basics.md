@@ -43,37 +43,23 @@ You'll often hear the term "distributed ledger" used. It is correct in a narrow
 sense. A ledger is just a KV store from block number -> transactions.
 
 ```solidity
-contract ERC20 is Context, IERC20, IERC20Metadata {
-    mapping(address => uint256) private _balances;
+import styles from './code.module.scss';
 
-    mapping(address => mapping(address => uint256)) private _allowances;
+const getRawText = (children) => {
+  let text = '';
 
-    uint256 private _totalSupply;
-
-    string private _name;
-    string private _symbol;
-
-    /**
-     * @dev Sets the values for {name} and {symbol}.
-     *
-     * The default value of {decimals} is 18. To select a different value for
-     * {decimals} you should overload it.
-     *
-     * All two of these values are immutable: they can only be set once during
-     * construction.
-     */
-    constructor(string memory name_, string memory symbol_) {
-        _name = name_;
-        _symbol = symbol_;
+  React.Children.map(children, (child) => {
+    if (typeof child === 'string') {
+      text += child;
     }
+  });
 
-    /**
-     * @dev Returns the name of the token.
-     */
-    function name() public view virtual override returns (string memory) {
-        return _name;
-    }
-}
+  return text;
+};
+
+const Highlight = ({ children }) => {
+  return <Refractor language="ts" value={getRawText(children)} />;
+};
 ```
 
 And this is the constructor:
@@ -85,4 +71,4 @@ constructor(string memory name_, string memory symbol_) {
 }
 ```
 
-Now go check out this [cool shit](https://google.com)
+Now go check out this [cool shit](https://www.youtube.com/watch?v=dQw4w9WgXcQ)

@@ -4,6 +4,7 @@ import path from 'path';
 import Markdoc from '@markdoc/markdoc';
 import fs from 'fs';
 import { Paragraph, Heading } from '~/components/Article';
+import { Code } from '~/components/Code';
 
 const isTag = (tag) => {
   return tag.$$mdtype === 'Tag';
@@ -20,7 +21,6 @@ function tagName(name, components) {
 }
 
 function renderMarkdoc(node, React, components) {
-  //console.log('DYNAMIC', node);
   function deepRender(value) {
     if (value == null || typeof value !== 'object') {
       return value;
@@ -46,7 +46,6 @@ function renderMarkdoc(node, React, components) {
   }
 
   function render(node) {
-    console.log(node);
     if (Array.isArray(node)) {
       return React.createElement(React.Fragment, null, ...node.map(render));
     }
@@ -65,8 +64,6 @@ function renderMarkdoc(node, React, components) {
       attrs.className = className;
     }
 
-    console.log('CREATE ELEMENT', name, tagName(name, components));
-
     return React.createElement(
       tagName(name, components),
       Object.keys(attrs).length == 0 ? null : deepRender(attrs),
@@ -80,14 +77,13 @@ function renderMarkdoc(node, React, components) {
 const components = {
   Paragraph: Paragraph,
   Heading: Heading,
+  Code: Code,
 };
 
 // Create a React component using Markdoc's React renderer and our list of custom components.
 const BlogPostPage = (props) => {
   const { content } = props;
   const parsedContent = JSON.parse(content);
-
-  console.log('XXX', parsedContent);
 
   return <div>{renderMarkdoc(parsedContent, React, components)}</div>;
 };
@@ -101,6 +97,9 @@ const CONFIG = {
     },
     heading: {
       render: 'Heading',
+    },
+    fence: {
+      render: 'Code',
     },
   },
 };
@@ -124,8 +123,6 @@ export const getStaticProps = async (context) => {
   // Create a renderable tree
   const content = JSON.stringify(Markdoc.transform(ast, CONFIG));
 
-  console.log('YYY', content);
-
   // Return the content as a prop to the React component for now
   // We will render the content in the next section
   return {
@@ -148,8 +145,6 @@ export const getStaticPaths = async () => {
     const slug = path.basename(postPath, path.extname(postPath));
     return { params: { slug } };
   });
-
-  console.log(paths);
 
   // Return the possible paths
   return { paths, fallback: false };

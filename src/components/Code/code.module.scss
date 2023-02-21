@@ -1,10 +1,125 @@
-@use '@carbon/layout';
+@use '~/scss/main.scss';
+@use '@carbon/colors';
 
-.block {
-  margin-top: layout.$spacing-05;
+.codeBox {
+  padding-bottom: main.space(1);
+  background-color: colors.$cyan-90;
+  border-bottom-left-radius: main.space-smaller(1);
+  border-bottom-right-radius: main.space-smaller(1);
+
+  code {
+    color: main.$white;
+    line-height: 1.3;
+  }
+
+  pre {
+    &::after {
+      display: block;
+      width: main.space(2);
+      height: 100%;
+      content: '';
+    }
+  }
 }
 
-.cds--snippet--multi {
-  display: block;
-  max-width: none;
+.codeScrollFrame {
+  @include main.scrollbar();
+
+  width: 100%;
+  height: 100%;
+
+  box-sizing: border-box;
+  -webkit-mask-image: linear-gradient(
+    90deg,
+    #ffffff,
+    #ffffff 0,
+    transparent 0,
+    #ffffff calc(10px + 10px),
+    #ffffff calc(100% - 20px),
+    transparent
+  );
+  -webkit-overflow-scrolling: touch;
+  overflow-x: auto;
+}
+
+.scrollHack {
+  display: inline-block;
+  min-width: 100%;
+  box-sizing: border-box;
+  //padding-right: main.space(2);
+  padding-bottom: main.space(1);
+}
+
+.codeContent {
+  display: flex;
+  flex-direction: row;
+}
+
+.numbersBox {
+  display: flex;
+  flex-direction: column;
+  padding-right: main.space(1);
+  padding-left: main.space(2);
+  color: colors.$cyan-30;
+  font-family: main.$mono;
+  line-height: 1.3;
+}
+
+.number {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.markedNumber {
+  color: colors.$cyan-20;
+  font-weight: 600;
+}
+
+.code {
+  color: main.$white;
+  font-family: main.$mono;
+  //-webkit-mask-image: linear-gradient(90deg, rgba(255, 255, 255, 0), transparent 100%);
+}
+
+.header {
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+  justify-content: flex-end;
+  margin-top: main.space(2);
+  background-color: colors.$cyan-90;
+  border-top-left-radius: main.space-smaller(1);
+  border-top-right-radius: main.space-smaller(1);
+  color: main.$white;
+}
+
+$duration: 0.4s;
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: main.space(1);
+  background-size: 300% 100%;
+  transition: all $duration ease-in;
+
+  &:hover {
+    background-image: linear-gradient(
+      to right,
+      main.color(main.$blue, 9),
+      main.color(main.$blue, 7),
+      main.color(main.$blue, 8),
+      main.color(main.$blue, 8)
+    );
+    background-position: 100% 0;
+  }
+}
+
+.line {
+  padding-right: main.space(2);
+  padding-left: main.space(2);
+}
+
+.marker {
+  position: relative;
+  background-color: colors.$cyan-80;
 }

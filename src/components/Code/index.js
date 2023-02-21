@@ -1,10 +1,14 @@
 import React from 'react';
-import { CodeSnippet, Theme, Grid, Column } from '@carbon/react';
-import Highlight, { defaultProps } from 'prism-react-renderer';
-import oceanicNext from 'prism-react-renderer/themes/oceanicNext';
+import { Grid, Column } from '~/components/Grid';
+import Refractor from 'react-refractor';
+import typescript from 'refractor/lang/typescript.js';
+import { RiFileCopyLine } from 'react-icons/ri';
+
+Refractor.registerLanguage(typescript);
+
 import styles from './code.module.scss';
 
-const getText = (children) => {
+const getRawText = (children) => {
   let text = '';
 
   React.Children.map(children, (child) => {
@@ -16,11 +20,57 @@ const getText = (children) => {
   return text;
 };
 
+const textData = (children) => {
+  const text = getRawText(children);
+  const count = (text.match(/\n/g) || []).length;
+  return [text, count];
+};
+
+const LineNumbers = ({ count, markers }) => {
+  const numbers = [...Array(count)].map((_, i) => {
+    const classes = [styles.number];
+    if (markers.includes(i + 1)) {
+      console.log(i);
+      classes.push(styles.markedNumber);
+    }
+    return (
+      <span className={classes.join(' ')} key={i + 1}>
+        {i + 1}
+      </span>
+    );
+  });
+
+  return <div className={styles.numbersBox}>{numbers}</div>;
+};
+
+/*
 export const InlineCode = ({ content }) => {
   return <CodeSnippet type="inline">{content}</CodeSnippet>;
 };
+*/
+
+const arrayRange = (start, stop, step) =>
+  Array.from(
+    { length: (stop - start) / step + 1 },
+    (value, index) => start + index * step
+  );
 
 export const Code = ({ children }) => {
+  const [rawText, lineCount] = textData(children);
+  const markers = { start: 3, stop: 10 };
+  const markedNumbers = arrayRange(markers.start, markers.stop, 1);
+  const allNumbers = arrayRange(0, lineCount, 1);
+  const refractorMarkers = allNumbers.map((i) => {
+    const classes = [styles.line];
+    if (markedNumbers.includes(i)) {
+      classes.push(styles.marker);
+    }
+    return {
+      line: i,
+      className: classes.join(' '),
+    };
+  });
+
   return (
     <Grid>
       <Column
@@ -30,29 +80,27 @@ export const Code = ({ children }) => {
         xlg={{ offset: 4, span: 8 }}
         max={{ offset: 5, span: 6 }}
       >
-        <Theme theme="g100">
-          <Highlight
-            {...defaultProps}
-            theme={oceanicNext}
-            code={getText(children)}
-            language="jsx"
-          >
-            {({ className, tokens, getLineProps, getTokenProps }) => (
-              <CodeSnippet
-                type="multi"
-                className={`${styles.block} ${className}`}
-              >
-                {tokens.map((line, i) => (
-                  <div key={i} {...getLineProps({ line, key: i })}>
-                    {line.map((token, key) => (
-                      <span key={key} {...getTokenProps({ token, key })} />
-                    ))}
-                  </div>
-                ))}
-              </CodeSnippet>
-            )}
-          </Highlight>
-        </Theme>
+        <div className={styles.header}>
+          <div className={styles.button}>
+            <RiFileCopyLine />
+          </div>
+        </div>
+        <div className={styles.codeBox}>
+          <div className={styles.codeContent}>
+            <LineNumbers count={lineCount} markers={markedNumbers}>
+              {children}
+            </LineNumbers>
+            <div className={styles.codeScrollFrame}>
+              <div className={styles.scrollHack}>
+                <Refractor
+                  language="ts"
+                  value={rawText}
+                  markers={refractorMarkers}
+                />
+              </div>
+            </div>
+          </div>
+        </div>
       </Column>
     </Grid>
   );

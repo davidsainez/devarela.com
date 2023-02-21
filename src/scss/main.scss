@@ -1,3 +1,5 @@
+@use '@carbon/colors';
+
 /*************************************************
  * Utilities
  ************************************************/
@@ -79,4 +81,31 @@ $base-space-unit: 8px;
 
 @function space-smaller($step) {
   @return $base-space-unit - 2 * $step;
+}
+
+/*************************************************
+ * Other
+ ************************************************/
+
+@mixin scrollbar(
+  $size: 4px,
+  $foreground-color: colors.$cyan-80,
+  $background-color: rgba(0, 0, 0, 0)
+) {
+  // For Chrome & Safari
+  &::-webkit-scrollbar {
+    width: $size;
+    height: $size;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: $foreground-color;
+    border-radius: space(1);
+  }
+  &::-webkit-scrollbar-track {
+    background: $background-color;
+    border-radius: space(1);
+  }
+
+  // Standard version (Firefox only for now)
+  scrollbar-color: $foreground-color $background-color;
 }

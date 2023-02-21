@@ -8,6 +8,7 @@
     "develop": "next",
     "format": "prettier --write '**/*.{js,md,scss,ts,tsx,yml}' '!**/{build,es,lib,storybook,ts,umd}/**'",
     "format:diff": "prettier --list-different '**/*.{js,md,scss,ts,tsx,yml}' '!**/{build,es,lib,storybook,ts,umd}/**'",
+    "format:styles": "stylelint --fix '**/*.{css,scss}' --report-needless-disables --report-invalid-scope-disables",
     "lint": "eslint src",
     "lint:styles": "stylelint '**/*.{css,scss}' --report-needless-disables --report-invalid-scope-disables",
     "start": "next start",
@@ -33,6 +34,7 @@
     "react-aria": "^3.22.0",
     "react-dom": "latest",
     "react-icons": "^4.7.1",
+    "react-refractor": "^2.1.7",
     "sass": "^1.43.4"
   },
   "devDependencies": {
@@ -59,6 +61,7 @@
     "style-loader": "^3.3.1",
     "stylelint": "^13.13.1",
     "stylelint-config-carbon": "^1.7.0",
+    "stylelint-config-standard-scss": "^7.0.1",
     "webpack": "^5.75.0",
     "webpack-cli": "^5.0.1"
   },
