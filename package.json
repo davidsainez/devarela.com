@@ -23,7 +23,7 @@
     "@carbon/styles": "^1.23.0",
     "@carbon/type": "^11.15.0",
     "@markdoc/markdoc": "^0.2.2",
-    "@markdoc/next.js": "^0.2.1",
+    "@markdoc/next.js": "^0.2.2",
     "@next/bundle-analyzer": "^13.1.6",
     "formik": "^2.2.9",
     "glob-promise": "^6.0.2",
