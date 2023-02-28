@@ -2,16 +2,18 @@ import * as NextLink from 'next/link';
 import { iconBox } from '~/components/Utilities';
 import styles from './link.module.scss';
 
-export const Link = ({ href, icon, children }) => {
-  let className = styles.link;
+export const Link = ({ className, href, icon, children }) => {
+  const classes = [styles.link];
   let boxedIcon;
   if (icon) {
-    className = styles.icon_link;
+    classes.push(styles.icon_link);
     boxedIcon = iconBox(icon, styles.icon_link__icon);
+  } else {
+    classes.push(styles.link);
   }
 
   return (
-    <NextLink href={href} className={className}>
+    <NextLink href={href} className={[className, ...classes].join(' ')}>
       {children}
       {boxedIcon}
     </NextLink>

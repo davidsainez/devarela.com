@@ -1,30 +1,78 @@
-@use '@carbon/type';
+@use '~/scss/main.scss';
+@use '@carbon/colors';
 @use '@carbon/grid';
-@use '@carbon/layout';
+
+.segmentHeading {
+  margin-top: 48px;
+  margin-bottom: 16px;
+  font-family: main.$sans;
+  font-size: 21px;
+  font-weight: 600;
+}
+
+@mixin text {
+  display: flex;
+  flex-direction: column;
+}
+
+.regularText {
+  @include text;
+}
+
+.about {
+  margin-bottom: 1.4em;
+}
+
+.contactItem {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+}
 
 .heading {
-  @include type.type-style('heading-05');
+  display: flex;
+  justify-content: center;
+  margin-top: main.space(8);
+  margin-bottom: main.space(4);
 
-  @include grid.breakpoint(md) {
-    @include type.type-style('heading-06');
+  h1 {
+    font-family: main.$sans;
+    font-size: main.font-size(5);
+    font-weight: 600;
   }
 
-  margin-top: layout.$spacing-10;
+  @include grid.breakpoint-up(lg) {
+    justify-content: flex-start;
+    margin-top: main.space(20);
+    margin-bottom: main.space(4);
+
+    h1 {
+      font-size: main.font-size(7);
+    }
+  }
 }
 
 .copy {
-  @include type.type-style('body-02');
+  margin-top: main.space(2);
+  color: main.$white;
+  font-family: main.$sans;
+  font-size: main.font-size(2);
 
-  margin-top: layout.$spacing-07;
+  @include grid.breakpoint-down(lg) {
+    font-size: main.font-size(1);
+  }
 }
 
-.cta {
-  @include type.type-style('heading-02');
+.signature {
+  padding-left: 50%;
+  margin-top: main.space(4);
+  p {
+    font-weight: 400;
+  }
+}
 
-  display: flex;
-  width: 100%;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  margin-top: layout.$spacing-08;
+.grid {
+  display: grid;
+  gap: main.space(1);
+  grid-template-columns: 1fr 1fr;
 }

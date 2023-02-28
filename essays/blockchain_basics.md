@@ -37,7 +37,8 @@ apt-get install bash
 ## So what, g?
 
 The blockchain is a distributed, trustless store of information. Let's disect
-each of these terms one by one.
+each of these terms one by one. Now go check out this
+[cool shit](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
 
 You'll often hear the term "distributed ledger" used. It is correct in a narrow
 sense. A ledger is just a KV store from block number -> transactions.
@@ -70,5 +71,3 @@ constructor(string memory name_, string memory symbol_) {
     _symbol = symbol_;
 }
 ```
-
-Now go check out this [cool shit](https://www.youtube.com/watch?v=dQw4w9WgXcQ)

@@ -1,6 +1,12 @@
+@use '~/scss/main.scss';
 @use '@carbon/type';
 @use '@carbon/layout';
 @use '@carbon/colors';
+
+.box {
+  margin-top: 64px;
+  margin-bottom: 48px;
+}
 
 .date_track {
   padding-left: layout.$spacing-05;
@@ -8,15 +14,50 @@
   margin-top: layout.$spacing-07;
 }
 
-.date {
-  @include type.type-style('body-compact-01');
+.meta {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: main.space(2);
+  gap: main.space(1);
 }
 
-/* TODO use carbon v11 and include fluid-heading-06 */
-.heading_track {
-  margin-top: layout.$spacing-08;
+.tags {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: main.space(1);
+  gap: main.space(1);
+}
+
+.tag {
+  @include main.tag;
+
+  color: colors.$warm-gray-70;
+  font-weight: 500;
+}
+
+.date {
+  margin-bottom: -8px;
+  color: colors.$warm-gray-70;
+  font-family: main.$sans;
+  font-size: main.font-size-smaller(1);
 }
 
 .heading {
-  @include type.type-style('heading-07');
+  margin-bottom: main.space(4);
+  font-family: main.$sans;
+  font-size: main.font-size(5);
+  font-weight: 600;
+}
+
+.footer {
+  padding-top: main.space(4);
+
+  border-top: solid 1px colors.$cool-gray-20;
+  margin-top: main.space(6);
+  font-family: main.$sans;
+  font-size: main.font-size(1);
+
+  p {
+    margin-bottom: main.space(1);
+  }
 }

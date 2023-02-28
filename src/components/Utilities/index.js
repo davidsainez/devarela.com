@@ -22,3 +22,7 @@ export const iconBox = (icon, className) => {
     undefined
   );
 };
+
+export const cj = (...classes) => {
+  return classes.join(' ');
+};

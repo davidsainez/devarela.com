@@ -3,7 +3,9 @@ import glob from 'glob-promise';
 import path from 'path';
 import Markdoc from '@markdoc/markdoc';
 import fs from 'fs';
+import { getMetadataFromAST } from '~/Data';
 import { Paragraph, Heading } from '~/components/Article';
+import { Essay } from '~/components/Essay';
 import { Code } from '~/components/Code';
 
 const isTag = (tag) => {
@@ -82,10 +84,14 @@ const components = {
 
 // Create a React component using Markdoc's React renderer and our list of custom components.
 const BlogPostPage = (props) => {
-  const { content } = props;
+  const { content, metadata } = props;
   const parsedContent = JSON.parse(content);
 
-  return <div>{renderMarkdoc(parsedContent, React, components)}</div>;
+  return (
+    <Essay metadata={metadata}>
+      {renderMarkdoc(parsedContent, React, components)}
+    </Essay>
+  );
 };
 
 export default BlogPostPage;
@@ -122,12 +128,14 @@ export const getStaticProps = async (context) => {
 
   // Create a renderable tree
   const content = JSON.stringify(Markdoc.transform(ast, CONFIG));
+  const metadata = getMetadataFromAST(fullPath, ast);
 
   // Return the content as a prop to the React component for now
   // We will render the content in the next section
   return {
     props: {
       content,
+      metadata,
     },
   };
 };

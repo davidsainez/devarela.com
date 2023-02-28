@@ -1,6 +1,7 @@
 import { NextSeo, BreadcrumbJsonLd } from 'next-seo';
-import { EssayIndexCard } from '~/components/EssayIndexCard';
 import { Grid, Column } from '~/components/Grid';
+import { Template } from '~/components/Template';
+import { Card } from './Card';
 import styles from './essayIndex.module.scss';
 
 const DESCRIPTION = `
@@ -8,9 +9,10 @@ D.E. Varela's collection of essays exploring mental models, software design, and
 `;
 
 export const EssayIndex = ({ essays }) => {
-  const cards = essays.map((essay) => (
-    <EssayIndexCard
-      key={essay.href}
+  const cards = essays.map((essay, i) => (
+    <Card
+      //key={essay.href} // TODO re-enable after testing
+      key={i}
       tags={essay.tags}
       href={essay.href}
       title={essay.title}
@@ -39,18 +41,11 @@ export const EssayIndex = ({ essays }) => {
           },
         ]}
       />
-      <Grid className={styles.title_row} condensed>
-        <Column
-          sm={4}
-          md={8}
-          lg={{ offset: 4, span: 6 }}
-          xlg={{ offset: 4, span: 6 }}
-          max={{ offset: 5, span: 6 }}
-        >
-          <h1 className={styles.title}>Essays</h1>
-        </Column>
-      </Grid>
-      <div className={styles.card_row}>{cards}</div>
+      <Template>
+        <div>{cards}</div>
+      </Template>
     </>
   );
 };
+
+//<div className={styles.grid}>{[<h1>hello</h1>, ...cards]}</div>

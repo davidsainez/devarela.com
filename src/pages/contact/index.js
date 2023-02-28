@@ -1,10 +1,10 @@
 import { Template } from '~/components/Template';
 import { Grid, Column } from '@carbon/react';
 
-export const About = () => {
+const Contact = () => {
   return (
     <>
-      <Template path="/me" gradient />
+      <Template path="/contact" />
       <Column sm={4} md={8} lg={16} xlg={16} max={16}>
         <Grid>
           <Column
@@ -14,7 +14,7 @@ export const About = () => {
             xlg={{ offset: 4, span: 6 }}
             max={{ offset: 5, span: 4 }}
           >
-            <h1>About me</h1>
+            <h1>Contact</h1>
             <p>Hello, my name is David.</p>
           </Column>
         </Grid>
@@ -22,3 +22,5 @@ export const About = () => {
     </>
   );
 };
+
+export default Contact;

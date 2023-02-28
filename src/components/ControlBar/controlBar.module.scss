@@ -1,0 +1,106 @@
+@use '~/scss/main.scss';
+@use '@carbon/colors';
+@use '@carbon/grid';
+
+.bleed {
+  backdrop-filter: blur(10px);
+  background-color: hsla(0, 0, 0, 0.8);
+}
+
+.box {
+  padding-top: main.space(3);
+  padding-bottom: main.space(3);
+}
+
+.sidebar {
+  padding: main.space(2);
+  backdrop-filter: blur(10px);
+  background-color: hsla(0, 0, 100, 0.8);
+  box-shadow: main.$slim-shadow;
+
+  @include grid.breakpoint-up(lg) {
+    //position: sticky;
+    //top: 0;
+    display: flex;
+    //width: main.space(36);
+    //min-width: main.space(36);
+    //height: 100vh;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0;
+    color: main.$white;
+    contain: paint layout;
+  }
+}
+
+.menu {
+  display: none;
+  @include grid.breakpoint-up(lg) {
+    display: block;
+  }
+}
+
+.mobile {
+  @include grid.breakpoint-up(lg) {
+    display: none;
+  }
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  @include grid.breakpoint-up(lg) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.branding {
+  color: main.$white;
+  font-family: main.$condensed;
+  font-size: main.font-size(1);
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+/*
+.branding {
+  color: main.$white;
+  background-color: black;
+  padding: main.space-smaller(1);
+  border-radius: main.space(3);
+  font-family: main.$mono;
+  font-weight: 700;
+  font-style: italic;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  @include grid.breakpoint-up(lg) {
+    font-size: main.font-size(2);
+  }
+}
+*/
+
+.last {
+  //transform: translateX(1px);
+}
+
+.footer {
+  display: none;
+  @include grid.breakpoint-up(lg) {
+    display: block;
+    padding-right: main.space(4);
+    padding-bottom: main.space(2);
+    padding-left: main.space(4);
+  }
+}
+
+.legal {
+  margin-top: main.space(4);
+  color: colors.$gray-80;
+  font-size: main.font-size-smaller(1);
+}

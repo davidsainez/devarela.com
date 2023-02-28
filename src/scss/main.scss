@@ -35,6 +35,8 @@ $white: #ffffff;
 }
 
 // colors
+$cultured: hsla(40, 30%, 98%, 1);
+$cultured-20: hsla(40, 30%, 95%, 1);
 $blue: 221;
 $green: 140;
 
@@ -48,20 +50,21 @@ $green: 140;
 
 // families
 $sans: 'IBM Plex Sans', sans-serif;
+$condensed: 'IBM Plex Sans Condensed', sans-serif;
+$mono: 'IBM Plex Mono', monospaced;
 $serif: 'IBM Plex Serif', serif;
-$mono: IBM Plex Mono, monospaced;
 
 // scales
-$base-font-size: 16px;
-$font-ratio: 1.333;
-$font-smaller-step: 2;
+$base-font-size: 1rem;
+$font-ratio: 1.25;
+$font-smaller-ratio: 0.8;
 
 @function font-size($step) {
   @return $base-font-size * pow($font-ratio, $step - 1);
 }
 
 @function font-size-smaller($step) {
-  @return $base-font-size - 2 * $step;
+  @return $base-font-size * pow($font-smaller-ratio, $step);
 }
 
 // weight
@@ -84,12 +87,62 @@ $base-space-unit: 8px;
 }
 
 /*************************************************
+ * Tokens
+ ************************************************/
+$slim-shadow: rgba(0, 0, 0, 0.1) 0 2px 5px -1px,
+  rgba(0, 0, 0, 0.1) 0 1px 3px -1px;
+$hover-shadow: rgba(50, 50, 93, 0.25) 0 13px 27px -5px,
+  rgba(0, 0, 0, 0.3) 0 8px 16px -8px;
+
+//$light-shadow: hsla(0, 0, 100, 0.25) 0 space(2) space(6) -8px;
+//$hover-shadow: hsla(0, 0, 0, 0.95) 0 13px 27px -5px, hsla(0, 0, 0, 0.99) 0 8px 16px -8px;
+
+@mixin card {
+  background-color: hsl(0, 0, 100);
+  color: $black;
+  text-decoration: none;
+  transition: all 0.4s;
+  //box-shadow: $slim-shadow;
+
+  &:hover {
+    box-shadow: $hover-shadow;
+  }
+}
+
+@mixin tag {
+  color: colors.$blue-10;
+  font-family: $sans;
+  font-size: font-size-smaller(1);
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+$line-height: 1.4211;
+
+@mixin code {
+  // do not bleed white highlight into background white
+  border: solid 2px colors.$cool-gray-10;
+  background-color: colors.$cool-gray-10;
+  color: $black;
+  font-family: $mono;
+  line-height: $line-height;
+}
+
+/*************************************************
  * Other
  ************************************************/
 
+@mixin svg-hover-color($color) {
+  &:hover {
+    svg {
+      color: $color;
+    }
+  }
+}
+
 @mixin scrollbar(
   $size: 4px,
-  $foreground-color: colors.$cyan-80,
+  $foreground-color: colors.$cool-gray-30,
   $background-color: rgba(0, 0, 0, 0)
 ) {
   // For Chrome & Safari

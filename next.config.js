@@ -12,8 +12,11 @@ module.exports = withBundleAnalyzer({
   sassOptions: {
     includePaths: [path.join(__dirname, 'node_modules')],
   },
-  webpack(config) {
+  webpack(config, { isServer }) {
     config.resolve.alias['~'] = path.join(__dirname, 'src');
+    if (!isServer) {
+      config.resolve.fallback.fs = false;
+    }
     return config;
   },
 });

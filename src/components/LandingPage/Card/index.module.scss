@@ -1,0 +1,35 @@
+@use '~/scss/main.scss';
+@use '@carbon/colors';
+@use '@carbon/grid';
+
+.box {
+  display: flex;
+
+  flex-direction: column;
+  margin-top: 32px;
+  margin-bottom: 48px;
+  color: white;
+  font-family: main.$sans;
+  gap: main.space(1);
+  text-decoration: none;
+}
+
+.date {
+  color: black;
+  font-size: 14px;
+}
+
+.title {
+  color: colors.$cool-gray-70;
+  font-family: main.$condensed;
+  font-size: main.font-size(2);
+  font-weight: 600;
+}
+
+.summary {
+  color: black;
+  font-size: 16px;
+}
+
+.read {
+}

@@ -1,14 +1,16 @@
-@use '@carbon/type';
-@use '@carbon/layout';
+@use '~/scss/main.scss';
+@use '@carbon/grid';
 
 .heading {
-  @include type.type-style('heading-05');
-
-  margin-top: layout.$spacing-08;
+  margin-top: 48px;
+  margin-bottom: 16px;
+  font-family: main.$sans;
+  font-size: 21px;
+  font-weight: 500;
 }
 
 .paragraph {
-  @include type.type-style('body-02');
-
-  margin-top: layout.$spacing-05;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  font-family: main.$sans;
 }

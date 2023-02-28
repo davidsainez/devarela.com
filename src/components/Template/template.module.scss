@@ -1,0 +1,99 @@
+@use '~/scss/main.scss';
+@use '~/scss/gradient.scss' as gradients;
+@use '@carbon/colors';
+@use '@carbon/grid';
+
+.stack {
+  display: flex;
+  flex-direction: column;
+}
+
+@function midpoints($hueOne, $hueTwo, $count) {
+  $start: 0;
+  $stop: 0;
+  @if ($hueOne > $hueTwo) {
+    $start: $hueTwo;
+    $stop: $hueOne;
+  } @else {
+    $start: $hueOne;
+    $stop: $hueTwo;
+  }
+
+  $step: math.floor(($stop - $start) / $count);
+  $hues: ($start);
+  @for $i from 1 through $count {
+    $hues: list.append($hues, $start + $step * 1);
+  }
+
+  @return $hues;
+}
+
+.background {
+  position: fixed;
+  z-index: -2;
+  top: 0;
+  left: -30vw;
+  overflow: hidden;
+  width: 130vw;
+  height: 120vh;
+  image-rendering: pixelated;
+}
+
+.isolate {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  isolation: isolate;
+}
+
+.solid {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: colors.$cool-gray-10;
+  mix-blend-mode: darken;
+  opacity: 0.7;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  //background: colors.$blue-10;
+}
+
+.gradient {
+  position: relative;
+  top: 25%;
+  overflow: visible;
+  width: 100%;
+  // account for skew
+  height: 100%;
+  background: radial-gradient(
+      80% 15% at 45% 15%,
+      gradients.scrim(colors.$red-60, 0.2)
+    ),
+    radial-gradient(60% 10% at 40% 15%, gradients.scrim(colors.$blue-60)),
+    radial-gradient(60% 10% at 40% 5%, gradients.scrim(colors.$blue-70, 0.2)),
+    radial-gradient(20% 35% at 35% 20%, gradients.scrim(colors.$green-60)),
+    radial-gradient(20% 35% at 35% 20%, gradients.scrim(colors.$green-60, 0.6)),
+    radial-gradient(
+      60% 10% at 50% 25%,
+      gradients.clothoid(colors.$blue-60, 0.5)
+    ),
+    radial-gradient(20% 25% at 55% 35%, gradients.scrim(colors.$red-60, 0.2)),
+    //radial-gradient(50% 10% at 15% 10%, gradients.scrim(colors.$red-60)),
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 500 500' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='3.65' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='50%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  filter: contrast(250%) brightness(150%);
+  -webkit-mask-image: linear-gradient(
+    0deg,
+    transparent,
+    #000000 80%,
+    #000000 90%,
+    transparent
+  );
+  mix-blend-mode: screen;
+  transform: scaleX(1.4) scaleY(1.1) skew(15deg, 25deg) translateY(10%);
+}

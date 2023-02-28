@@ -2,14 +2,14 @@
 @use '@carbon/colors';
 
 .codeBox {
-  padding-bottom: main.space(1);
-  background-color: colors.$cyan-90;
-  border-bottom-left-radius: main.space-smaller(1);
-  border-bottom-right-radius: main.space-smaller(1);
+  //border-bottom-left-radius: main.space(1);
+  //border-bottom-right-radius: main.space(1);
+  border: solid 2px colors.$cool-gray-10;
+  background-color: colors.$cool-gray-10;
 
   code {
-    color: main.$white;
-    line-height: 1.3;
+    color: main.$black;
+    line-height: 1.4211;
   }
 
   pre {
@@ -29,6 +29,10 @@
   height: 100%;
 
   box-sizing: border-box;
+
+  padding-top: main.space(1);
+  padding-bottom: main.space(1);
+  /*
   -webkit-mask-image: linear-gradient(
     90deg,
     #ffffff,
@@ -38,6 +42,7 @@
     #ffffff calc(100% - 20px),
     transparent
   );
+  */
   -webkit-overflow-scrolling: touch;
   overflow-x: auto;
 }
@@ -58,11 +63,12 @@
 .numbersBox {
   display: flex;
   flex-direction: column;
-  padding-right: main.space(1);
-  padding-left: main.space(2);
-  color: colors.$cyan-30;
+
+  padding: main.space(1);
+  border-right: solid 1px colors.$cool-gray-20;
+  color: colors.$cool-gray-80;
   font-family: main.$mono;
-  line-height: 1.3;
+  line-height: 1.4211;
 }
 
 .number {
@@ -70,14 +76,10 @@
   justify-content: flex-end;
 }
 
-.markedNumber {
-  color: colors.$cyan-20;
-  font-weight: 600;
-}
-
 .code {
-  color: main.$white;
+  color: main.$black;
   font-family: main.$mono;
+  font-size: 16px;
   //-webkit-mask-image: linear-gradient(90deg, rgba(255, 255, 255, 0), transparent 100%);
 }
 
@@ -87,30 +89,23 @@
   width: 100%;
   justify-content: flex-end;
   margin-top: main.space(2);
-  background-color: colors.$cyan-90;
-  border-top-left-radius: main.space-smaller(1);
-  border-top-right-radius: main.space-smaller(1);
-  color: main.$white;
+  background-color: colors.$cool-gray-10;
+  //border-top-left-radius: main.space(1);
+  //border-top-right-radius: main.space(1);
 }
 
-$duration: 0.4s;
+$duration: 0.2s;
 .button {
   display: flex;
   align-items: center;
   justify-content: center;
   padding: main.space(1);
-  background-size: 300% 100%;
+  color: colors.$cool-gray-70;
   transition: all $duration ease-in;
 
   &:hover {
-    background-image: linear-gradient(
-      to right,
-      main.color(main.$blue, 9),
-      main.color(main.$blue, 7),
-      main.color(main.$blue, 8),
-      main.color(main.$blue, 8)
-    );
-    background-position: 100% 0;
+    color: main.$black;
+    transform: scale(1.1);
   }
 }
 
@@ -121,5 +116,5 @@ $duration: 0.4s;
 
 .marker {
   position: relative;
-  background-color: colors.$cyan-80;
+  background-color: colors.$white;
 }
