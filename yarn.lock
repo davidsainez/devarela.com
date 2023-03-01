@@ -1288,6 +1288,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@next/font@npm:^13.2.2":
+  version: 13.2.2
+  resolution: "@next/font@npm:13.2.2"
+  checksum: 6b0e0081c0c1eef6c44f1c4b54b7e3953a89c2eac97ec99fdda96c10f9637d21e55cf32d784c5a58399473304557e558643aee43ebdc652500e07241f2b41160
+  languageName: node
+  linkType: hard
+
 "@next/swc-android-arm-eabi@npm:13.1.6":
   version: 13.1.6
   resolution: "@next/swc-android-arm-eabi@npm:13.1.6"
@@ -8866,6 +8873,7 @@ __metadata:
     "@markdoc/markdoc": ^0.2.2
     "@markdoc/next.js": ^0.2.1
     "@next/bundle-analyzer": ^13.1.6
+    "@next/font": ^13.2.2
     css-loader: ^6.7.3
     cssnano: ^5.1.15
     eslint: ^7.32.0

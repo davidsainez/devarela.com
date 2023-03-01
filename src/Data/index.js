@@ -13,8 +13,6 @@ export const getMetadataFromAST = (postPath, ast) => {
     ? yaml.load(ast.attributes.frontmatter)
     : {};
 
-  const filename = 'pareto';
-
   return {
     href: `/essays/${slug(postPath)}`,
     title: metadata.title,

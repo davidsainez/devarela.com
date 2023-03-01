@@ -1,7 +1,29 @@
 import { DefaultSeo } from 'next-seo';
-//import { useRouter } from 'next/router';
+import {
+  IBM_Plex_Mono,
+  IBM_Plex_Sans,
+  IBM_Plex_Sans_Condensed,
+} from '@next/font/google';
 import Head from 'next/head';
 import '~/scss/index.scss';
+
+const mono = IBM_Plex_Mono({
+  weight: ['300', '400', '500'],
+  subsets: ['latin'],
+  variable: '--font-mono',
+});
+
+const sans = IBM_Plex_Sans({
+  weight: ['300', '400', '500', '600'],
+  subsets: ['latin'],
+  variable: '--font-sans',
+});
+
+const condensed = IBM_Plex_Sans_Condensed({
+  weight: ['300', '400', '500'],
+  subsets: ['latin'],
+  variable: '--font-condensed',
+});
 
 /*
 export function reportWebVitals(metric) {
@@ -33,7 +55,11 @@ export default function App({ Component, pageProps }) {
           cardType: 'summary',
         }}
       />
-      <Component {...pageProps} />
+      <main
+        className={[mono.variable, sans.variable, condensed.variable].join(' ')}
+      >
+        <Component {...pageProps} />
+      </main>
     </div>
   );
 }

@@ -4,21 +4,15 @@
 @use '@carbon/colors';
 
 .box {
-  margin-top: 64px;
-  margin-bottom: 48px;
-}
-
-.date_track {
-  padding-left: layout.$spacing-05;
-  border-left: solid 1px colors.$blue-50;
-  margin-top: layout.$spacing-07;
-}
-
-.meta {
   display: flex;
   flex-direction: column;
-  margin-bottom: main.space(2);
-  gap: main.space(1);
+  align-items: center;
+}
+
+.headingBox {
+  @include main.container;
+
+  margin-top: main.space(8);
 }
 
 .tags {
@@ -29,33 +23,33 @@
 }
 
 .tag {
-  @include main.tag;
+  @include main.ui;
 
-  color: colors.$warm-gray-70;
+  color: main.$color-fade;
   font-weight: 500;
+  text-transform: uppercase;
 }
 
 .date {
+  @include main.ui;
+
   margin-bottom: -8px;
-  color: colors.$warm-gray-70;
-  font-family: main.$sans;
-  font-size: main.font-size-smaller(1);
+  color: main.$color-fade;
 }
 
 .heading {
+  @include main.heading-1;
+
   margin-bottom: main.space(4);
-  font-family: main.$sans;
-  font-size: main.font-size(5);
-  font-weight: 600;
 }
 
 .footer {
+  @include main.container;
+
   padding-top: main.space(4);
 
   border-top: solid 1px colors.$cool-gray-20;
   margin-top: main.space(6);
-  font-family: main.$sans;
-  font-size: main.font-size(1);
 
   p {
     margin-bottom: main.space(1);

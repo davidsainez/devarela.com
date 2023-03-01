@@ -1,7 +1,8 @@
 import * as NextLink from 'next/link';
+import { RiArrowRightLine } from 'react-icons/ri';
 import styles from './index.module.scss';
 
-export const Card = ({ href, title, date, summary, tags }) => {
+export const Card = ({ href, title, date, summary }) => {
   return (
     <div className={styles.box}>
       <span className={styles.date}>{date}</span>
@@ -10,7 +11,7 @@ export const Card = ({ href, title, date, summary, tags }) => {
         <p>{summary}</p>
       </div>
       <NextLink href={href} className={styles.read}>
-        Read
+        Read <RiArrowRightLine />
       </NextLink>
     </div>
   );

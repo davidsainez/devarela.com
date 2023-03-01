@@ -1,5 +1,5 @@
 import * as NextLink from 'next/link';
-import { RiArrowRight } from 'react-icons/ri';
+import { RiArrowRightLine } from 'react-icons/ri';
 import styles from './index.module.scss';
 
 export const Card = ({ essay }) => {
@@ -13,7 +13,7 @@ export const Card = ({ essay }) => {
       <h2 className={styles.title}>{essay.title}</h2>
       <p className={styles.summary}>{essay.summary}</p>
       <NextLink className={styles.read} href={essay.href}>
-        Read
+        Read <RiArrowRightLine />
       </NextLink>
     </div>
   );

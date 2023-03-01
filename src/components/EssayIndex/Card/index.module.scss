@@ -3,26 +3,37 @@
 @use '@carbon/grid';
 
 .box {
+  @include main.container;
+
   display: flex;
   flex-direction: column;
-  margin-top: 48px;
-  margin-bottom: 16px;
-  color: black;
+  margin-top: main.space(8);
+  margin-bottom: main.space(2);
 }
 
 .date {
+  @include main.ui;
+
   margin-bottom: 8px;
-  color: colors.$cool-gray-80;
-  font-size: 14px;
+  color: main.$color-fade;
 }
 
 .title {
+  @include main.heading-2;
+
   margin-bottom: 8px;
-  font-family: main.$sans;
-  font-size: 21px;
-  font-weight: 500;
 }
 
 .summary {
+  @include main.content;
+
   margin-bottom: 8px;
+}
+
+.read {
+  @include main.ui;
+
+  display: flex;
+  align-items: center;
+  gap: main.space(1);
 }

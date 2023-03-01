@@ -4,32 +4,29 @@
 
 .box {
   display: flex;
-
   flex-direction: column;
   margin-top: 32px;
   margin-bottom: 48px;
-  color: white;
-  font-family: main.$sans;
-  gap: main.space(1);
-  text-decoration: none;
+  gap: 8px;
 }
 
 .date {
-  color: black;
-  font-size: 14px;
+  @include main.ui;
+
+  color: main.$color-fade;
 }
 
 .title {
-  color: colors.$cool-gray-70;
+  @include main.heading-2;
+
+  color: main.$color-secondary;
   font-family: main.$condensed;
-  font-size: main.font-size(2);
-  font-weight: 600;
 }
 
 .summary {
-  color: black;
-  font-size: 16px;
+  @include main.content;
 }
 
 .read {
+  @include main.ui;
 }

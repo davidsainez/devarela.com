@@ -2,24 +2,27 @@
 @use '@carbon/colors';
 @use '@carbon/grid';
 
-.segmentHeading {
+.container {
+  @include main.container;
+}
+
+.welcome {
+  @include main.heading-1;
+
   margin-top: 48px;
   margin-bottom: 16px;
-  font-family: main.$sans;
-  font-size: 21px;
-  font-weight: 600;
 }
 
-@mixin text {
-  display: flex;
-  flex-direction: column;
-}
+.heading {
+  @include main.heading-2;
 
-.regularText {
-  @include text;
+  margin-top: 48px;
+  margin-bottom: 16px;
 }
 
 .about {
+  @include main.content;
+
   margin-bottom: 1.4em;
 }
 
@@ -27,52 +30,9 @@
   display: flex;
   flex-direction: column;
   margin-bottom: 16px;
-}
-
-.heading {
-  display: flex;
-  justify-content: center;
-  margin-top: main.space(8);
-  margin-bottom: main.space(4);
-
-  h1 {
-    font-family: main.$sans;
-    font-size: main.font-size(5);
-    font-weight: 600;
-  }
-
-  @include grid.breakpoint-up(lg) {
-    justify-content: flex-start;
-    margin-top: main.space(20);
-    margin-bottom: main.space(4);
-
-    h1 {
-      font-size: main.font-size(7);
-    }
-  }
-}
-
-.copy {
-  margin-top: main.space(2);
-  color: main.$white;
-  font-family: main.$sans;
-  font-size: main.font-size(2);
-
-  @include grid.breakpoint-down(lg) {
-    font-size: main.font-size(1);
-  }
-}
-
-.signature {
-  padding-left: 50%;
-  margin-top: main.space(4);
-  p {
-    font-weight: 400;
-  }
-}
-
-.grid {
-  display: grid;
   gap: main.space(1);
-  grid-template-columns: 1fr 1fr;
+
+  a {
+    font-size: 16px;
+  }
 }

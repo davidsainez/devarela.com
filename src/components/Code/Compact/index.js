@@ -1,14 +1,13 @@
 import Refractor from 'react-refractor';
-import { RiFileCopyLine } from 'react-icons/ri';
 import styles from './index.module.scss';
 
-export const CompactCode = ({ rawText, markers }) => {
+export const CompactCode = ({ compact, rawText, markers }) => {
+  const classes = [styles.box];
+  classes.push(compact ? styles.compact : styles.full);
+
   return (
-    <div className={styles.box}>
+    <div className={classes.join(' ')}>
       <Refractor language="ts" value={rawText} markers={markers} />
-      <div className={styles.copy}>
-        <RiFileCopyLine />
-      </div>
     </div>
   );
 };

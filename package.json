@@ -25,6 +25,7 @@
     "@markdoc/markdoc": "^0.2.2",
     "@markdoc/next.js": "^0.2.1",
     "@next/bundle-analyzer": "^13.1.6",
+    "@next/font": "^13.2.2",
     "formik": "^2.2.9",
     "glob-promise": "^6.0.2",
     "next": "latest",

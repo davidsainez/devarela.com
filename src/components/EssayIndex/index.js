@@ -1,8 +1,6 @@
 import { NextSeo, BreadcrumbJsonLd } from 'next-seo';
-import { Grid, Column } from '~/components/Grid';
 import { Template } from '~/components/Template';
 import { Card } from './Card';
-import styles from './essayIndex.module.scss';
 
 const DESCRIPTION = `
 D.E. Varela's collection of essays exploring mental models, software design, and web technology.
@@ -47,5 +45,3 @@ export const EssayIndex = ({ essays }) => {
     </>
   );
 };
-
-//<div className={styles.grid}>{[<h1>hello</h1>, ...cards]}</div>

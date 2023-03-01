@@ -49,9 +49,9 @@ $green: 140;
  ************************************************/
 
 // families
-$sans: 'IBM Plex Sans', sans-serif;
-$condensed: 'IBM Plex Sans Condensed', sans-serif;
-$mono: 'IBM Plex Mono', monospaced;
+$sans: var(--font-sans), sans-serif;
+$condensed: var(--font-condensed), sans-serif;
+$mono: var(--font-mono), monospace;
 $serif: 'IBM Plex Serif', serif;
 
 // scales
@@ -119,13 +119,31 @@ $hover-shadow: rgba(50, 50, 93, 0.25) 0 13px 27px -5px,
 
 $line-height: 1.4211;
 
+@mixin breakout-container {
+  @include container;
+
+  width: 100%;
+  max-width: 450px;
+
+  @media (min-width: 734px) {
+    width: 692px;
+    max-width: none;
+  }
+
+  @media (min-width: 1024px) {
+    width: 980px;
+  }
+}
+
 @mixin code {
   // do not bleed white highlight into background white
-  border: solid 2px colors.$cool-gray-10;
+  border: solid 1px colors.$cool-gray-20;
   background-color: colors.$cool-gray-10;
+  border-radius: 16px;
   color: $black;
   font-family: $mono;
-  line-height: $line-height;
+  font-size: 16px;
+  line-height: 1.3;
 }
 
 /*************************************************
@@ -162,3 +180,69 @@ $line-height: 1.4211;
   // Standard version (Firefox only for now)
   scrollbar-color: $foreground-color $background-color;
 }
+
+/******************************************************************************
+ * FINAL
+ ******************************************************************************/
+
+// control width of any element to prevent long lines
+@mixin container {
+  width: 87.5%;
+  max-width: 414px;
+  margin-right: auto;
+  margin-left: auto;
+
+  @media (min-width: 734px) {
+    width: 576px;
+    max-width: none;
+  }
+
+  @media (min-width: 1024px) {
+    width: 653px;
+  }
+}
+
+// ui text remains constant at 14px
+@mixin ui {
+  font-size: 14px;
+}
+
+@mixin content {
+  font-family: $sans;
+  font-size: 17px;
+
+  @media (min-width: 734px) {
+    font-size: 18px;
+  }
+
+  @media (min-width: 1024px) {
+    font-size: 19px;
+  }
+}
+
+@mixin heading-1 {
+  font-size: 32px;
+  font-weight: 600;
+
+  @media (min-width: 734px) {
+    font-size: 40px;
+  }
+
+  @media (min-width: 1440px) {
+    font-size: 48px;
+  }
+}
+
+@mixin heading-2 {
+  font-family: $sans;
+  font-size: 21px;
+  font-weight: 500;
+
+  @media (min-width: 1440px) {
+    font-size: 24px;
+  }
+}
+
+$color-fade: colors.$cool-gray-70;
+$color-secondary: colors.$cool-gray-80;
+$color-primary: colors.$black;

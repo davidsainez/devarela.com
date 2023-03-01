@@ -4,85 +4,56 @@
 
 .all {
   display: flex;
+  overflow: hidden;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
-}
-
-.dark {
-  background-color: black;
-  color: white;
-
-  a {
-    color: hsl(240, 70%, 70%);
-    text-decoration: none;
-    //text-decoration: hsl(240,70%,70%) underline;
-  }
-}
-
-.light {
-  background-color: white;
-  color: black;
-
-  a {
-    color: black;
-    color: hsl(240, 95%, 60%);
-    text-decoration: none;
-    //text-decoration: hsl(240,95%,70%) underline;
-  }
-}
-
-.container {
-  display: block;
-  width: 87.5%;
-  max-width: 414px;
   padding-top: main.space(4);
   padding-bottom: main.space(4);
   font-family: main.$sans;
 
-  @media (min-width: 734px) {
-    width: 576px;
-    max-width: none;
-  }
-
-  @media (min-width: 1024px) {
-    width: 653px;
+  a {
+    color: hsl(240, 95%, 60%);
+    text-decoration: none;
   }
 }
 
+.container {
+  @include main.container;
+}
+
 .info {
+  @include main.ui;
+
   display: flex;
   flex-direction: column;
   font-family: main.$mono;
-  font-size: 14px;
   font-weight: 300;
   gap: main.space(1);
 }
 
 .name {
   a {
-    color: black;
-    font-family: main.$mono;
+    color: main.$black;
     font-weight: 400;
     text-transform: uppercase;
   }
 }
 
 .header {
+  @include main.container;
+
   display: flex;
   justify-content: space-between;
 }
 
 .nav {
   display: flex;
-  font-family: main.$sans;
-  gap: main.space(2);
+  gap: 16px;
+
   a {
-    color: black;
+    color: main.$black;
     font-size: 14px;
     font-weight: 300;
-    transition: all 0.4s;
-
-    &:hover {
-      color: hsl(240, 95%, 70%);
-    }
   }
 }
