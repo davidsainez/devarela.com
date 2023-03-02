@@ -59,7 +59,6 @@
   position: absolute;
   top: 0;
   width: 100%;
-  height: 100%;
   //background: colors.$blue-10;
 }
 
@@ -72,7 +71,7 @@
   height: 100%;
   background: radial-gradient(
       80% 15% at 45% 15%,
-      gradients.scrim(colors.$red-60, 0.2)
+      gradients.scrim(colors.$red-60, 0.3)
     ),
     radial-gradient(60% 10% at 40% 15%, gradients.scrim(colors.$blue-60)),
     radial-gradient(60% 10% at 40% 5%, gradients.scrim(colors.$blue-70, 0.2)),
@@ -84,8 +83,8 @@
     ),
     radial-gradient(20% 25% at 55% 35%, gradients.scrim(colors.$red-60, 0.2)),
     //radial-gradient(50% 10% at 15% 10%, gradients.scrim(colors.$red-60)),
-    url("data:image/svg+xml,%3Csvg viewBox='0 0 500 500' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='3.65' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='50%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-  filter: contrast(350%) brightness(150%);
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 500 500' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='5.65' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  filter: contrast(450%) brightness(180%);
   -webkit-mask-image: linear-gradient(
     0deg,
     transparent,
