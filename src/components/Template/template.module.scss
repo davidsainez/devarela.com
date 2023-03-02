@@ -52,8 +52,7 @@
   width: 100%;
   height: 100%;
   background: colors.$cool-gray-10;
-  mix-blend-mode: darken;
-  opacity: 0.7;
+  opacity: 0.6;
 }
 
 .overlay {
@@ -78,7 +77,7 @@
     radial-gradient(60% 10% at 40% 15%, gradients.scrim(colors.$blue-60)),
     radial-gradient(60% 10% at 40% 5%, gradients.scrim(colors.$blue-70, 0.2)),
     radial-gradient(20% 35% at 35% 20%, gradients.scrim(colors.$green-60)),
-    radial-gradient(20% 35% at 35% 20%, gradients.scrim(colors.$green-60, 0.6)),
+    radial-gradient(20% 35% at 35% 20%, gradients.scrim(colors.$green-60, 0.2)),
     radial-gradient(
       60% 10% at 50% 25%,
       gradients.clothoid(colors.$blue-60, 0.5)
@@ -86,7 +85,7 @@
     radial-gradient(20% 25% at 55% 35%, gradients.scrim(colors.$red-60, 0.2)),
     //radial-gradient(50% 10% at 15% 10%, gradients.scrim(colors.$red-60)),
     url("data:image/svg+xml,%3Csvg viewBox='0 0 500 500' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='3.65' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='50%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-  filter: contrast(250%) brightness(150%);
+  filter: contrast(350%) brightness(150%);
   -webkit-mask-image: linear-gradient(
     0deg,
     transparent,
@@ -94,6 +93,6 @@
     #000000 90%,
     transparent
   );
-  mix-blend-mode: screen;
-  transform: scaleX(1.4) scaleY(1.1) skew(15deg, 25deg) translateY(10%);
+  mix-blend-mode: darken;
+  transform: scaleX(1.4) scaleY(1.1) skew(15deg, 15deg) translateY(10%);
 }

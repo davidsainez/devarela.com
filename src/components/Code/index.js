@@ -29,7 +29,6 @@ const getWidth = (rawText) => {
     }
   });
 
-  console.log(max);
   return max;
 };
 

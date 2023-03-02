@@ -236,7 +236,7 @@ $line-height: 1.4211;
 @mixin heading-2 {
   font-family: $sans;
   font-size: 21px;
-  font-weight: 500;
+  font-weight: 600;
 
   @media (min-width: 1440px) {
     font-size: 24px;

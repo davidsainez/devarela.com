@@ -20,7 +20,7 @@ const sans = IBM_Plex_Sans({
 });
 
 const condensed = IBM_Plex_Sans_Condensed({
-  weight: ['300', '400', '500'],
+  weight: ['300', '400', '500', '600'],
   subsets: ['latin'],
   variable: '--font-condensed',
 });

@@ -29,4 +29,8 @@
 
 .read {
   @include main.ui;
+
+  display: flex;
+  align-items: center;
+  gap: main.space(1);
 }

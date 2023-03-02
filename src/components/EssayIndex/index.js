@@ -1,16 +1,9 @@
-import { NextSeo, BreadcrumbJsonLd } from 'next-seo';
-import { Template } from '~/components/Template';
 import { Card } from './Card';
 
-const DESCRIPTION = `
-D.E. Varela's collection of essays exploring mental models, software design, and web technology.
-`;
-
 export const EssayIndex = ({ essays }) => {
-  const cards = essays.map((essay, i) => (
+  const cards = essays.map((essay) => (
     <Card
-      //key={essay.href} // TODO re-enable after testing
-      key={i}
+      key={essay.href}
       tags={essay.tags}
       href={essay.href}
       title={essay.title}
@@ -19,29 +12,5 @@ export const EssayIndex = ({ essays }) => {
     />
   ));
 
-  return (
-    <>
-      <NextSeo
-        title="Essays | D.E. Varela"
-        description={DESCRIPTION}
-        openGraph={{
-          url: 'https://devarela.com/essays',
-          title: 'Essays | D.E. Varela',
-          description: DESCRIPTION,
-        }}
-      />
-      <BreadcrumbJsonLd
-        itemListElements={[
-          {
-            position: 1,
-            name: 'Essays',
-            item: 'https://devarela.com/essays',
-          },
-        ]}
-      />
-      <Template>
-        <div>{cards}</div>
-      </Template>
-    </>
-  );
+  return cards;
 };

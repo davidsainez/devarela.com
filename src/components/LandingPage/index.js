@@ -1,8 +1,7 @@
-import * as NextLink from 'next/link';
 import { NextSeo } from 'next-seo';
 import { Template } from '~/components/Template';
-import { Card } from './Card';
 import styles from './landingPage.module.scss';
+import { EssayIndex } from '~/components/EssayIndex';
 
 const TITLE = 'D.E. Varela';
 const URL = 'devarela.com';
@@ -10,24 +9,9 @@ const DESCRIPTION = `
 D.E. Varela's collection of essays exploring mental models, software design, and web technology.
 `;
 
-const PINNED = [
-  '/essays/pareto',
-  '/essays/getting-started',
-  '/essays/blockchain_basics',
-];
-
-const match = (essays, path) => {
-  for (const essay of essays) {
-    if (essay.href === path) {
-      return essay;
-    }
-  }
-  return undefined;
-};
-
 export const LandingPage = ({ essays }) => {
   return (
-    <Template>
+    <Template color>
       <NextSeo
         title={TITLE}
         description={DESCRIPTION}
@@ -37,43 +21,36 @@ export const LandingPage = ({ essays }) => {
           description: DESCRIPTION,
         }}
       />
-
+      <h1 className={[styles.heading, styles.welcome].join(' ')}>Welcome</h1>
       <div className={styles.container}>
-        <h1 className={styles.heading}>Welcome</h1>
         <p className={styles.about}>
-          This site hosts a collection of{' '}
-          <NextLink href="/essays" className={styles.link}>
-            essays
-          </NextLink>{' '}
-          that explore mental models, software design, and web technology.
+          This site hosts a collection of essays that explore mental models,
+          software design, and web technology.
         </p>
         <p className={styles.about}>
           I write to pursue clarity. Good ideas don&apos;t spring out of the
           abyss. They are a product of constant refinement. I offer my writing
           here so that it may be of service to you as well.
         </p>
-        <h2 className={styles.heading}>Selected Essays</h2>
-        <Card essay={match(essays, PINNED[0])} />
-        <Card essay={match(essays, PINNED[1])} />
-        <h2 className={styles.heading}>Contact</h2>
-        <div className={styles.contactItem}>
-          Twitter
+        <p className={styles.about}>
+          You can find me on{' '}
           <a href="https://twitter.com/varelabuilds" className={styles.link}>
-            @varelabuilds
-          </a>
-        </div>
-        <div className={styles.contactItem}>
-          GitHub
+            twitter
+          </a>{' '}
+          and{' '}
           <a href="https://github.com/de-varela" className={styles.link}>
-            @de-varela
+            github
           </a>
-        </div>
-        <div className={styles.contactItem}>
-          Email
+          . Feel free to reach out{' '}
           <a href="mailto:de-varela@outlook.com" className={styles.link}>
-            de-varela@outlook.com
-          </a>
-        </div>
+            directly
+          </a>{' '}
+          via email.
+        </p>
+      </div>
+      <div className={styles.essays}>
+        <h2 className={styles.heading}>Essays</h2>
+        <EssayIndex essays={essays} />
       </div>
     </Template>
   );

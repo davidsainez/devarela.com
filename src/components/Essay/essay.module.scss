@@ -25,7 +25,10 @@
 .tag {
   @include main.ui;
 
-  color: main.$color-fade;
+  padding: 4px;
+  background-color: colors.$blue-10;
+
+  color: colors.$blue-80;
   font-weight: 500;
   text-transform: uppercase;
 }
