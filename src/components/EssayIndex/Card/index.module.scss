@@ -8,7 +8,7 @@
   display: flex;
   flex-direction: column;
 
-  padding: main.space(3);
+  padding: main.space(2);
   margin-top: main.space(2);
   margin-bottom: main.space(2);
 
@@ -36,10 +36,10 @@
 }
 
 .summary {
-  @include main.content;
-
-  margin-bottom: 8px;
+  margin-bottom: main.space(2);
   color: main.$black;
+  font-size: 16px;
+  line-height: 1.3;
 }
 
 .tag {
@@ -48,6 +48,5 @@
 
 .tags {
   display: flex;
-  margin-bottom: main.space(1);
   gap: main.space(1);
 }
