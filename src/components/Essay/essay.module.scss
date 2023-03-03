@@ -23,14 +23,7 @@
 }
 
 .tag {
-  @include main.ui;
-
-  padding: 4px;
-  background-color: colors.$blue-10;
-
-  color: colors.$blue-80;
-  font-weight: 500;
-  text-transform: uppercase;
+  @include main.tag;
 }
 
 .date {

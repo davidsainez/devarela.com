@@ -1,7 +1,6 @@
 import React from 'react';
 import Refractor from 'react-refractor';
 import typescript from 'refractor/lang/typescript.js';
-import { CompactCode } from './Compact';
 import styles from './code.module.scss';
 import { RiFileCopyLine } from 'react-icons/ri';
 
@@ -63,19 +62,22 @@ export const Code = ({ children }) => {
   });
 
   const width = getWidth(rawText);
+  const classes = [styles.box];
+  classes.push(width < 70 ? styles.compact : styles.full);
+  const className = classes.join(' ');
 
   return (
-    <div className={styles.box}>
+    <div>
       <div className={styles.controls}>
         <button className={styles.button} type="button">
           Copy Text <RiFileCopyLine />
         </button>
       </div>
-      <CompactCode
-        compact={width < 60}
-        rawText={rawText}
-        markers={refractorMarkers}
-      />
+      <div className={className}>
+        <div className={styles.scrollHack}>
+          <Refractor language="ts" value={rawText} markers={refractorMarkers} />
+        </div>
+      </div>
     </div>
   );
 };
