@@ -8,7 +8,7 @@
 }
 
 .token.punctuation {
-  color: colors.$cyan-70;
+  color: colors.$cyan-30;
 }
 
 .namespace {
@@ -18,7 +18,7 @@
 .token.property,
 .token.keyword,
 .token.tag {
-  color: colors.$magenta-60;
+  color: colors.$magenta-30;
 }
 
 .token.class-name {
@@ -46,7 +46,7 @@
 .token.char,
 .token.builtin,
 .token.inserted {
-  color: colors.$teal-70;
+  color: colors.$teal-30;
 }
 
 .token.variable {
@@ -54,11 +54,11 @@
 }
 
 .token.operator {
-  color: colors.$gray-70;
+  color: colors.$gray-30;
 }
 
 .token.function {
-  color: colors.$cyan-60;
+  color: colors.$cyan-30;
   font-weight: 500;
 }
 
