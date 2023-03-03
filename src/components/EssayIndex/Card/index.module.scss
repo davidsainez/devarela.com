@@ -33,12 +33,14 @@
   @include main.heading-2;
 
   margin-bottom: 8px;
+  color: main.$black;
 }
 
 .summary {
   @include main.content;
 
   margin-bottom: 8px;
+  color: main.$black;
 }
 
 .read {
