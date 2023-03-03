@@ -204,13 +204,12 @@ $line-height: 1.4211;
 @mixin tag {
   @include ui;
 
-  padding: 4px;
   background-color: colors.$blue-10;
   color: colors.$blue-80;
 
   font-family: $condensed;
-  font-weight: 500;
-  text-transform: uppercase;
+  font-weight: 400;
+  text-transform: lowercase;
 }
 
 @mixin content {

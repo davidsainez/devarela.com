@@ -42,10 +42,12 @@
   color: main.$black;
 }
 
-.read {
-  @include main.ui;
+.tag {
+  @include main.tag;
+}
 
+.tags {
   display: flex;
-  align-items: center;
+  margin-bottom: main.space(1);
   gap: main.space(1);
 }
