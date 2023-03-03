@@ -51,6 +51,8 @@
   box-sizing: border-box;
   padding-bottom: main.space(1);
   font-size: 14px;
+  // prevent iOS safari from erronously zooming
+  -webkit-text-size-adjust: 100%;
 }
 
 .number {
