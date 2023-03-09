@@ -5,7 +5,7 @@ description: A tutorial on the basic structure of the Ethereum Virtual Machine.
 tags: evm,blockchain
 summary:
   The EVM is the Ethereum Virtual Machine. It is the underlying programming
-  model powering Ethereum.
+  model powering Ethereum. And one other thing.
 ---
 
 ## What is the EVM?

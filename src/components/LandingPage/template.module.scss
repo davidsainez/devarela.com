@@ -1,65 +1,21 @@
 @use '~/scss/main.scss';
 @use '~/scss/gradient.scss' as gradients;
 @use '@carbon/colors';
-@use '@carbon/grid';
 
-.stack {
-  display: flex;
-  flex-direction: column;
-}
-
-@function midpoints($hueOne, $hueTwo, $count) {
-  $start: 0;
-  $stop: 0;
-  @if ($hueOne > $hueTwo) {
-    $start: $hueTwo;
-    $stop: $hueOne;
-  } @else {
-    $start: $hueOne;
-    $stop: $hueTwo;
-  }
-
-  $step: math.floor(($stop - $start) / $count);
-  $hues: ($start);
-  @for $i from 1 through $count {
-    $hues: list.append($hues, $start + $step * 1);
-  }
-
-  @return $hues;
-}
-
+/*
 .background {
-  position: sticky;
-  z-index: -3;
-  top: 0;
-  left: -30vw;
-  overflow: hidden;
-  width: 130vw;
-  height: 100vh;
-  image-rendering: pixelated;
+  grid-row-end: span 1;
+  grid-row-start: 1;
 }
-
-.isolate {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  isolation: isolate;
-}
+*/
 
 .solid {
   position: absolute;
   top: 0;
   width: 100%;
   height: 100%;
-  background: colors.$cool-gray-10;
+  background: colors.$black;
   opacity: 0.6;
-}
-
-.overlay {
-  position: absolute;
-  top: 0;
-  width: 100%;
-  //background: colors.$blue-10;
 }
 
 .gradient {

@@ -394,6 +394,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@babel/runtime@npm:^7.12.5":
+  version: 7.21.0
+  resolution: "@babel/runtime@npm:7.21.0"
+  dependencies:
+    regenerator-runtime: ^0.13.11
+  checksum: 7b33e25bfa9e0e1b9e8828bb61b2d32bdd46b41b07ba7cb43319ad08efc6fda8eb89445193e67d6541814627df0ca59122c0ea795e412b99c5183a0540d338ab
+  languageName: node
+  linkType: hard
+
 "@babel/runtime@npm:^7.18.3":
   version: 7.20.13
   resolution: "@babel/runtime@npm:7.20.13"
@@ -4643,6 +4652,13 @@ __metadata:
   version: 1.1.0
   resolution: "console-control-strings@npm:1.1.0"
   checksum: 8755d76787f94e6cf79ce4666f0c5519906d7f5b02d4b884cf41e11dcd759ed69c57da0670afd9236d229a46e0f9cf519db0cd829c6dca820bb5a5c3def584ed
+  languageName: node
+  linkType: hard
+
+"consolidated-events@npm:^1.1.0 || ^2.0.0":
+  version: 2.0.2
+  resolution: "consolidated-events@npm:2.0.2"
+  checksum: 3ffb9fa2647ffbc07845f7ddb22c2e7be88a51aabf2256da860b5e88d9fbbddea60af51d849330d6159fd698881ecd51f168aa07a4f5d238056db75b2e96ff9a
   languageName: node
   linkType: hard
 
@@ -8902,6 +8918,7 @@ __metadata:
     react-dom: ^18.2.0
     react-icons: ^4.7.1
     react-refractor: ^2.1.7
+    react-waypoint: ^10.3.0
     rimraf: ^3.0.2
     sass: ^1.43.4
     sass-loader: ^13.2.0
@@ -10148,6 +10165,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"prop-types@npm:^15.0.0, prop-types@npm:^15.8.1":
+  version: 15.8.1
+  resolution: "prop-types@npm:15.8.1"
+  dependencies:
+    loose-envify: ^1.4.0
+    object-assign: ^4.1.1
+    react-is: ^16.13.1
+  checksum: c056d3f1c057cb7ff8344c645450e14f088a915d078dcda795041765047fa080d38e5d626560ccaac94a4e16e3aa15f3557c1a9a8d1174530955e992c675e459
+  languageName: node
+  linkType: hard
+
 "prop-types@npm:^15.7.2":
   version: 15.7.2
   resolution: "prop-types@npm:15.7.2"
@@ -10156,17 +10184,6 @@ __metadata:
     object-assign: ^4.1.1
     react-is: ^16.8.1
   checksum: 5eef82fdda64252c7e75aa5c8cc28a24bbdece0f540adb60ce67c205cf978a5bd56b83e4f269f91c6e4dcfd80b36f2a2dec24d362e278913db2086ca9c6f9430
-  languageName: node
-  linkType: hard
-
-"prop-types@npm:^15.8.1":
-  version: 15.8.1
-  resolution: "prop-types@npm:15.8.1"
-  dependencies:
-    loose-envify: ^1.4.0
-    object-assign: ^4.1.1
-    react-is: ^16.13.1
-  checksum: c056d3f1c057cb7ff8344c645450e14f088a915d078dcda795041765047fa080d38e5d626560ccaac94a4e16e3aa15f3557c1a9a8d1174530955e992c675e459
   languageName: node
   linkType: hard
 
@@ -10317,6 +10334,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-is@npm:^17.0.1 || ^18.0.0":
+  version: 18.2.0
+  resolution: "react-is@npm:18.2.0"
+  checksum: e72d0ba81b5922759e4aff17e0252bd29988f9642ed817f56b25a3e217e13eea8a7f2322af99a06edb779da12d5d636e9fda473d620df9a3da0df2a74141d53e
+  languageName: node
+  linkType: hard
+
 "react-is@npm:^17.0.1, react-is@npm:^17.0.2":
   version: 17.0.2
   resolution: "react-is@npm:17.0.2"
@@ -10335,6 +10359,20 @@ __metadata:
   peerDependencies:
     react: ">=15.0.0"
   checksum: 854c96a39256b722bb4b2c5aa6c0a787d6722aae7b1bd462c9940f753d64d87cf3b0424a063365924b46e145a4e6b3cd4663231a2ef5a16e3df2f3118ec88b39
+  languageName: node
+  linkType: hard
+
+"react-waypoint@npm:^10.3.0":
+  version: 10.3.0
+  resolution: "react-waypoint@npm:10.3.0"
+  dependencies:
+    "@babel/runtime": ^7.12.5
+    consolidated-events: ^1.1.0 || ^2.0.0
+    prop-types: ^15.0.0
+    react-is: ^17.0.1 || ^18.0.0
+  peerDependencies:
+    react: ^15.3.0 || ^16.0.0 || ^17.0.0 || ^18.0.0
+  checksum: 5a476432cd4a55ae022b33f82610a1addae92912ec88111cf33c17ef473bbbfc2c695714cb3bd60911259c92c5b6349f80033b022bf1e59e1a4be9b198a70a7a
   languageName: node
   linkType: hard
 

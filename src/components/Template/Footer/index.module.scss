@@ -1,0 +1,59 @@
+@use '~/scss/main.scss';
+
+.panel {
+  position: fixed;
+  z-index: -1;
+  bottom: 0;
+  display: flex;
+  width: 100vw;
+  height: main.$footer-height;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-bottom: main.space(6);
+  background-color: main.$black;
+  color: main.$white;
+}
+
+.content {
+  @include main.full-width;
+
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  font-family: main.$sans;
+  font-size: 16px;
+  gap: main.space(2);
+
+  a {
+    color: hsl(0, 0, 85);
+    text-decoration: none;
+  }
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  color: hsl(0, 0, 85);
+  font-family: main.$sans;
+  font-size: 16px;
+  gap: main.space(2);
+
+  a {
+    text-decoration: none;
+  }
+}
+
+.copyright {
+  margin-top: main.space(6);
+  font-family: main.$sans;
+  font-size: 14px;
+}
+
+.brand {
+  font-family: main.$mono;
+  font-weight: 700;
+}

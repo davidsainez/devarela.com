@@ -9,21 +9,16 @@ html {
   font-size: 16px;
 
   p {
+    font-weight: 300;
     line-height: 1.47;
   }
 
   @media (min-width: 1024px) {
     font-size: 18px;
-    p {
-      line-height: 1.47;
-    }
   }
 
   @media (min-width: 1440px) {
     font-size: 19px;
-    p {
-      line-height: 1.42;
-    }
   }
 }
 
@@ -34,4 +29,9 @@ article {
 code {
   background-color: colors.$cool-gray-10;
   font-family: 'IBM Plex Mono', monospace;
+}
+
+::selection {
+  background-color: hsla(0, 0, 0, 0.8);
+  color: hsl(0, 0, 100);
 }

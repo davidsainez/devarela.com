@@ -6,16 +6,16 @@ tags: blockchain
 summary: The blockchain is dope as fuck.
 ---
 
-The blockchain is a **distributed**, trustless store of information. Let's
-disect each of these terms one by one. You'll often hear the term "distributed
-ledger" used. It is correct in a narrow sense. A ledger is just a KV store from
-block number to transactions.
+The blockchain is a distributed, trustless store of information. Let's disect
+each of these terms one by one. You'll often hear the term "distributed ledger"
+used. It is correct in a narrow sense. A ledger is just a KV store from block
+number to transactions.
 
-The blockchain is a **distributed**, trustless store of information. Let's
-disect each of these terms one by one. You'll often hear the term "distributed
-ledger" used. It is correct in a narrow sense. A ledger is just a KV store from
-block number to transactions. The blockchain is a **distributed**, trustless
-store of information. Let's disect each of these terms `uno` by one.
+The blockchain is a distributed, trustless store of information. Let's disect
+each of these terms one by one. You'll often hear the term "distributed ledger"
+used. It is correct in a narrow sense. A ledger is just a KV store from block
+number to transactions. The blockchain is a distributed, trustless store of
+information. Let's disect each of these terms `uno` by one.
 
 You'll often hear the term "distributed ledger" used. It is correct in a narrow
 sense. A ledger is just a KV store from block number to transactions. Take a

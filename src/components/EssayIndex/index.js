@@ -12,5 +12,5 @@ export const EssayIndex = ({ essays }) => {
     />
   ));
 
-  return cards;
+  return [...cards, ...cards];
 };

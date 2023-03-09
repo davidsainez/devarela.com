@@ -1,6 +1,6 @@
 import { NextSeo, ArticleJsonLd, BreadcrumbJsonLd } from 'next-seo';
 import { Template } from '~/components/Template';
-import { CONF } from '~/Constants';
+//import { CONF } from '~/Constants';
 import styles from './essay.module.scss';
 
 export const Essay = ({ metadata, children }) => {
@@ -11,10 +11,13 @@ export const Essay = ({ metadata, children }) => {
   const date = metadata.date;
   const timestamp = new Date(date).toISOString();
 
-  const Tags = tags.map((tag) => (
-    <span key={tag} className={styles.tag}>
-      {tag}
-    </span>
+  const Tags = tags.map((tag, i) => (
+    <>
+      <span key={tag} className={styles.tag}>
+        {tag}
+      </span>
+      {i < tags.length - 1 && '·'}
+    </>
   ));
 
   return (
@@ -62,23 +65,16 @@ export const Essay = ({ metadata, children }) => {
         ]}
       />
       <Template>
-        <div className={styles.headingBox}>
-          <div className={styles.tags}>{Tags}</div>
-          <h1 className={styles.heading}>{title}</h1>
-          <div className={styles.date}>{metadata.formated_date}</div>
-        </div>
-        {children}
-        <div>
-          <div className={styles.footer}>
-            <p>
-              Hello! I hope you found this essay helpful. If you would like to
-              keep in touch, we can connect on{' '}
-              <a href={CONF.twitter}>twitter</a> or{' '}
-              <a href={CONF.email}>directly</a> via email. Looking forward to
-              hearing from you.
-            </p>
-            <p>— David</p>
+        <div className={styles.box}>
+          <div className={styles.headingBox}>
+            <div className={styles.tags}>{Tags}</div>
+            <h1 className={styles.heading}>{title}</h1>
           </div>
+          <div className={styles.borderBox}>
+            <div className={styles.border} />
+          </div>
+          <div className={styles.date}>{metadata.formated_date}</div>
+          {children}
         </div>
       </Template>
     </>

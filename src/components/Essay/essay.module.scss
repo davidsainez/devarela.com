@@ -6,37 +6,69 @@
 .box {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  margin-top: main.space(10);
+  margin-bottom: main.space(16);
 }
 
 .headingBox {
-  @include main.container;
+  @include main.full-width;
 
-  margin-top: main.space(8);
+  margin-top: main.space(6);
+}
+
+.borderBox {
+  @include main.full-width;
+
+  margin-bottom: main.space(12);
+}
+
+.border {
+  width: 0;
+  height: 1px;
+  animation: grow 1800ms ease 500ms 1 normal forwards;
+  background-color: main.$black;
+}
+
+@keyframes grow {
+  100% {
+    width: 100%;
+  }
 }
 
 .tags {
   display: flex;
+  width: 100%;
   flex-direction: row;
+  //justify-content: center;
   margin-bottom: main.space(1);
+  color: hsl(0, 0, 30);
+  font-family: main.$mono;
+  font-size: 12px;
+  font-weight: 300;
   gap: main.space(1);
 }
 
 .tag {
-  @include main.tag;
+  text-transform: uppercase;
 }
 
 .date {
-  @include main.ui;
+  @include main.container;
 
-  margin-bottom: -8px;
-  color: main.$color-fade;
+  padding-left: main.space(1);
+  color: hsl(0, 0, 30);
+
+  font-family: main.$mono;
+  font-size: 12px;
+  font-weight: 300;
+  //justify-content: center;
+  text-transform: uppercase;
 }
 
 .heading {
-  @include main.heading-1;
-
   margin-bottom: main.space(4);
+  font-family: main.$serif;
+  font-size: 64px;
 }
 
 .footer {

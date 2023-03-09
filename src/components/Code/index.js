@@ -70,7 +70,7 @@ export const Code = ({ children }) => {
     <div>
       <div className={styles.controls}>
         <button className={styles.button} type="button">
-          Copy Text <RiFileCopyLine />
+          <RiFileCopyLine />
         </button>
       </div>
       <div className={className}>

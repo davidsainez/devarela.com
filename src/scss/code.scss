@@ -8,7 +8,8 @@
 }
 
 .token.punctuation {
-  color: colors.$cyan-30;
+  color: hsl(0, 0, 80);
+  font-weight: 300;
 }
 
 .namespace {
@@ -18,7 +19,7 @@
 .token.property,
 .token.keyword,
 .token.tag {
-  color: colors.$magenta-30;
+  color: hsl(240, 60, 80);
 }
 
 .token.class-name {
@@ -46,7 +47,8 @@
 .token.char,
 .token.builtin,
 .token.inserted {
-  color: colors.$teal-30;
+  color: hsl(0, 50, 80);
+  font-weight: 300;
 }
 
 .token.variable {
@@ -54,12 +56,12 @@
 }
 
 .token.operator {
-  color: colors.$gray-30;
+  color: colors.$gray-70;
 }
 
 .token.function {
-  color: colors.$cyan-30;
-  font-weight: 500;
+  color: hsl(0, 0, 100);
+  font-weight: 400;
 }
 
 .token.regex {
@@ -86,7 +88,7 @@
 
 .token.important,
 .token.bold {
-  font-weight: bold;
+  font-weight: 400;
 }
 
 .token.italic {
