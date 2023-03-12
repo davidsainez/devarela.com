@@ -1,8 +1,8 @@
-import * as NextLink from 'next/link';
+import Link from 'next/link';
 import { useInView, animated } from '@react-spring/web';
 import styles from './index.module.scss';
 
-export const Card = ({ href, title, date, summary }) => {
+export const IndexCard = ({ href, title, date, summary }) => {
   const [ref, springs] = useInView(
     () => ({
       from: {
@@ -25,7 +25,7 @@ export const Card = ({ href, title, date, summary }) => {
         <span className={styles.date}>{date}</span>
       </div>
       <h2 className={styles.title}>
-        <NextLink href={href}>{title}</NextLink>
+        <Link href={href}>{title}</Link>
       </h2>
       <p className={styles.summary}>{summary}</p>
       {/*

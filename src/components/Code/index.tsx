@@ -1,7 +1,7 @@
 import React from 'react';
 import Refractor from 'react-refractor';
 import typescript from 'refractor/lang/typescript.js';
-import styles from './code.module.scss';
+import styles from './index.module.scss';
 
 // register all used languages here
 Refractor.registerLanguage(typescript);

@@ -3,7 +3,7 @@ import { NextSeo, ArticleJsonLd, BreadcrumbJsonLd } from 'next-seo';
 import { Template } from '~/components/Template';
 import { RiArrowDropLeftLine } from 'react-icons/ri';
 //import { CONF } from '~/Constants';
-import styles from './essay.module.scss';
+import styles from './index.module.scss';
 
 export const Essay = ({ metadata, children }) => {
   const url = `https://devarela${metadata.href}`;

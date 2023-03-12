@@ -1,13 +1,28 @@
 import { NextSeo } from 'next-seo';
+import { IndexCard } from '~/components/IndexCard';
 import { Template } from '~/components/Template';
 import styles from './landingPage.module.scss';
-import { EssayIndex } from '~/components/EssayIndex';
 
 const TITLE = 'David Sainez';
 const URL = 'sainez.io';
 const DESCRIPTION = `
 David Sainez's collection of essays exploring mental models, software design, and web technology.
 `;
+
+const EssayIndex = ({ essays }) => {
+  const cards = essays.map((essay) => (
+    <IndexCard
+      key={essay.href}
+      tags={essay.tags}
+      href={essay.href}
+      title={essay.title}
+      date={essay.formated_date}
+      summary={essay.summary}
+    />
+  ));
+
+  return [...cards, ...cards];
+};
 
 export const LandingPage = ({ essays }) => {
   return (
