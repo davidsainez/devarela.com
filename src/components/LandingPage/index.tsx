@@ -9,11 +9,10 @@ const DESCRIPTION = `
 David Sainez's collection of essays exploring mental models, software design, and web technology.
 `;
 
-const EssayIndex = ({ essays }) => {
-  const cards = essays.map((essay) => (
+export const LandingPage = ({ essays }) => {
+  const cards: JSX.Element[] = essays.map((essay) => (
     <IndexCard
       key={essay.href}
-      tags={essay.tags}
       href={essay.href}
       title={essay.title}
       date={essay.formated_date}
@@ -21,12 +20,8 @@ const EssayIndex = ({ essays }) => {
     />
   ));
 
-  return [...cards, ...cards];
-};
-
-export const LandingPage = ({ essays }) => {
   return (
-    <Template color>
+    <Template>
       <NextSeo
         title={TITLE}
         description={DESCRIPTION}
@@ -83,7 +78,7 @@ export const LandingPage = ({ essays }) => {
           </div>
           <div className={styles.bg}>
             <div className={styles.index}>
-              <EssayIndex essays={essays} />
+              {cards}
             </div>
           </div>
         </div>
