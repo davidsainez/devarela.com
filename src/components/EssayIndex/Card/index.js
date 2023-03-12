@@ -1,29 +1,47 @@
 import * as NextLink from 'next/link';
-//import { Waypoint } from 'react-waypoint';
+import { useInView, animated } from '@react-spring/web';
 import styles from './index.module.scss';
 
-export const Card = ({ href, title, date, summary, tags }) => {
-  const last = tags.length;
+export const Card = ({ href, title, date, summary }) => {
+  const [ref, springs] = useInView(
+    () => ({
+      from: {
+        opacity: 0,
+        y: 100,
+      },
+      to: {
+        opacity: 1,
+        y: 0,
+      },
+    }),
+    {
+      once: true,
+    }
+  );
 
   return (
-    <div className={styles.box}>
+    <animated.div className={styles.box} ref={ref} style={springs}>
       <div className={styles.meta}>
         <span className={styles.date}>{date}</span>
+      </div>
+      <h2 className={styles.title}>
+        <NextLink href={href}>{title}</NextLink>
+      </h2>
+      <p className={styles.summary}>{summary}</p>
+      {/*
+      <div className={styles.meta}>
         <div className={styles.tags}>
           {tags.map((tag, i) => (
             <>
               <span key={tag} className={styles.tag}>
                 {tag}
               </span>
-              {i < last - 1 && '·'}
+              {i < tags.length - 1 && '·'}
             </>
           ))}
         </div>
       </div>
-      <h2 className={styles.title}>
-        <NextLink href={href}>{title}</NextLink>
-      </h2>
-      <p className={styles.summary}>{summary}</p>
-    </div>
+       */}
+    </animated.div>
   );
 };

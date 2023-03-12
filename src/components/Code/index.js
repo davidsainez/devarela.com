@@ -2,7 +2,6 @@ import React from 'react';
 import Refractor from 'react-refractor';
 import typescript from 'refractor/lang/typescript.js';
 import styles from './code.module.scss';
-import { RiFileCopyLine } from 'react-icons/ri';
 
 // register all used languages here
 Refractor.registerLanguage(typescript);
@@ -68,11 +67,13 @@ export const Code = ({ children }) => {
 
   return (
     <div>
+      {/*
       <div className={styles.controls}>
         <button className={styles.button} type="button">
           <RiFileCopyLine />
         </button>
       </div>
+       */}
       <div className={className}>
         <div className={styles.scrollHack}>
           <Refractor language="ts" value={rawText} markers={refractorMarkers} />

@@ -8,10 +8,21 @@
   @include main.full-width;
 
   display: grid;
-  padding-top: main.space(20);
-  padding-bottom: main.space(20);
+  padding-top: main.space(8);
+  padding-bottom: main.space(8);
   border-top: solid 1px hsl(0, 0, 90);
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
+
+  @media (min-width: main.$tablet) {
+    padding-top: main.space(12);
+    padding-bottom: main.space(12);
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media (min-width: main.$desktop) {
+    padding-top: main.space(20);
+    padding-bottom: main.space(20);
+  }
 }
 
 .info {
@@ -27,15 +38,38 @@
   font-weight: 400;
 }
 
+.connect {
+  margin-top: main.space(4);
+  @media (min-width: main.$tablet) {
+    margin-top: 0;
+  }
+}
+
 .title {
   font-family: main.$serif;
-  font-size: 30px;
+  font-size: 24px;
   font-weight: 300;
+
+  @media (min-width: main.$tablet) {
+    font-size: 24px;
+  }
+
+  @media (min-width: main.$desktop) {
+    font-size: 32px;
+  }
 }
 
 .sub {
-  color: hsl(0, 0, 40);
+  color: hsl(0, 0, 30);
   font-family: main.$serif;
-  font-size: 25px;
+  font-size: 24px;
   font-weight: 300;
+
+  @media (min-width: main.$tablet) {
+    font-size: 24px;
+  }
+
+  @media (min-width: main.$desktop) {
+    font-size: 24px;
+  }
 }

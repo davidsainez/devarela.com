@@ -133,7 +133,7 @@ $line-height: 1.4211;
   }
 
   @media (min-width: 1024px) {
-    width: 980px;
+    width: 690px;
   }
 }
 
@@ -183,7 +183,7 @@ $line-height: 1.4211;
 
 // control width of any element to prevent long lines
 @mixin container {
-  width: 87.5%;
+  width: 95%;
   max-width: 414px;
   margin-right: auto;
   margin-left: auto;
@@ -198,11 +198,21 @@ $line-height: 1.4211;
   }
 }
 
+$tablet: 768px;
+$desktop: 1024px;
+
 @mixin full-width {
+  width: 87.5%;
+  max-width: 414px;
   margin-right: auto;
   margin-left: auto;
 
-  @media (min-width: 1024px) {
+  @media (min-width: $tablet) {
+    width: 730px;
+    max-width: none;
+  }
+
+  @media (min-width: $desktop) {
     width: 980px;
   }
 }

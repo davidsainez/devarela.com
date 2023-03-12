@@ -5,10 +5,12 @@
   position: relative;
   padding-top: main.space(2);
   padding-bottom: main.space(1);
-  //border: solid 1px hsl(0, 0, 95);
-  margin-top: 4px;
-  background-color: hsl(0, 0, 0);
-  color: main.$white;
+  //border-left: solid 2px hsl(240, 50, 30);
+  border: solid 1px hsl(0, 0, 0);
+  margin-top: main.space(6);
+  background-color: hsl(0, 0, 20);
+  border-radius: 10px;
+  color: hsl(0, 0, 95);
   font-family: main.$mono;
   line-height: 1.4;
   overflow-x: auto;
@@ -67,5 +69,5 @@
 
 .marker {
   position: relative;
-  background-color: hsl(0, 0, 15);
+  //background-color: hsl(240, 0, 95);
 }

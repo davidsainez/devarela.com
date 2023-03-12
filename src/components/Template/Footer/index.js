@@ -26,7 +26,7 @@ export const Footer = () => {
             <a href="https://stackoverflow.com/user/">StackOverflow</a>
           </div>
         </div>
-        <div className={styles.copyright}>© 2023 David Sainez.</div>
+        <div className={styles.copyright}>© 2023 David Sainez</div>
       </div>
     </div>
   );

@@ -4,11 +4,17 @@
 .heading {
   @include main.container;
 
-  margin-top: main.space(6);
-  margin-bottom: main.space(3);
+  margin-top: main.space(4);
+  margin-bottom: main.space(2);
+
   font-family: main.$serif;
-  font-size: 32px;
-  font-weight: 300;
+  font-size: 24px;
+  font-weight: 400;
+
+  @media (min-width: main.$tablet) {
+    margin-top: main.space(6);
+    margin-bottom: main.space(3);
+  }
 }
 
 .paragraph {
@@ -16,5 +22,12 @@
 
   margin-top: 16px;
   margin-bottom: 16px;
-  font-family: main.$sans;
+  font-family: main.$serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+
+  @media (min-width: main.$tablet) {
+    font-size: 20px;
+  }
 }

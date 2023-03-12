@@ -26,6 +26,7 @@
     "@markdoc/next.js": "^0.2.1",
     "@next/bundle-analyzer": "^13.1.6",
     "@next/font": "^13.2.2",
+    "@react-spring/web": "^9.7.1",
     "formik": "^2.2.9",
     "glob-promise": "^6.0.2",
     "next": "^13.1.0",

@@ -1,5 +1,7 @@
+import * as NextLink from 'next/link';
 import { NextSeo, ArticleJsonLd, BreadcrumbJsonLd } from 'next-seo';
 import { Template } from '~/components/Template';
+import { RiArrowDropLeftLine } from 'react-icons/ri';
 //import { CONF } from '~/Constants';
 import styles from './essay.module.scss';
 
@@ -69,12 +71,15 @@ export const Essay = ({ metadata, children }) => {
           <div className={styles.headingBox}>
             <div className={styles.tags}>{Tags}</div>
             <h1 className={styles.heading}>{title}</h1>
-          </div>
-          <div className={styles.borderBox}>
             <div className={styles.border} />
           </div>
           <div className={styles.date}>{metadata.formated_date}</div>
           {children}
+          <div className={styles.back}>
+            <NextLink href="/">
+              <RiArrowDropLeftLine /> Back
+            </NextLink>
+          </div>
         </div>
       </Template>
     </>

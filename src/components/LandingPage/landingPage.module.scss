@@ -4,15 +4,32 @@
 @use '~/scss/gradient.scss' as gradients;
 
 .art {
-  width: 80%;
-  border: solid 1px hsl(0, 0, 70);
-  margin-top: -80px;
-  margin-left: auto;
-  //margin-top: main.space(2);
+  width: 100%;
   animation: slide 800ms ease 200ms 1 normal forwards;
-  aspect-ratio: 2/3;
+  aspect-ratio: 100/90;
   object-fit: cover;
+  object-position: top;
   opacity: 0%;
+
+  @media (min-width: main.$tablet) {
+    width: 90%;
+    margin-top: main.space(6);
+    margin-right: 0;
+    margin-left: auto;
+    aspect-ratio: 1/2;
+    grid-area: art;
+  }
+
+  @media (min-width: main.$desktop) {
+    width: 80%;
+
+    border: solid 1px hsl(0, 0, 70);
+    margin-top: -80px;
+    margin-right: 0;
+    margin-left: auto;
+    animation: slide 800ms ease 200ms 1 normal forwards;
+    aspect-ratio: 2/3;
+  }
 }
 
 @keyframes slide {
@@ -60,10 +77,31 @@
   @include main.full-width;
 
   display: grid;
-  margin-top: main.space(18);
-  margin-bottom: main.space(12);
+  margin-top: main.space(8);
+  margin-bottom: main.space(2);
   gap: main.space(2);
-  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    'title'
+    'art'
+    'about';
+  grid-template-columns: 1fr;
+
+  @media (min-width: main.$tablet) {
+    margin-top: main.space(12);
+    margin-bottom: main.space(6);
+    grid-template-areas:
+      'title art'
+      'about art';
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media (min-width: main.$desktop) {
+    margin-top: main.space(18);
+    margin-bottom: main.space(12);
+    grid-template-areas:
+      'title art'
+      'about art';
+  }
 }
 
 .yep {
@@ -107,7 +145,17 @@
 }
 
 .container {
-  margin-top: main.space(10);
+  margin-top: main.space(4);
+  grid-area: about;
+
+  @media (min-width: main.$tablet) {
+    margin-top: main.space(6);
+  }
+
+  @media (min-width: main.$desktop) {
+    width: 100%;
+    margin-top: main.space(10);
+  }
 }
 
 .heading {
@@ -120,9 +168,9 @@
   margin-top: main.space(8);
   background-image: linear-gradient(
     hsl(0, 0, 100) 1%,
-    hsl(0, 0, 100) 69%,
-    hsl(240, 5, 93) 70%,
-    hsl(240, 5, 97) 71%,
+    hsl(0, 0, 100) 59%,
+    hsl(240, 5, 93) 60%,
+    hsl(240, 5, 97) 61%,
     hsl(240, 5, 97) 99%
   );
 }
@@ -132,13 +180,25 @@
 }
 
 .spacer {
-  height: main.space(16);
+  height: main.space(8);
+
+  @media (min-width: main.$tablet) {
+    height: main.space(10);
+  }
+
+  @media (min-width: main.$desktop) {
+    height: main.space(14);
+  }
 }
 
 .sectionHeading {
   font-family: main.$serif;
   font-size: 32px;
-  font-weight: 400;
+  font-weight: 300;
+
+  @media (min-width: main.$tablet) {
+    font-size: 40px;
+  }
 }
 
 .bar {
@@ -149,16 +209,23 @@
 
 .welcome {
   font-family: main.$serif;
-  //font-size: 64px;
-  font-size: 72px;
+  font-size: 48px;
   font-weight: 300;
+
+  @media (min-width: main.$tablet) {
+    font-size: 56px;
+  }
+
+  @media (min-width: main.$desktop) {
+    font-size: 72px;
+  }
 }
 
 .about {
   margin-bottom: main.space(2);
-  font-family: main.$sans;
-  font-size: 20px;
-  font-weight: 300;
+  font-family: main.$serif;
+  font-size: 18px;
+  font-weight: 400;
   letter-spacing: 0.018em;
   line-height: 1.4;
 }
