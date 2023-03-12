@@ -3,16 +3,11 @@
 @use '@carbon/grid';
 
 .all {
-  display: flex;
-  //overflow: hidden;
-  flex-direction: column;
-  margin-bottom: main.$footer-height;
   background-color: main.$white;
   color: main.$black;
   font-family: main.$sans;
 
   a {
-    //color: hsl(240, 95%, 60%);
     color: main.$black;
     text-decoration: underline;
     //text-decoration-thickness: from-font;
@@ -84,13 +79,20 @@ $borderWeight: 1px;
 $border: bordershadow(1000);
 $stripe: stripeshadow(1000);
 
+.headerPanel {
+  padding-top: main.space(2);
+  padding-bottom: main.space(2);
+
+  @media (min-width: main.$tablet) {
+    padding-top: main.space(5);
+  }
+}
+
 .header {
   @include main.full-width;
 
   display: flex;
   justify-content: space-between;
-
-  padding-top: main.space(5);
 
   a {
     text-decoration: none;

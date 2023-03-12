@@ -72,7 +72,6 @@ export const Essay = ({ metadata, children }) => {
           <div className={styles.headingBox}>
             <div className={styles.tags}>{Tags}</div>
             <h1 className={styles.heading}>{title}</h1>
-            <div className={styles.border} />
           </div>
           <div className={styles.date}>{metadata.formated_date}</div>
           {children}

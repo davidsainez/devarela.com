@@ -9,7 +9,7 @@ export const Footer = () => {
           <div>Writing</div>
           <div>Me</div>
         </div>
-        <div className={styles.links}>
+        <div id={styles.links}>
           <div>
             <a href="mailto:david@sainez.io">Email</a>
           </div>

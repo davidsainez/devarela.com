@@ -183,7 +183,7 @@ $line-height: 1.4211;
 
 // control width of any element to prevent long lines
 @mixin container {
-  width: 95%;
+  width: 87.5%;
   max-width: 414px;
   margin-right: auto;
   margin-left: auto;
@@ -272,5 +272,3 @@ $desktop: 1024px;
 $color-fade: colors.$cool-gray-70;
 $color-secondary: colors.$cool-gray-80;
 $color-primary: colors.$black;
-
-$footer-height: space(40);
