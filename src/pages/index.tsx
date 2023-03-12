@@ -1,5 +1,5 @@
-import { fetchEssayMetadata } from '~/Data';
-import { LandingPage } from '~/components/LandingPage';
+import { fetchEssayMetadata } from 'Data';
+import { LandingPage } from 'components/LandingPage';
 
 const Lando = ({ essays }) => {
   return <LandingPage essays={essays} />;

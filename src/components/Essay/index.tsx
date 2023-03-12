@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { NextSeo, ArticleJsonLd, BreadcrumbJsonLd } from 'next-seo';
-import { Template } from '~/components/Template';
+import { Template } from 'components/Template';
 import { RiArrowDropLeftLine } from 'react-icons/ri';
 //import { CONF } from '~/Constants';
 import styles from './index.module.scss';

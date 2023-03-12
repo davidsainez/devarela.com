@@ -1,6 +1,6 @@
 import { NextSeo } from 'next-seo';
-import { IndexCard } from '~/components/IndexCard';
-import { Template } from '~/components/Template';
+import { IndexCard } from 'components/IndexCard';
+import { Template } from 'components/Template';
 import styles from './landingPage.module.scss';
 
 const TITLE = 'David Sainez';

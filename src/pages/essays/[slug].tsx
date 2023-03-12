@@ -3,10 +3,10 @@ import glob from 'glob-promise';
 import path from 'path';
 import Markdoc from '@markdoc/markdoc';
 import fs from 'fs';
-import { getMetadataFromAST } from '~/Data';
-import { Paragraph, Heading } from '~/components/Article';
-import { Essay } from '~/components/Essay';
-import { Code } from '~/components/Code';
+import { getMetadataFromAST } from 'Data';
+import { Paragraph, Heading } from 'components/Article';
+import { Essay } from '/components/Essay';
+import { Code } from 'components/Code';
 
 const isTag = (tag) => {
   return tag.$$mdtype === 'Tag';
