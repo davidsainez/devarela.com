@@ -1,7 +1,4 @@
 @use '~/scss/main.scss';
-@use '@carbon/type';
-@use '@carbon/layout';
-@use '@carbon/colors';
 
 .box {
   display: flex;
@@ -80,19 +77,6 @@
   @media (min-width: main.$tablet) {
     margin-bottom: main.space(3);
     font-size: 56px;
-  }
-}
-
-.footer {
-  @include main.container;
-
-  padding-top: main.space(4);
-
-  border-top: solid 1px colors.$cool-gray-20;
-  margin-top: main.space(6);
-
-  p {
-    margin-bottom: main.space(1);
   }
 }
 

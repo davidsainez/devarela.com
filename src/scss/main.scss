@@ -1,5 +1,3 @@
-@use '@carbon/colors';
-
 /*************************************************
  * Utilities
  ************************************************/
@@ -156,7 +154,7 @@ $line-height: 1.4211;
 
 @mixin scrollbar(
   $size: 4px,
-  $foreground-color: colors.$cool-gray-30,
+  $foreground-color: hsl(0, 0, 30),
   $background-color: rgba(0, 0, 0, 0)
 ) {
   // For Chrome & Safari
@@ -269,6 +267,6 @@ $desktop: 1024px;
   }
 }
 
-$color-fade: colors.$cool-gray-70;
-$color-secondary: colors.$cool-gray-80;
-$color-primary: colors.$black;
+$color-fade: hsl(0, 0, 70);
+$color-secondary: hsl(0, 0, 80);
+$color-primary: hsl(0, 0, 0);

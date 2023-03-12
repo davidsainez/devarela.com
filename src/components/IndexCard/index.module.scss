@@ -1,6 +1,4 @@
 @use '~/scss/main.scss';
-@use '@carbon/colors';
-@use '@carbon/grid';
 
 .box {
   @include main.container;
