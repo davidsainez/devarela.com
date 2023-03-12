@@ -5,7 +5,7 @@ import Markdoc from '@markdoc/markdoc';
 import fs from 'fs';
 import { getMetadataFromAST } from 'Data';
 import { Paragraph, Heading } from 'components/Article';
-import { Essay } from '/components/Essay';
+import { Essay } from 'components/Essay';
 import { Code } from 'components/Code';
 
 const isTag = (tag) => {
