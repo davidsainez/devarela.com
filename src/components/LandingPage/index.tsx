@@ -76,11 +76,3 @@ export const LandingPage = ({ essays }) => {
     </Template>
   );
 };
-
-/*
-              <pre>
-                <p className={styles.about}>
-                  {'                            '}— David Sainez
-                </p>
-              </pre>
-              */

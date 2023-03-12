@@ -1,4 +1,4 @@
-import * as NextLink from 'next/link';
+import Link from 'next/link';
 import { NextSeo, ArticleJsonLd, BreadcrumbJsonLd } from 'next-seo';
 import { Template } from '~/components/Template';
 import { RiArrowDropLeftLine } from 'react-icons/ri';
@@ -51,6 +51,7 @@ export const Essay = ({ metadata, children }) => {
         ]}
         description={description}
         isAccessibleForFree={true}
+        images={[]}
       />
       <BreadcrumbJsonLd
         itemListElements={[
@@ -76,9 +77,9 @@ export const Essay = ({ metadata, children }) => {
           <div className={styles.date}>{metadata.formated_date}</div>
           {children}
           <div className={styles.back}>
-            <NextLink href="/">
+            <Link href="/">
               <RiArrowDropLeftLine /> Back
-            </NextLink>
+            </Link>
           </div>
         </div>
       </Template>

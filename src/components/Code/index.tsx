@@ -18,7 +18,7 @@ function getRawText(children) {
   return text;
 }
 
-const getWidth = (rawText) => {
+const getWidth = (rawText: string) => {
   let max = 0;
 
   rawText.split('\n').forEach((chunk) => {
@@ -30,16 +30,16 @@ const getWidth = (rawText) => {
   return max;
 };
 
-function textData(children) {
+function textData(children): [string, number] {
   const text = getRawText(children);
   const count = (text.match(/\n/g) || []).length;
   return [text, count];
 }
 
-function arrayRange(start, stop, step) {
+function arrayRange(start: number, stop: number, step: number) {
   return Array.from(
     { length: (stop - start) / step + 1 },
-    (value, index) => start + index * step
+    (_, index) => start + index * step
   );
 }
 
@@ -67,13 +67,6 @@ export const Code = ({ children }) => {
 
   return (
     <div>
-      {/*
-      <div className={styles.controls}>
-        <button className={styles.button} type="button">
-          <RiFileCopyLine />
-        </button>
-      </div>
-       */}
       <div className={className}>
         <div className={styles.scrollHack}>
           <Refractor language="ts" value={rawText} markers={refractorMarkers} />

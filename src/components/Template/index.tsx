@@ -1,4 +1,4 @@
-import * as NextLink from 'next/link';
+import Link from 'next/link';
 import { Hook } from './Hook';
 import { Footer } from './Footer';
 import styles from './index.module.scss';
@@ -11,12 +11,12 @@ export const Template = ({ children }) => {
           <div className={styles.header}>
             <div className={styles.info}>
               <span className={styles.name}>
-                <NextLink href="/">sainez.io</NextLink>
+                <Link href="/">sainez.io</Link>
               </span>
             </div>
             <div className={styles.nav}>
-              <NextLink href="/">Writing</NextLink>
-              <NextLink href="/me">Me</NextLink>
+              <Link href="/">Writing</Link>
+              <Link href="/me">Me</Link>
             </div>
           </div>
         </div>
