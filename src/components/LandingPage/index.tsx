@@ -10,7 +10,7 @@ David Sainez's collection of essays exploring mental models, software design, an
 `;
 
 export const LandingPage = ({ essays }) => {
-  const cards: JSX.Element[] = essays.map((essay) => (
+  const cards = essays.map((essay) => (
     <IndexCard
       key={essay.href}
       href={essay.href}
@@ -77,9 +77,7 @@ export const LandingPage = ({ essays }) => {
             <div className={styles.spacer} />
           </div>
           <div className={styles.bg}>
-            <div className={styles.index}>
-              {cards}
-            </div>
+            <div className={styles.index}>{cards}</div>
           </div>
         </div>
       </div>
