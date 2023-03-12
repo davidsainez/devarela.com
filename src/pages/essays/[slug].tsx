@@ -1,5 +1,5 @@
 import React from 'react';
-import type { createElement, ComponentType, Fragment, ReactNode } from 'react';
+import type { createElement, ComponentType, Fragment } from 'react';
 import glob from 'glob-promise';
 import path from 'path';
 import Markdoc from '@markdoc/markdoc';
@@ -46,7 +46,7 @@ type ReactShape = Readonly<{
 
 function tagName(
   name: string,
-  components: Record<string, Component> | ((string: string) => Component)
+  components: Record<string, Component> | ((_: string) => Component)
 ): string | Component {
   return typeof name !== 'string'
     ? name // This can be an object, e.g. when React.forwardRef is used
@@ -63,16 +63,26 @@ function dynamic(
   { components = {} } = {}
 ) {
   function deepRender(value: any): any {
-    if (value == null || typeof value !== 'object') return value;
+    if (value == null || typeof value !== 'object') {
+      return value;
+    }
 
-    if (Array.isArray(value)) return value.map((item) => deepRender(item));
+    if (Array.isArray(value)) {
+      return value.map((item) => deepRender(item));
+    }
 
-    if (value.$$mdtype === 'Tag') return render(value);
+    if (value.$$mdtype === 'Tag') {
+      return render(value);
+    }
 
-    if (typeof value !== 'object') return value;
+    if (typeof value !== 'object') {
+      return value;
+    }
 
     const output: Record<string, Scalar> = {};
-    for (const [k, v] of Object.entries(value)) output[k] = deepRender(v);
+    for (const [k, v] of Object.entries(value)) {
+      output[k] = deepRender(v);
+    }
     return output;
   }
 
@@ -91,7 +101,9 @@ function dynamic(
       children = [],
     } = node;
 
-    if (className) attrs.className = className;
+    if (className) {
+      attrs.className = className;
+    }
 
     return React.createElement(
       tagName(name, components),
