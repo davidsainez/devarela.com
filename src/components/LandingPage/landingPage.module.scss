@@ -68,7 +68,7 @@
   }
 
   @media (min-width: main.$desktop) {
-    margin-top: main.space(18);
+    margin-top: main.space(12);
     margin-bottom: main.space(12);
     grid-template-areas:
       'title art'
@@ -96,17 +96,6 @@
   font-weight: 500;
 }
 
-.half {
-  margin-top: main.space(8);
-  background-image: linear-gradient(
-    hsl(0, 0, 100) 1%,
-    hsl(0, 0, 100) 59%,
-    hsl(240, 5, 93) 60%,
-    hsl(240, 5, 97) 61%,
-    hsl(240, 5, 97) 99%
-  );
-}
-
 .section {
   @include main.full-width;
 }
@@ -124,9 +113,10 @@
 }
 
 .sectionHeading {
-  font-family: main.$serif;
+  font-family: main.$display;
   font-size: 32px;
-  font-weight: 300;
+  font-weight: 700;
+  text-transform: uppercase;
 
   @media (min-width: main.$tablet) {
     font-size: 40px;
@@ -134,9 +124,10 @@
 }
 
 .welcome {
-  font-family: main.$serif;
+  font-family: main.$display;
   font-size: 48px;
-  font-weight: 300;
+  font-weight: 700;
+  text-transform: uppercase;
 
   @media (min-width: main.$tablet) {
     font-size: 56px;
@@ -149,7 +140,7 @@
 
 .about {
   margin-bottom: main.space(2);
-  font-family: main.$serif;
+  font-family: main.$sans;
   font-size: 18px;
   font-weight: 400;
   letter-spacing: 0.018em;
@@ -159,14 +150,15 @@
 .essays {
   display: flex;
   flex-direction: column;
+  padding-top: main.space(8);
+  border-top: solid 1px hsl(240, 5, 93);
+  background-color: hsl(240, 5, 97);
 }
 
 .index {
   @include main.full-width;
 
   padding-bottom: main.space(10);
-}
 
-.bg {
-  background-color: hsl(240, 5, 97);
+  margin-top: main.space(10);
 }

@@ -29,11 +29,11 @@
   gap: main.space(6);
 }
 
-.title {
+#title {
   margin-bottom: main.space(1);
-  font-family: main.$serif;
+  font-family: main.$sans;
   font-size: 24px;
-  font-weight: 300;
+  font-weight: 400;
   letter-spacing: -0.03em;
 
   a {
@@ -48,7 +48,7 @@
 
 .summary {
   color: hsl(0, 0, 20);
-  font-family: main.$serif;
+  font-family: main.$sans;
   font-size: 16px;
   font-weight: 400;
   line-height: 1.4;

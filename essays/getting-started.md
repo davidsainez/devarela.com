@@ -1,5 +1,5 @@
 ---
-title: Get started with Markdoc
+title: Get Started with Markdoc
 date: 2023-02-02
 description:
   A markdoc tutorial which covers the basics and gets you up to speed quickly.

@@ -37,7 +37,7 @@ export const IndexCard: FC<IndexCardProps> = ({
       <div className={styles.meta}>
         <span className={styles.date}>{date}</span>
       </div>
-      <h2 className={styles.title}>
+      <h2 id={styles.title}>
         <Link href={href}>{title}</Link>
       </h2>
       <p className={styles.summary}>{summary}</p>
