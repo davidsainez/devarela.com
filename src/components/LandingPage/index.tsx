@@ -1,6 +1,8 @@
+import { FC } from 'react';
 import { NextSeo } from 'next-seo';
 import { IndexCard } from 'components/IndexCard';
 import { Template } from 'components/Template';
+import { Metadata } from 'Data';
 import styles from './landingPage.module.scss';
 
 const TITLE = 'David Sainez';
@@ -9,7 +11,11 @@ const DESCRIPTION = `
 David Sainez's collection of essays exploring mental models, software design, and web technology.
 `;
 
-export const LandingPage = ({ essays }) => {
+type LandingPageProps = {
+  essays: Array<Metadata>;
+};
+
+export const LandingPage: FC<LandingPageProps> = ({ essays }) => {
   const cards = essays.map((essay) => (
     <IndexCard
       key={essay.href}

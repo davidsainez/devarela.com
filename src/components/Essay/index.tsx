@@ -1,11 +1,18 @@
+import { FC, ReactNode } from 'react';
 import Link from 'next/link';
 import { NextSeo, ArticleJsonLd, BreadcrumbJsonLd } from 'next-seo';
 import { Template } from 'components/Template';
 import { RiArrowDropLeftLine } from 'react-icons/ri';
+import { Metadata } from 'Data';
 //import { CONF } from '~/Constants';
 import styles from './index.module.scss';
 
-export const Essay = ({ metadata, children }) => {
+type EssayProps = {
+  metadata: Metadata;
+  children: ReactNode;
+};
+
+export const Essay: FC<EssayProps> = ({ metadata, children }) => {
   const url = `https://devarela${metadata.href}`;
   const title = metadata.title;
   const description = metadata.summary;

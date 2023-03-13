@@ -1,4 +1,4 @@
-import React from 'react';
+import { Children, FC, ReactNode } from 'react';
 import Refractor from 'react-refractor';
 import typescript from 'refractor/lang/typescript.js';
 import styles from './index.module.scss';
@@ -6,10 +6,10 @@ import styles from './index.module.scss';
 // register all used languages here
 Refractor.registerLanguage(typescript);
 
-function getRawText(children) {
+function getRawText(children: ReactNode) {
   let text = '';
 
-  React.Children.map(children, (child) => {
+  Children.map(children, (child) => {
     if (typeof child === 'string') {
       text += child;
     }
@@ -30,7 +30,7 @@ const getWidth = (rawText: string) => {
   return max;
 };
 
-function textData(children): [string, number] {
+function textData(children: ReactNode): [string, number] {
   const text = getRawText(children);
   const count = (text.match(/\n/g) || []).length;
   return [text, count];
@@ -43,7 +43,10 @@ function arrayRange(start: number, stop: number, step: number) {
   );
 }
 
-export const Code = ({ children }) => {
+type CodeProps = {
+  children: ReactNode;
+};
+export const Code: FC<CodeProps> = ({ children }) => {
   const [rawText, lineCount] = textData(children);
   const markers = { start: 3, stop: 10 };
   const numberMarkers = arrayRange(markers.start, markers.stop, 1);

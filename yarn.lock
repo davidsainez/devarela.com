@@ -2936,16 +2936,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/glob@npm:^8.0.0":
-  version: 8.0.1
-  resolution: "@types/glob@npm:8.0.1"
-  dependencies:
-    "@types/minimatch": ^5.1.2
-    "@types/node": "*"
-  checksum: 98f3d0403c09638348a2f3b30aac2a3d6bdc306bce3ceb868f4794fef4f02727ccdf0dab0c7b7d65fd38a1afa1e48f02de56d29d2babe94ee9b204ca54acb31f
-  languageName: node
-  linkType: hard
-
 "@types/graceful-fs@npm:^4.1.2":
   version: 4.1.5
   resolution: "@types/graceful-fs@npm:4.1.5"
@@ -2986,6 +2976,13 @@ __metadata:
   dependencies:
     "@types/istanbul-lib-report": "*"
   checksum: f1ad54bc68f37f60b30c7915886b92f86b847033e597f9b34f2415acdbe5ed742fa559a0a40050d74cdba3b6a63c342cac1f3a64dba5b68b66a6941f4abd7903
+  languageName: node
+  linkType: hard
+
+"@types/js-yaml@npm:^4.0.5":
+  version: 4.0.5
+  resolution: "@types/js-yaml@npm:4.0.5"
+  checksum: 7dcac8c50fec31643cc9d6444b5503239a861414cdfaa7ae9a38bc22597c4d850c4b8cec3d82d73b3fbca408348ce223b0408d598b32e094470dfffc6d486b4d
   languageName: node
   linkType: hard
 
@@ -3043,13 +3040,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/minimatch@npm:^5.1.2":
-  version: 5.1.2
-  resolution: "@types/minimatch@npm:5.1.2"
-  checksum: 0391a282860c7cb6fe262c12b99564732401bdaa5e395bee9ca323c312c1a0f45efbf34dce974682036e857db59a5c9b1da522f3d6055aeead7097264c8705a8
-  languageName: node
-  linkType: hard
-
 "@types/minimist@npm:^1.2.0":
   version: 1.2.2
   resolution: "@types/minimist@npm:1.2.2"
@@ -3085,6 +3075,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/prismjs@npm:*":
+  version: 1.26.0
+  resolution: "@types/prismjs@npm:1.26.0"
+  checksum: cd5e7a6214c1f4213ec512a5fcf6d8fe37a56b813fc57ac95b5ff5ee074742bfdbd2f2730d9fd985205bf4586728e09baa97023f739e5aa1c9735a7c1ecbd11a
+  languageName: node
+  linkType: hard
+
 "@types/prop-types@npm:*":
   version: 15.7.5
   resolution: "@types/prop-types@npm:15.7.5"
@@ -3100,6 +3097,15 @@ __metadata:
     "@types/scheduler": "*"
     csstype: ^3.0.2
   checksum: e752df961105e5127652460504785897ca6e77259e0da8f233f694f9e8f451cde7fa0709d4456ade0ff600c8ce909cfe29f9b08b9c247fa9b734e126ec53edd7
+  languageName: node
+  linkType: hard
+
+"@types/refractor@npm:^3.0.2":
+  version: 3.0.2
+  resolution: "@types/refractor@npm:3.0.2"
+  dependencies:
+    "@types/prismjs": "*"
+  checksum: 91d49fbf4b523065d9fb6e6d3d87ff3f0d4e2246b0cdd9d13a3664512322eaf718f7cd95a8980cfb4228d5f5875991c0a879a0405cc36f83c5fbfc943c8d09f2
   languageName: node
   linkType: hard
 
@@ -6273,17 +6279,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"glob-promise@npm:^6.0.2":
-  version: 6.0.2
-  resolution: "glob-promise@npm:6.0.2"
-  dependencies:
-    "@types/glob": ^8.0.0
-  peerDependencies:
-    glob: ^8.0.3
-  checksum: 3caa63b052ddcf28d3498a0c93ef623bc43d0fa57487844782b77175c32db1602fd63e4e26091075125083b21eb3e81b4318d5d24139b9b033a764e64b6b3bc3
-  languageName: node
-  linkType: hard
-
 "glob-to-regexp@npm:^0.4.1":
   version: 0.4.1
   resolution: "glob-to-regexp@npm:0.4.1"
@@ -8795,14 +8790,15 @@ __metadata:
     "@next/bundle-analyzer": ^13.1.6
     "@next/font": ^13.2.2
     "@react-spring/web": ^9.7.1
+    "@types/js-yaml": ^4.0.5
     "@types/react": 18.0.28
+    "@types/refractor": ^3.0.2
     css-loader: ^6.7.3
     cssnano: ^5.1.15
     eslint: ^7.32.0
     eslint-config-carbon: ^2.8.0
     eslint-config-next: ^12.0.1
     formik: ^2.2.9
-    glob-promise: ^6.0.2
     husky: ^7.0.0
     jest: ^27.3.1
     jest-watch-typeahead: ^1.0.0
@@ -8827,6 +8823,7 @@ __metadata:
     stylelint: ^13.13.1
     stylelint-config-carbon: ^1.7.0
     stylelint-config-standard-scss: ^7.0.1
+    typescript: ^4.9.5
     webpack: ^5.75.0
     webpack-cli: ^5.0.1
   languageName: unknown
@@ -12091,6 +12088,16 @@ typescript@^4.4.3:
   languageName: node
   linkType: hard
 
+typescript@^4.9.5:
+  version: 4.9.5
+  resolution: "typescript@npm:4.9.5"
+  bin:
+    tsc: bin/tsc
+    tsserver: bin/tsserver
+  checksum: ee000bc26848147ad423b581bd250075662a354d84f0e06eb76d3b892328d8d4440b7487b5a83e851b12b255f55d71835b008a66cbf8f255a11e4400159237db
+  languageName: node
+  linkType: hard
+
 "typescript@patch:typescript@^4.4.3#~builtin<compat/typescript>":
   version: 4.4.4
   resolution: "typescript@patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=d8b4e7"
@@ -12098,6 +12105,16 @@ typescript@^4.4.3:
     tsc: bin/tsc
     tsserver: bin/tsserver
   checksum: 4a639b6886be13616582ab82abdb4ffbbf5b0458069d13c10cd5d44fc1cafa33eab005e8ac8691ad8fae249fee85844bb7d523263c4568fe9a2ca31cd3c91c3d
+  languageName: node
+  linkType: hard
+
+"typescript@patch:typescript@^4.9.5#~builtin<compat/typescript>":
+  version: 4.9.5
+  resolution: "typescript@patch:typescript@npm%3A4.9.5#~builtin<compat/typescript>::version=4.9.5&hash=d8b4e7"
+  bin:
+    tsc: bin/tsc
+    tsserver: bin/tsserver
+  checksum: dc93a8cb88f42a4b5f074798a38ddf3ba5a8e083663cad6170f4fbfbdb69fe8dfb782584cb47c1e1814f38218699d76bcb39ae83b91333f116058b685c566a4d
   languageName: node
   linkType: hard
 

@@ -1,8 +1,21 @@
+import { FC } from 'react';
 import Link from 'next/link';
 import { useInView, animated } from '@react-spring/web';
 import styles from './index.module.scss';
 
-export const IndexCard = ({ href, title, date, summary }) => {
+type IndexCardProps = {
+  href: string;
+  title: string;
+  date: string;
+  summary: string;
+};
+
+export const IndexCard: FC<IndexCardProps> = ({
+  href,
+  title,
+  date,
+  summary,
+}) => {
   const [ref, springs] = useInView(
     () => ({
       from: {
@@ -28,20 +41,6 @@ export const IndexCard = ({ href, title, date, summary }) => {
         <Link href={href}>{title}</Link>
       </h2>
       <p className={styles.summary}>{summary}</p>
-      {/*
-      <div className={styles.meta}>
-        <div className={styles.tags}>
-          {tags.map((tag, i) => (
-            <>
-              <span key={tag} className={styles.tag}>
-                {tag}
-              </span>
-              {i < tags.length - 1 && '·'}
-            </>
-          ))}
-        </div>
-      </div>
-       */}
     </animated.div>
   );
 };

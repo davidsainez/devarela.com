@@ -1,3 +1,4 @@
+import { AppProps } from 'next/app';
 import { DefaultSeo } from 'next-seo';
 import {
   IBM_Plex_Mono,
@@ -32,10 +33,7 @@ export function reportWebVitals(metric) {
 }
 */
 
-export default function App({ Component, pageProps }) {
-  //const router = useRouter();
-  //const path = router.asPath;
-
+export default function App({ Component, pageProps }: AppProps) {
   return (
     <div>
       <Head>

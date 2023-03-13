@@ -1,119 +1,11 @@
 import React from 'react';
-import type { createElement, ComponentType, Fragment } from 'react';
-import glob from 'glob-promise';
-import path from 'path';
+import { GetStaticProps, GetStaticPaths } from 'next';
 import Markdoc from '@markdoc/markdoc';
-import fs from 'fs';
-import { getMetadataFromAST } from 'Data';
+import { slugToAST, getMetadata, Metadata, fetchAllEssaySlugs } from 'Data';
+import { render, nodeConfig } from 'Markdoc';
 import { Paragraph, Heading } from 'components/Article';
 import { Essay } from 'components/Essay';
 import { Code } from 'components/Code';
-
-class Tag<
-  N extends string = string,
-  A extends Record<string, any> = Record<string, any>
-> {
-  readonly $$mdtype = 'Tag' as const;
-
-  static isTag = (tag: any): tag is Tag => {
-    return !!(tag?.$$mdtype === 'Tag');
-  };
-
-  name: N;
-  attributes: A;
-  children: RenderableTreeNode[];
-
-  constructor(
-    name = 'div' as N,
-    attributes = {} as A,
-    children: RenderableTreeNode[] = []
-  ) {
-    this.name = name;
-    this.attributes = attributes;
-    this.children = children;
-  }
-}
-
-type Primitive = null | boolean | number | string;
-type RenderableTreeNode = Tag | Scalar;
-type RenderableTreeNodes = RenderableTreeNode | RenderableTreeNode[];
-type Scalar = Primitive | Scalar[] | { [key: string]: Scalar };
-type Component = ComponentType<unknown>;
-type ReactShape = Readonly<{
-  createElement: typeof createElement;
-  Fragment: typeof Fragment;
-}>;
-
-function tagName(
-  name: string,
-  components: Record<string, Component> | ((_: string) => Component)
-): string | Component {
-  return typeof name !== 'string'
-    ? name // This can be an object, e.g. when React.forwardRef is used
-    : name[0] !== name[0].toUpperCase()
-    ? name
-    : components instanceof Function
-    ? components(name)
-    : components[name];
-}
-
-function dynamic(
-  node: RenderableTreeNodes,
-  React: ReactShape,
-  { components = {} } = {}
-) {
-  function deepRender(value: any): any {
-    if (value == null || typeof value !== 'object') {
-      return value;
-    }
-
-    if (Array.isArray(value)) {
-      return value.map((item) => deepRender(item));
-    }
-
-    if (value.$$mdtype === 'Tag') {
-      return render(value);
-    }
-
-    if (typeof value !== 'object') {
-      return value;
-    }
-
-    const output: Record<string, Scalar> = {};
-    for (const [k, v] of Object.entries(value)) {
-      output[k] = deepRender(v);
-    }
-    return output;
-  }
-
-  function render(node: RenderableTreeNodes) {
-    if (Array.isArray(node)) {
-      return React.createElement(React.Fragment, null, ...node.map(render));
-    }
-
-    if (node === null || typeof node !== 'object' || !Tag.isTag(node)) {
-      return node;
-    }
-
-    const {
-      name,
-      attributes: { class: className, ...attrs } = {},
-      children = [],
-    } = node;
-
-    if (className) {
-      attrs.className = className;
-    }
-
-    return React.createElement(
-      tagName(name, components),
-      Object.keys(attrs).length == 0 ? null : deepRender(attrs),
-      ...children.map(render)
-    );
-  }
-
-  return render(node);
-}
 
 const components = {
   Paragraph: Paragraph,
@@ -122,55 +14,33 @@ const components = {
 };
 
 // Create a React component using Markdoc's React renderer and our list of custom components.
-const BlogPostPage = (props) => {
-  const { content, metadata } = props;
-  const parsedContent = JSON.parse(content);
+type EssayProps = {
+  content: string;
+  essayMetadata: Metadata;
+};
 
+const EssayPage: React.FC<EssayProps> = ({ content, essayMetadata }) => {
   return (
-    <Essay metadata={metadata}>
-      {dynamic(parsedContent, React, { components })}
+    <Essay metadata={essayMetadata}>
+      {render(JSON.parse(content), React, { components })}
     </Essay>
   );
 };
 
-export default BlogPostPage;
+export default EssayPage;
 
-const CONFIG = {
-  nodes: {
-    paragraph: {
-      render: 'Paragraph',
-    },
-    heading: {
-      render: 'Heading',
-    },
-    fence: {
-      render: 'Code',
-    },
-  },
-};
-
-export const getStaticProps = async (context) => {
-  // Our Markdown files are stored in the posts/ directory
-  const POSTS_DIR = path.join(process.cwd(), 'essays');
-
+export const getStaticProps: GetStaticProps = async (context) => {
   // Generate the local Markdown path from the URL slug
-  const {
-    params: { slug },
-  } = context;
-  const fullPath = path.join(POSTS_DIR, slug + '.md');
+  let { slug } = context.params;
+  if (Array.isArray(slug)) {
+    throw Error('this should not occur');
+  }
 
-  // Read the Markdown file contents
-  const source = fs.readFileSync(fullPath, 'utf-8');
-
-  // Use Markdoc to create a tree of tokens based on the Markdown file
-  const ast = Markdoc.parse(source);
-
+  const ast = await slugToAST(slug);
+  const metadata = getMetadata(slug, ast);
   // Create a renderable tree
-  const content = JSON.stringify(Markdoc.transform(ast, CONFIG));
-  const metadata = getMetadataFromAST(fullPath, ast);
+  const content = JSON.stringify(Markdoc.transform(ast, nodeConfig));
 
-  // Return the content as a prop to the React component for now
-  // We will render the content in the next section
   return {
     props: {
       content,
@@ -179,20 +49,11 @@ export const getStaticProps = async (context) => {
   };
 };
 
-export const getStaticPaths = async () => {
-  // Our Markdown files are stored in the posts/ directory
-  const POSTS_DIR = path.join(process.cwd(), 'essays');
+export const getStaticPaths: GetStaticPaths = async () => {
+  const slugs = await fetchAllEssaySlugs();
+  const paths = slugs.map((slug) => ({
+    params: { slug },
+  }));
 
-  // Find all Markdown files in the posts/ directory
-  // With The glob-promise library, we can use a one liner to find our Markdown files
-  const postPaths = await glob(path.join(POSTS_DIR, '**/*.md'));
-
-  // For each filename, the slug is the filename without the .md extension
-  const paths = postPaths.map((postPath) => {
-    const slug = path.basename(postPath, path.extname(postPath));
-    return { params: { slug } };
-  });
-
-  // Return the possible paths
   return { paths, fallback: false };
 };
