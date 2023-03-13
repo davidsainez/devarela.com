@@ -1,5 +1,5 @@
 import React from 'react';
-import { GetStaticProps, GetStaticPaths } from 'next';
+import { InferGetStaticPropsType, GetStaticProps, GetStaticPaths } from 'next';
 import Markdoc from '@markdoc/markdoc';
 import { slugToAST, getMetadata, Metadata, fetchAllEssaySlugs } from 'Data';
 import { render, nodeConfig } from 'Markdoc';
@@ -13,15 +13,12 @@ const components = {
   Code: Code,
 };
 
-// Create a React component using Markdoc's React renderer and our list of custom components.
-type EssayProps = {
-  content: string;
-  essayMetadata: Metadata;
-};
-
-const EssayPage: React.FC<EssayProps> = ({ content, essayMetadata }) => {
+const EssayPage = ({
+  content,
+  metadata,
+}: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
-    <Essay metadata={essayMetadata}>
+    <Essay metadata={metadata}>
       {render(JSON.parse(content), React, { components })}
     </Essay>
   );
@@ -29,7 +26,12 @@ const EssayPage: React.FC<EssayProps> = ({ content, essayMetadata }) => {
 
 export default EssayPage;
 
-export const getStaticProps: GetStaticProps = async (context) => {
+type StaticProps = {
+  content: string;
+  metadata: Metadata;
+};
+
+export const getStaticProps: GetStaticProps<StaticProps> = async (context) => {
   // Generate the local Markdown path from the URL slug
   let { slug } = context.params;
   if (Array.isArray(slug)) {

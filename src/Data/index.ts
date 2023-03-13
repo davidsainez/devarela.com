@@ -2,27 +2,8 @@ import { promises as fs } from 'fs';
 import Markdoc from '@markdoc/markdoc';
 import type { Node } from '@markdoc/markdoc';
 import path from 'path';
-import yaml from 'js-yaml';
+import YAML from 'yaml';
 import { formatDate } from 'components/Utilities';
-
-type MetadataIn = {
-  title: string;
-  date: string;
-  tags: string;
-  summary: string;
-};
-
-// TODO not sure this is correct
-function isMetadataIn(obj: unknown): obj is MetadataIn {
-  return (
-    obj &&
-    typeof obj === 'object' &&
-    'title' in obj &&
-    'date' in obj &&
-    'tags' in obj &&
-    'summary' in obj
-  );
-}
 
 export type Metadata = {
   href: string;
@@ -34,18 +15,30 @@ export type Metadata = {
 };
 
 export const getMetadata = (slug: string, ast: Node): Metadata => {
-  const metadata = yaml.load(ast.attributes.frontmatter);
+  const metadata = YAML.parse(ast.attributes.frontmatter);
 
-  if (isMetadataIn(metadata)) {
+  if (
+    metadata &&
+    typeof metadata === 'object' &&
+    'title' in metadata &&
+    'date' in metadata &&
+    'tags' in metadata &&
+    'summary' in metadata &&
+    typeof metadata.title === 'string' &&
+    typeof metadata.date === 'string' &&
+    typeof metadata.tags === 'string' &&
+    typeof metadata.summary === 'string'
+  ) {
     return {
       href: `/essays/${slug}`,
       title: metadata.title,
-      date: JSON.stringify(metadata.date),
+      date: metadata.date,
       formated_date: formatDate(metadata.date),
       tags: metadata.tags.split(','),
       summary: metadata.summary,
     };
   }
+  throw Error('malformed frontmatter');
 };
 
 export const fetchAllEssaySlugs = async () => {

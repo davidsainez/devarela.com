@@ -32,13 +32,13 @@
     "react-dom": "^18.2.0",
     "react-icons": "^4.7.1",
     "react-refractor": "^2.1.7",
-    "sass": "^1.43.4"
+    "sass": "^1.43.4",
+    "yaml": "^2.2.1"
   },
   "devDependencies": {
     "@commitlint/cli": "^13.2.1",
     "@commitlint/config-conventional": "^13.2.0",
     "@fullhuman/postcss-purgecss": "^5.0.0",
-    "@types/js-yaml": "^4.0.5",
     "@types/react": "18.0.28",
     "@types/refractor": "^3.0.2",
     "css-loader": "^6.7.3",
