@@ -71,7 +71,7 @@ export const LandingPage: FC<LandingPageProps> = ({ essays }) => {
               .
             </p>
           </div>
-          <img src="bw2.png" alt="watercolor" className={styles.art} />
+          <img src="flowerText.png" alt="watercolor" className={styles.art} />
         </div>
         <div className={styles.essays}>
           <div className={styles.section}>

@@ -3,7 +3,7 @@
 .art {
   width: 100%;
   animation: slide 800ms ease 200ms 1 normal forwards;
-  aspect-ratio: 100/90;
+  aspect-ratio: 1/1;
   object-fit: cover;
   object-position: top;
   opacity: 0%;
@@ -20,7 +20,6 @@
   @media (min-width: main.$desktop) {
     width: 80%;
 
-    border: solid 1px hsl(0, 0, 70);
     margin-top: -80px;
     margin-right: 0;
     margin-left: auto;
@@ -50,8 +49,7 @@
 
   display: grid;
   margin-top: main.space(8);
-  margin-bottom: main.space(2);
-  gap: main.space(2);
+  margin-bottom: main.space(8);
   grid-template-areas:
     'title'
     'art'
@@ -115,17 +113,17 @@
 .sectionHeading {
   font-family: main.$display;
   font-size: 32px;
-  font-weight: 700;
+  font-weight: 800;
   text-transform: uppercase;
 
   @media (min-width: main.$tablet) {
-    font-size: 40px;
+    font-size: 24px;
   }
 }
 
 .welcome {
   font-family: main.$display;
-  font-size: 48px;
+  font-size: 40px;
   font-weight: 700;
   text-transform: uppercase;
 
@@ -141,7 +139,7 @@
 .about {
   margin-bottom: main.space(2);
   font-family: main.$sans;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 400;
   letter-spacing: 0.018em;
   line-height: 1.4;
