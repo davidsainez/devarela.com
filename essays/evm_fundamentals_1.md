@@ -1,5 +1,5 @@
 ---
-title: EVM Fundamentals, Part 1
+title: EVM Fundamentals — Pt. 1
 date: 2022-09-01
 description: A tutorial on the basic structure of the Ethereum Virtual Machine.
 tags: evm,blockchain

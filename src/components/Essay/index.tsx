@@ -82,9 +82,9 @@ export const Essay: FC<EssayProps> = ({ metadata, children }) => {
           </div>
           <div className={styles.date}>{metadata.formated_date}</div>
           {children}
-          <div className={styles.back}>
+          <div className={styles.read}>
             <Link href="/">
-              <RiArrowDropLeftLine /> Back
+              <RiArrowDropLeftLine /> Read more
             </Link>
           </div>
         </div>

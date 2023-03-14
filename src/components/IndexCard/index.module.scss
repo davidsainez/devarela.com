@@ -1,12 +1,11 @@
 @use '~/scss/main.scss';
 
 .box {
-  @include main.container;
+  @include main.full-width;
 
   display: flex;
   flex-direction: column;
-  margin-bottom: main.space(6);
-  margin-left: 0;
+  margin-bottom: main.space(7);
 
   @media (min-width: main.$tablet) {
     margin-bottom: main.space(8);
@@ -34,7 +33,7 @@
   font-family: main.$display;
   font-size: 24px;
   font-weight: 500;
-  letter-spacing: -0.03em;
+  letter-spacing: 0.02em;
 
   a {
     text-decoration: none;

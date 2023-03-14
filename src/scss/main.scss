@@ -267,6 +267,12 @@ $desktop: 1024px;
   }
 }
 
+@mixin brand {
+  font-family: $display;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
 $color-fade: hsl(0, 0, 70);
 $color-secondary: hsl(0, 0, 80);
 $color-primary: hsl(0, 0, 0);

@@ -37,14 +37,14 @@ export const LandingPage: FC<LandingPageProps> = ({ essays }) => {
           description: DESCRIPTION,
         }}
       />
-      <div className={styles.herp}>
-        <div className={styles.panel}>
-          <h1 className={[styles.heading, styles.welcome].join(' ')}>
+      <div className={styles.all}>
+        <div className={styles.introPanel}>
+          <h1 className={styles.title}>
             Relentless
             <br />
-            <span className={styles.fancy}>Refinement.</span>
+            Refinement.
           </h1>
-          <div className={styles.container}>
+          <div className={styles.aboutBox}>
             <p className={styles.about}>
               The act of creation serves as the only reliable source of truth.
               We often engage in creation as a practical matter to tend to
@@ -73,11 +73,11 @@ export const LandingPage: FC<LandingPageProps> = ({ essays }) => {
           </div>
           <img src="flowerText.png" alt="watercolor" className={styles.art} />
         </div>
-        <div className={styles.essays}>
-          <div className={styles.section}>
-            <h2 className={styles.sectionHeading}>Writing</h2>
+        <div className={styles.essayPanel}>
+          <div className={styles.headingBox}>
+            <h2 className={styles.heading}>Writing</h2>
           </div>
-          <div className={styles.index}>{cards}</div>
+          {cards}
         </div>
       </div>
     </Template>

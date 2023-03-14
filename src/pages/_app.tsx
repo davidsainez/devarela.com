@@ -4,7 +4,7 @@ import {
   IBM_Plex_Mono,
   IBM_Plex_Sans,
   IBM_Plex_Serif,
-  Inter,
+  Inter_Tight,
 } from '@next/font/google';
 import Head from 'next/head';
 import '~/scss/index.scss';
@@ -28,7 +28,7 @@ const serif = IBM_Plex_Serif({
   variable: '--font-serif',
 });
 
-const display = Inter({
+const display = Inter_Tight({
   subsets: ['latin'],
   variable: '--font-display',
 });

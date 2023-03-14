@@ -1,8 +1,8 @@
 @use '~/scss/main.scss';
 
 .panel {
-  padding-top: main.space(4);
-  padding-bottom: main.space(4);
+  padding-top: main.space(6);
+  padding-bottom: main.space(6);
   background-color: main.$black;
   color: main.$white;
 
@@ -33,10 +33,10 @@
 .nav {
   display: flex;
   flex-direction: column;
-  margin-top: main.space(2);
+  margin-top: main.space(3);
   color: hsl(0, 0, 85);
   font-family: main.$sans;
-  font-size: 16px;
+  font-size: 14px;
   gap: main.space(1);
   grid-area: nav;
 
@@ -53,9 +53,9 @@
 #links {
   display: flex;
   flex-direction: column;
-  margin-top: main.space(2);
+  margin-top: main.space(3);
   font-family: main.$sans;
-  font-size: 16px;
+  font-size: 14px;
   gap: main.space(1);
   grid-area: links;
 
@@ -83,7 +83,7 @@
 }
 
 .brand {
-  font-family: main.$mono;
-  font-weight: 600;
   grid-area: brand;
+
+  @include main.brand;
 }

@@ -6,9 +6,10 @@
   margin-top: main.space(4);
   margin-bottom: main.space(2);
 
-  font-family: main.$sans;
+  font-family: main.$display;
   font-size: 24px;
-  font-weight: 500;
+  font-weight: 600;
+  letter-spacing: 0.02em;
 
   @media (min-width: main.$tablet) {
     margin-top: main.space(6);

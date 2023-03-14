@@ -80,13 +80,13 @@
   }
 }
 
-.back {
+.read {
   @include main.container;
 
   margin-top: main.space(4);
   font-family: main.$mono;
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 400;
 
   a {
     //color: hsl(0,0,30);

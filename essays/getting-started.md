@@ -32,7 +32,7 @@ fringilla urna porttitor rhoncus dolor. Ornare massa eget egestas purus viverra.
 Dis parturient montes nascetur ridiculus mus mauris. Lacinia quis vel eros donec
 ac odio tempor orci.
 
-# Also getting started
+# Also Getting Started
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
 incididunt ut labore et dolore magna aliqua. Fusce id velit ut tortor pretium
