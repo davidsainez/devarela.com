@@ -6,10 +6,12 @@ export const Footer = () => {
       <div className={styles.content}>
         <div className={styles.brand}>sainez.io</div>
         <div className={styles.nav}>
+          <div className={styles.heading}>Nav</div>
           <div>Writing</div>
           <div>Me</div>
         </div>
         <div id={styles.links}>
+          <div className={styles.heading}>Contact</div>
           <div>
             <a href="mailto:david@sainez.io">Email</a>
           </div>
