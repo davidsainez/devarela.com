@@ -17,15 +17,15 @@
 
 .light {
   background-color: main.white;
-  color: main.black;
+  color: main.$black;
 }
 
 .medium {
   background-color: hsl(240, 50, 98);
-  color: main.black;
+  color: main.$black;
 }
 
 .dark {
   background-color: hsl(240, 80, 15);
-  color: main.white;
+  color: main.$white;
 }
