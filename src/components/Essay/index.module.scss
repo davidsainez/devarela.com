@@ -1,25 +1,16 @@
 @use '~/scss/main.scss';
 
-.box {
+.content {
   display: flex;
   flex-direction: column;
-  margin-top: main.space(4);
-  margin-bottom: main.space(4);
-
-  @media (min-width: main.$tablet) {
-    margin-top: main.space(10);
-    margin-bottom: main.space(16);
-  }
 }
 
 .headingBox {
   @include main.container;
 
-  margin-top: main.space(3);
   margin-bottom: main.space(4);
 
   @media (min-width: main.$tablet) {
-    margin-top: main.space(6);
     margin-bottom: main.space(8);
   }
 }
@@ -50,10 +41,6 @@
   gap: main.space(1);
 }
 
-.tag {
-  //text-transform: uppercase;
-}
-
 .date {
   @include main.container;
 
@@ -68,11 +55,11 @@
 }
 
 .heading {
+  @include main.bold;
+
   margin-bottom: main.space(1);
-  font-family: main.$display;
+
   font-size: 32px;
-  font-weight: 700;
-  letter-spacing: -0.03em;
 
   @media (min-width: main.$tablet) {
     margin-bottom: main.space(3);
@@ -89,7 +76,6 @@
   font-weight: 400;
 
   a {
-    //color: hsl(0,0,30);
     display: flex;
     align-items: center;
     text-decoration: none;

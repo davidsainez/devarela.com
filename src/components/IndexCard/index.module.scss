@@ -30,10 +30,9 @@
 
 #title {
   margin-bottom: main.space(1);
-  font-family: main.$display;
+  font-family: main.$sans;
   font-size: 24px;
   font-weight: 500;
-  letter-spacing: 0.02em;
 
   a {
     text-decoration: none;
@@ -46,14 +45,17 @@
 }
 
 .summary {
-  color: hsl(0, 0, 20);
+  color: hsl(0, 0, 30);
   font-family: main.$sans;
   font-size: 16px;
   font-weight: 400;
   line-height: 1.4;
 
   @media (min-width: main.$tablet) {
-    //width: 80%;
+    font-size: 17px;
+  }
+
+  @media (min-width: main.$desktop) {
     font-size: 18px;
   }
 }

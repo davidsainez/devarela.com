@@ -1,12 +1,13 @@
+import { Panel } from 'components/Panel';
 import styles from './index.module.scss';
 
 export const Footer = () => {
   return (
-    <div className={styles.panel}>
+    <Panel>
       <div className={styles.content}>
         <div className={styles.brand}>sainez.io</div>
         <div className={styles.nav}>
-          <div className={styles.heading}>Nav</div>
+          <div className={styles.heading}>Navigation</div>
           <div>Writing</div>
           <div>Me</div>
         </div>
@@ -30,6 +31,6 @@ export const Footer = () => {
         </div>
         <div className={styles.copyright}>© 2023 David Sainez</div>
       </div>
-    </div>
+    </Panel>
   );
 };

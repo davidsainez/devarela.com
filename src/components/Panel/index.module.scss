@@ -1,0 +1,31 @@
+@use '~/scss/main.scss';
+
+.panel {
+  padding-top: main.space(9);
+  padding-bottom: main.space(9);
+
+  @media (min-width: main.$tablet) {
+    padding-top: main.space(12);
+    padding-bottom: main.space(12);
+  }
+
+  @media (min-width: main.$desktop) {
+    padding-top: main.space(16);
+    padding-bottom: main.space(16);
+  }
+}
+
+.light {
+  background-color: main.white;
+  color: main.black;
+}
+
+.medium {
+  background-color: hsl(240, 50, 98);
+  color: main.black;
+}
+
+.dark {
+  background-color: hsl(240, 80, 15);
+  color: main.white;
+}

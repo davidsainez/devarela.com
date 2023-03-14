@@ -5,6 +5,7 @@ import { Template } from 'components/Template';
 import { RiArrowDropLeftLine } from 'react-icons/ri';
 import { Metadata } from 'Data';
 //import { CONF } from '~/Constants';
+import { Panel } from 'components/Panel';
 import styles from './index.module.scss';
 
 type EssayProps = {
@@ -75,19 +76,21 @@ export const Essay: FC<EssayProps> = ({ metadata, children }) => {
         ]}
       />
       <Template>
-        <div className={styles.box}>
-          <div className={styles.headingBox}>
-            <div className={styles.tags}>{Tags}</div>
-            <h1 className={styles.heading}>{title}</h1>
+        <Panel>
+          <div className={styles.content}>
+            <div className={styles.headingBox}>
+              <div className={styles.tags}>{Tags}</div>
+              <h1 className={styles.heading}>{title}</h1>
+            </div>
+            <div className={styles.date}>{metadata.formated_date}</div>
+            {children}
+            <div className={styles.read}>
+              <Link href="/">
+                <RiArrowDropLeftLine /> Read more
+              </Link>
+            </div>
           </div>
-          <div className={styles.date}>{metadata.formated_date}</div>
-          {children}
-          <div className={styles.read}>
-            <Link href="/">
-              <RiArrowDropLeftLine /> Read more
-            </Link>
-          </div>
-        </div>
+        </Panel>
       </Template>
     </>
   );

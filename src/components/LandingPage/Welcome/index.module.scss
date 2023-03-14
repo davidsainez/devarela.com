@@ -1,0 +1,113 @@
+@use '~/scss/main.scss';
+
+.container {
+  @include main.full-width;
+
+  display: grid;
+  grid-template-areas:
+    'title'
+    'art'
+    'about';
+  grid-template-columns: 1fr;
+
+  @media (min-width: main.$tablet) {
+    grid-template-areas:
+      'title art'
+      'about art';
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media (min-width: main.$desktop) {
+    grid-column-gap: main.space(8);
+    grid-template-areas:
+      'title art'
+      'about art';
+  }
+}
+
+.heading {
+  @include main.bold;
+
+  font-size: 48px;
+
+  @media (min-width: main.$tablet) {
+    font-size: 56px;
+  }
+
+  @media (min-width: main.$desktop) {
+    font-size: 80px;
+  }
+}
+
+.aboutBox {
+  margin-top: main.space(6);
+  grid-area: about;
+
+  @media (min-width: main.$tablet) {
+    margin-top: main.space(6);
+  }
+
+  @media (min-width: main.$desktop) {
+    width: 100%;
+    margin-top: main.space(10);
+  }
+}
+
+.about {
+  margin-bottom: main.space(2);
+  font-family: main.$sans;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0.018em;
+  line-height: 1.4;
+
+  @media (min-width: main.$tablet) {
+    font-size: 17px;
+  }
+
+  @media (min-width: main.$desktop) {
+    font-size: 18px;
+  }
+}
+
+.art {
+  width: 100%;
+  margin-top: main.space(4);
+  animation: slide 800ms ease 200ms 1 normal forwards;
+  aspect-ratio: 100/90;
+  border-radius: 10px;
+  box-shadow: main.$hover-shadow;
+  object-fit: cover;
+  object-position: top;
+  // animation will fill this in;
+  opacity: 0%;
+
+  @media (min-width: main.$tablet) {
+    width: 90%;
+    margin-top: main.space(6);
+    margin-right: 0;
+    margin-left: auto;
+    aspect-ratio: 1/2;
+    grid-area: art;
+  }
+
+  @media (min-width: main.$desktop) {
+    width: 100%;
+
+    margin-top: -80px;
+    margin-right: 0;
+    margin-left: auto;
+    animation: slide 800ms ease 200ms 1 normal forwards;
+    aspect-ratio: 100/95;
+  }
+}
+
+@keyframes slide {
+  30% {
+    opacity: 0%;
+  }
+  100% {
+    margin-top: main.space(6);
+    opacity: 100%;
+  }
+}

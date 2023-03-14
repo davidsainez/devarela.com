@@ -5,136 +5,19 @@
   flex-direction: column;
 }
 
-.introPanel {
-  @include main.full-width;
-
-  display: grid;
-  margin-top: main.space(4);
-  margin-bottom: main.space(8);
-  grid-template-areas:
-    'title'
-    'art'
-    'about';
-  grid-template-columns: 1fr;
-
-  @media (min-width: main.$tablet) {
-    margin-top: main.space(12);
-    margin-bottom: main.space(6);
-    grid-template-areas:
-      'title art'
-      'about art';
-    grid-template-columns: 1fr 1fr;
-  }
-
-  @media (min-width: main.$desktop) {
-    margin-top: main.space(12);
-    margin-bottom: main.space(12);
-    grid-template-areas:
-      'title art'
-      'about art';
-  }
-}
-
-.title {
-  font-family: main.$display;
-  font-size: 40px;
-  font-weight: 700;
-  text-transform: uppercase;
-
-  @media (min-width: main.$tablet) {
-    font-size: 56px;
-  }
-
-  @media (min-width: main.$desktop) {
-    font-size: 72px;
-  }
-}
-
-.aboutBox {
-  margin-top: main.space(6);
-  grid-area: about;
-
-  @media (min-width: main.$tablet) {
-    margin-top: main.space(6);
-  }
-
-  @media (min-width: main.$desktop) {
-    width: 100%;
-    margin-top: main.space(10);
-  }
-}
-
-.about {
-  margin-bottom: main.space(2);
-  font-family: main.$sans;
-  font-size: 16px;
-  font-weight: 400;
-  letter-spacing: 0.018em;
-  line-height: 1.4;
-}
-
-.essayPanel {
-  display: flex;
-  flex-direction: column;
-  border-top: solid 1px hsl(240, 5, 93);
-  background-color: hsl(240, 5, 97);
-}
-
 .headingBox {
   @include main.full-width;
 
-  margin-top: main.space(6);
-  margin-bottom: main.space(6);
+  margin-bottom: main.space(8);
 }
 
 .heading {
-  color: hsl(0, 0, 30);
-  font-family: main.$display;
-  font-size: 16px;
-  font-weight: 500;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+  @include main.bold;
+
+  font-size: 24px;
 
   @media (min-width: main.$tablet) {
-    font-size: 24px;
-  }
-}
-
-.art {
-  width: 100%;
-  margin-top: main.space(4);
-  animation: slide 800ms ease 200ms 1 normal forwards;
-  aspect-ratio: 100/90;
-  object-fit: cover;
-  object-position: top;
-  opacity: 0%;
-
-  @media (min-width: main.$tablet) {
-    width: 90%;
-    margin-top: main.space(6);
-    margin-right: 0;
-    margin-left: auto;
-    aspect-ratio: 1/2;
-    grid-area: art;
-  }
-
-  @media (min-width: main.$desktop) {
-    width: 80%;
-
-    margin-top: -80px;
-    margin-right: 0;
-    margin-left: auto;
-    animation: slide 800ms ease 200ms 1 normal forwards;
-    aspect-ratio: 2/3;
-  }
-}
-
-@keyframes slide {
-  30% {
-    opacity: 0%;
-  }
-  100% {
-    margin-top: main.space(6);
-    opacity: 100%;
+    margin-bottom: main.space(6);
+    font-size: 32px;
   }
 }

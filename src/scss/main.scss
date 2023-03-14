@@ -268,9 +268,14 @@ $desktop: 1024px;
 }
 
 @mixin brand {
-  font-family: $display;
-  font-weight: 700;
-  letter-spacing: 0.06em;
+  font-family: $sans;
+  font-weight: 600;
+}
+
+@mixin bold {
+  font-family: $sans;
+  font-weight: 600;
+  letter-spacing: -0.06em;
 }
 
 $color-fade: hsl(0, 0, 70);

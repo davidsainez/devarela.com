@@ -1,17 +1,5 @@
 @use '~/scss/main.scss';
 
-.panel {
-  padding-top: main.space(6);
-  padding-bottom: main.space(6);
-  background-color: main.$black;
-  color: main.$white;
-
-  @media (min-width: main.$tablet) {
-    padding-top: main.space(6);
-    padding-bottom: main.space(6);
-  }
-}
-
 .content {
   @include main.full-width;
 
@@ -30,11 +18,13 @@
   }
 }
 
+$low-contrast: hsl(0, 0, 15);
+
 .nav {
   display: flex;
   flex-direction: column;
   margin-top: main.space(4);
-  color: hsl(0, 0, 85);
+  color: $low-contrast;
   font-family: main.$sans;
   font-size: 14px;
   gap: main.space(1);
@@ -60,7 +50,7 @@
   grid-area: links;
 
   a {
-    color: hsl(0, 0, 85);
+    color: $low-contrast;
     text-decoration: none;
   }
 
@@ -72,7 +62,7 @@
 
 .copyright {
   margin-top: main.space(4);
-  color: hsl(0, 0, 85);
+  color: $low-contrast;
   font-family: main.$sans;
   font-size: 14px;
   grid-area: copy;
@@ -90,7 +80,7 @@
 
 .heading {
   margin-bottom: main.space(1);
-  color: main.$white;
+  color: main.$black;
   font-family: main.$sans;
   font-weight: 500;
 }

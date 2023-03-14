@@ -4,7 +4,6 @@ import {
   IBM_Plex_Mono,
   IBM_Plex_Sans,
   IBM_Plex_Serif,
-  Inter_Tight,
 } from '@next/font/google';
 import Head from 'next/head';
 import '~/scss/index.scss';
@@ -26,11 +25,6 @@ const serif = IBM_Plex_Serif({
   style: ['normal', 'italic'],
   subsets: ['latin'],
   variable: '--font-serif',
-});
-
-const display = Inter_Tight({
-  subsets: ['latin'],
-  variable: '--font-display',
 });
 
 /*
@@ -61,12 +55,7 @@ export default function App({ Component, pageProps }: AppProps) {
         }}
       />
       <main
-        className={[
-          mono.variable,
-          sans.variable,
-          serif.variable,
-          display.variable,
-        ].join(' ')}
+        className={[mono.variable, sans.variable, serif.variable].join(' ')}
       >
         <Component {...pageProps} />
       </main>
