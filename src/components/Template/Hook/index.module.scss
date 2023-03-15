@@ -38,14 +38,6 @@
   font-weight: 400;
 }
 
-.connect {
-  margin-top: main.space(4);
-
-  @media (min-width: main.$tablet) {
-    margin-top: 0;
-  }
-}
-
 .title {
   font-family: main.$sans;
   font-size: 20px;
