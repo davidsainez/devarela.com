@@ -9,7 +9,7 @@
   font-family: main.$display;
   font-size: 24px;
   font-weight: 600;
-  letter-spacing: 0.02em;
+  letter-spacing: -0.03em;
 
   @media (min-width: main.$tablet) {
     margin-top: main.space(6);
