@@ -3,7 +3,7 @@ import { InferGetStaticPropsType, GetStaticProps, GetStaticPaths } from 'next';
 import Markdoc from '@markdoc/markdoc';
 import { slugToAST, getMetadata, Metadata, fetchAllEssaySlugs } from 'Data';
 import { render, nodeConfig } from 'Markdoc';
-import { Paragraph, Heading } from 'components/Article';
+import { Paragraph, Heading, List } from 'components/Article';
 import { Essay } from 'components/Essay';
 import { Code } from 'components/Code';
 
@@ -11,6 +11,7 @@ const components = {
   Paragraph: Paragraph,
   Heading: Heading,
   Code: Code,
+  List: List,
 };
 
 const EssayPage = ({

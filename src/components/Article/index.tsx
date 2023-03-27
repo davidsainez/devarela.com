@@ -24,3 +24,15 @@ export const Paragraph: FC<ParagraphProps> = ({ children }) => {
     </div>
   );
 };
+
+type ListProps = {
+  children: ReactNode;
+};
+
+export const List: FC<ListProps> = ({ children }) => {
+  return (
+    <div className={styles.container}>
+      <ul className={styles.list}>{children}</ul>
+    </div>
+  );
+};

@@ -11,5 +11,8 @@ export const nodeConfig = {
     fence: {
       render: 'Code',
     },
+    list: {
+      render: 'List',
+    },
   },
 };

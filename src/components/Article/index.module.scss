@@ -36,3 +36,23 @@
     font-size: 18px;
   }
 }
+
+.list {
+  margin-bottom: main.space(3);
+  margin-left: 1em;
+  font-family: main.$sans;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  list-style: square;
+
+  @media (min-width: main.$tablet) {
+    width: 70%;
+    font-size: 17px;
+  }
+
+  @media (min-width: main.$desktop) {
+    width: 65%;
+    font-size: 18px;
+  }
+}
