@@ -51,8 +51,9 @@
 .heading {
   // manual alignment
   margin-left: -4px;
+  font-family: main.$condensed;
   font-size: 36px;
-  letter-spacing: -0.03em;
+  font-weight: 300;
 
   @media (min-width: main.$tablet) {
     font-size: 56px;

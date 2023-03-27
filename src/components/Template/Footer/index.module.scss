@@ -28,6 +28,8 @@
   grid-area: nav;
 
   a {
+    padding-top: 4px;
+    padding-bottom: 4px;
     color: main.$gray-light;
     text-decoration: none;
   }
@@ -44,10 +46,12 @@
   margin-top: main.space(4);
   font-family: main.$sans;
   font-size: 14px;
-  gap: main.space(1);
+  gap: main.space(2);
   grid-area: links;
 
   a {
+    padding-top: 4px;
+    padding-bottom: 4px;
     color: main.$gray-light;
     text-decoration: none;
   }
@@ -60,7 +64,6 @@
 
 .copyright {
   margin-top: main.space(4);
-  color: main.$gray-light;
   font-family: main.$sans;
   font-size: 14px;
   grid-area: copy;
