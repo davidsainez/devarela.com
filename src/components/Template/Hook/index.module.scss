@@ -4,11 +4,9 @@
   @include main.full-width;
 
   display: grid;
-  grid-gap: main.space(6);
   grid-template-columns: 1fr;
 
   @media (min-width: main.$tablet) {
-    grid-gap: 0;
     grid-template-columns: 1fr 1fr;
   }
 }
@@ -20,9 +18,10 @@
   padding: main.space(2);
   padding-top: main.space(4);
   padding-bottom: main.space(4);
-  border: solid 1px hsl(240, 50, 35);
-  background-color: hsl(240, 60, 15);
-  border-radius: 8px;
+  margin-top: main.space(6);
+  background-color: main.$cosmos;
+  box-shadow: main.$hover-shadow;
+  color: main.$white;
   font-family: main.$mono;
   font-size: 14px;
   font-weight: 400;
@@ -30,6 +29,7 @@
 
   @media (min-width: main.$tablet) {
     padding: main.space(4);
+    margin-top: 0;
     aspect-ratio: 2/1;
   }
 }
@@ -39,27 +39,28 @@
 }
 
 .title {
+  color: main.$cosmos;
   font-family: main.$sans;
   font-size: 20px;
-  font-weight: 400;
+  font-weight: 500;
 
   @media (min-width: main.$tablet) {
     font-size: 24px;
   }
 
   @media (min-width: main.$desktop) {
-    font-size: 32px;
+    font-size: 28px;
   }
 }
 
 .sub {
-  color: hsl(0, 0, 85);
+  color: main.$dark-gray;
   font-family: main.$sans;
   font-size: 20px;
   font-weight: 400;
 
   @media (min-width: main.$tablet) {
-    font-size: 24px;
+    font-size: 20px;
   }
 
   @media (min-width: main.$desktop) {

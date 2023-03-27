@@ -2,7 +2,7 @@ import { FC, ReactNode } from 'react';
 import Link from 'next/link';
 import { NextSeo, ArticleJsonLd, BreadcrumbJsonLd } from 'next-seo';
 import { Template } from 'components/Template';
-import { RiArrowDropLeftLine } from 'react-icons/ri';
+import { RiArrowLeftLine } from 'react-icons/ri';
 import { Metadata } from 'Data';
 //import { CONF } from '~/Constants';
 import { Panel } from 'components/Panel';
@@ -75,20 +75,22 @@ export const Essay: FC<EssayProps> = ({ metadata, children }) => {
           },
         ]}
       />
-      <Template>
-        <Panel>
+      <Template white={false}>
+        <Panel color={3}>
           <div className={styles.content}>
             <div className={styles.headingBox}>
               <div className={styles.tags}>{Tags}</div>
               <h1 className={styles.heading}>{title}</h1>
             </div>
+          </div>
+        </Panel>
+        <Panel>
+          <div className={styles.content}>
             <div className={styles.date}>{metadata.formated_date}</div>
             {children}
-            <div className={styles.read}>
-              <Link href="/">
-                <RiArrowDropLeftLine /> Read more
-              </Link>
-            </div>
+            <Link href="/" className={styles.read}>
+              <RiArrowLeftLine /> Read more
+            </Link>
           </div>
         </Panel>
       </Template>

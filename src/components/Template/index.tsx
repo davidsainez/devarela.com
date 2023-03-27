@@ -5,13 +5,14 @@ import { Footer } from './Footer';
 import styles from './index.module.scss';
 
 type TemplateProps = {
+  white?: boolean;
   children: ReactNode;
 };
 
-export const Template: FC<TemplateProps> = ({ children }) => {
+export const Template: FC<TemplateProps> = ({ white = true, children }) => {
   return (
     <div className={styles.all}>
-      <Header />
+      <Header white={white} />
       {children}
       <Hook />
       <Footer />

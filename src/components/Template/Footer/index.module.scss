@@ -18,19 +18,17 @@
   }
 }
 
-$low-contrast: hsl(0, 0, 15);
-
 .nav {
   display: flex;
   flex-direction: column;
   margin-top: main.space(4);
-  color: $low-contrast;
   font-family: main.$sans;
   font-size: 14px;
   gap: main.space(1);
   grid-area: nav;
 
   a {
+    color: main.$gray-light;
     text-decoration: none;
   }
 
@@ -50,7 +48,7 @@ $low-contrast: hsl(0, 0, 15);
   grid-area: links;
 
   a {
-    color: $low-contrast;
+    color: main.$gray-light;
     text-decoration: none;
   }
 
@@ -62,7 +60,7 @@ $low-contrast: hsl(0, 0, 15);
 
 .copyright {
   margin-top: main.space(4);
-  color: $low-contrast;
+  color: main.$gray-light;
   font-family: main.$sans;
   font-size: 14px;
   grid-area: copy;
@@ -80,7 +78,7 @@ $low-contrast: hsl(0, 0, 15);
 
 .heading {
   margin-bottom: main.space(1);
-  color: main.$black;
+  color: main.$white;
   font-family: main.$sans;
   font-weight: 500;
 }

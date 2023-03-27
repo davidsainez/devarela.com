@@ -25,11 +25,12 @@ export const LandingPage: FC<LandingPageProps> = ({ essays }) => {
       title={essay.title}
       date={essay.formated_date}
       summary={essay.summary}
+      tags={essay.tags}
     />
   ));
 
   return (
-    <Template>
+    <Template white={false}>
       <NextSeo
         title={TITLE}
         description={DESCRIPTION}
@@ -41,8 +42,9 @@ export const LandingPage: FC<LandingPageProps> = ({ essays }) => {
       />
       <div className={styles.all}>
         <Welcome />
-        <Panel color={2}>
+        <Panel color={1}>
           <div className={styles.headingBox}>
+            <div className={styles.block} />
             <h2 className={styles.heading}>Writing</h2>
           </div>
           {cards}

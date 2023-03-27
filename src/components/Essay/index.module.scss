@@ -1,18 +1,14 @@
 @use '~/scss/main.scss';
 
 .content {
+  @include main.full-width;
+
   display: flex;
   flex-direction: column;
 }
 
 .headingBox {
-  @include main.container;
-
-  margin-bottom: main.space(4);
-
-  @media (min-width: main.$tablet) {
-    margin-bottom: main.space(8);
-  }
+  //margin-bottom: calc(-1 * main.space(4));
 }
 
 .border {
@@ -34,7 +30,6 @@
   flex-direction: row;
   //justify-content: center;
   margin-bottom: main.space(1);
-  color: hsl(0, 0, 30);
   font-family: main.$mono;
   font-size: 12px;
   font-weight: 400;
@@ -42,46 +37,48 @@
 }
 
 .date {
-  @include main.container;
+  @include main.full-width;
+
+  //margin-top: calc(-1 * main.space(4));
+  margin-bottom: main.space(3);
 
   font-family: main.$mono;
   font-size: 12px;
   font-weight: 400;
   text-transform: capitalize;
-
-  @media (min-width: main.$tablet) {
-    margin-bottom: main.space(1);
-  }
 }
 
 .heading {
-  @include main.bold;
-
-  margin-bottom: main.space(1);
-
-  font-size: 32px;
+  // manual alignment
+  margin-left: -4px;
+  font-size: 36px;
+  letter-spacing: -0.03em;
 
   @media (min-width: main.$tablet) {
-    margin-bottom: main.space(3);
     font-size: 56px;
+  }
+
+  @media (min-width: main.$desktop) {
+    font-size: main.space(9);
   }
 }
 
+.author {
+  margin-top: main.space(1);
+  font-family: main.$mono;
+  font-size: 14px;
+}
+
 .read {
-  @include main.container;
+  @include main.full-width;
+
+  display: flex;
+  align-items: center;
 
   margin-top: main.space(4);
   font-family: main.$mono;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 400;
-
-  a {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-  }
-
-  svg {
-    font-size: 24px;
-  }
+  gap: main.space(1);
+  text-decoration: none;
 }

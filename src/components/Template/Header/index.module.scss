@@ -1,11 +1,25 @@
 @use '~/scss/main.scss';
 
-.panel {
+@mixin panel {
   padding-top: main.space(4);
   padding-bottom: main.space(2);
 
   @media (min-width: main.$tablet) {
-    padding-top: main.space(5);
+    padding-top: main.space(3);
+    padding-bottom: main.space(3);
+  }
+}
+
+.whitePanel {
+  @include panel;
+}
+
+.colorPanel {
+  @include panel;
+
+  background-color: main.$black;
+  a {
+    color: main.$white;
   }
 }
 
@@ -30,23 +44,31 @@
   @media (min-width: main.$tablet) {
     a {
       font-size: 18px;
-      font-weight: 600;
     }
   }
 }
+
+/*
+.color {
+    color: hsl(240,100,70);
+}
+*/
 
 .nav {
   display: flex;
   gap: main.space(2);
 
   a {
-    font-family: main.$sans;
+    font-family: main.$mono;
     font-size: 14px;
     font-weight: 400;
-    letter-spacing: 0.03em;
+    //letter-spacing: 0.02em;
   }
 
   @media (min-width: main.$tablet) {
     gap: main.space(4);
+    a {
+      font-size: 16px;
+    }
   }
 }

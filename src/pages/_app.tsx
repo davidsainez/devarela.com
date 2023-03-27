@@ -4,6 +4,7 @@ import {
   IBM_Plex_Mono,
   IBM_Plex_Sans,
   IBM_Plex_Serif,
+  IBM_Plex_Sans_Condensed,
 } from '@next/font/google';
 import Head from 'next/head';
 import '~/scss/index.scss';
@@ -18,6 +19,13 @@ const sans = IBM_Plex_Sans({
   weight: ['300', '400', '500', '600', '700'],
   subsets: ['latin'],
   variable: '--font-sans',
+});
+
+const condensed = IBM_Plex_Sans_Condensed({
+  weight: ['300', '400', '500', '600', '700'],
+  style: ['normal', 'italic'],
+  subsets: ['latin'],
+  variable: '--font-condensed',
 });
 
 const serif = IBM_Plex_Serif({
@@ -55,7 +63,12 @@ export default function App({ Component, pageProps }: AppProps) {
         }}
       />
       <main
-        className={[mono.variable, sans.variable, serif.variable].join(' ')}
+        className={[
+          condensed.variable,
+          mono.variable,
+          sans.variable,
+          serif.variable,
+        ].join(' ')}
       >
         <Component {...pageProps} />
       </main>

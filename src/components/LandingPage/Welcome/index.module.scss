@@ -5,6 +5,7 @@
 
   display: grid;
   grid-template-areas:
+    'pre'
     'title'
     'art'
     'about';
@@ -12,54 +13,192 @@
 
   @media (min-width: main.$tablet) {
     grid-template-areas:
+      'pre   art'
       'title art'
       'about art';
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 3fr 1fr;
   }
 
   @media (min-width: main.$desktop) {
-    grid-column-gap: main.space(8);
     grid-template-areas:
-      'title art'
-      'about art';
+      'pre   pre   .     art'
+      'title title title art'
+      'about about about art';
+    grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 }
 
-.heading {
-  @include main.bold;
+.pre {
+  margin-bottom: main.space(1);
+  font-family: main.$mono;
+  font-size: 14px;
+  font-weight: 300;
+}
 
-  font-size: 48px;
+//$animationDuration: 30000ms;
+$animationDuration: 1600ms;
+$animationBlur: 8px;
+$animationScale: 2;
+$animationScaleX: 1;
+
+.title {
+  // manual alignment
+  margin-left: -4px;
+  // TODO temporary, want this to fade in
+  color: hsla(0, 0, 0, 0);
+  font-family: main.$sans;
+  font-size: 52px;
+  font-weight: 300;
+  grid-area: title;
+  transform-origin: 20% 20%;
+  //animation: scalein $animationDuration ease-out 1;
 
   @media (min-width: main.$tablet) {
     font-size: 56px;
   }
 
   @media (min-width: main.$desktop) {
-    font-size: 80px;
+    font-size: main.space(10);
+  }
+}
+
+#titleTop {
+  position: relative;
+}
+
+#titleBottom {
+  position: relative;
+}
+
+#titleTop::before {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  display: block;
+  color: hsla(0, 0, 0, 0);
+  content: attr(data-text);
+  //animation: topFlash $animationDuration ease 1;
+}
+
+#titleTop::after {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  color: main.$white;
+  content: attr(data-text);
+  //animation: fadeFlash $animationDuration linear 1;
+}
+
+#titleBottom::before {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  display: block;
+  color: hsla(0, 0, 0, 0);
+  content: attr(data-text);
+  //animation: bottomFlash $animationDuration ease 1;
+}
+
+#titleBottom::after {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  color: main.$white;
+  content: attr(data-text);
+  //animation: fadeFlash $animationDuration linear 1;
+}
+
+@keyframes scalein {
+  0% {
+    transform: scale(1.3);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/*
+    text-shadow: -0.05em  0.00em 0.00em hsla(  0,100,60,0.10),
+		 -0.05em -0.10em 0.00em hsla(  0,100,60,0.25),
+		  0.04em  0.00em 0.00em hsla(120,100,60,0.10),
+		  0.04em -0.10em 0.00em hsla(120,100,60,0.25),
+		  0.13em  0.00em 0.00em hsla(240,100,60,0.10),
+		  0.13em -0.10em 0.00em hsla(240,100,60,0.25);
+*/
+
+@keyframes topFlash {
+  0% {
+    filter: blur(10px);
+    text-shadow: -0.05em 0 0 hsla(0, 100, 60, 0.1),
+      -0.05em -0.1em 0 hsla(0, 100, 60, 0.25),
+      0.04em 0 0 hsla(120, 100, 60, 0.1),
+      0.04em -0.1em 0 hsla(120, 100, 60, 0.25),
+      0.13em 0 0 hsla(240, 100, 60, 0.1),
+      0.13em -0.1em 0 hsla(240, 100, 60, 0.25);
+    transform: scaleY(1.7);
+  }
+  80% {
+    filter: none;
+    transform: scaleY(1);
+  }
+}
+
+@keyframes fadeFlash {
+  0% {
+    color: hsla(0, 0, 100, 0);
+    mix-blend-mode: normal;
+  }
+  40% {
+    color: hsla(0, 0, 100, 0.2);
+  }
+  80% {
+    color: main.$white;
+    mix-blend-mode: normal;
+  }
+}
+
+@keyframes bottomFlash {
+  0% {
+    filter: blur(10px);
+    text-shadow: -0.05em -0 0 hsla(0, 100, 60, 0.1),
+      -0.05em 0.1em 0 hsla(0, 100, 60, 0.25),
+      0.04em -0 0 hsla(120, 100, 60, 0.1),
+      0.04em 0.1em 0 hsla(120, 100, 60, 0.25),
+      0.13em -0 0 hsla(240, 100, 60, 0.1),
+      0.13em 0.1em 0 hsla(240, 100, 60, 0.25);
+    transform: scaleY(1.7);
+  }
+  80% {
+    filter: none;
+    transform: scaleY(1);
   }
 }
 
 .aboutBox {
-  margin-top: main.space(6);
+  margin-top: main.space(4);
   grid-area: about;
 
   @media (min-width: main.$tablet) {
-    margin-top: main.space(6);
-  }
-
-  @media (min-width: main.$desktop) {
-    width: 100%;
-    margin-top: main.space(10);
+    width: 80%;
   }
 }
 
 .about {
-  margin-bottom: main.space(2);
+  margin-top: main.space(2);
   font-family: main.$sans;
   font-size: 16px;
   font-weight: 400;
-  letter-spacing: 0.018em;
-  line-height: 1.4;
+  line-height: 1.5;
+
+  a {
+    color: main.$white;
+  }
 
   @media (min-width: main.$tablet) {
     font-size: 17px;
@@ -74,31 +213,29 @@
   width: 100%;
   margin-top: main.space(4);
   animation: slide 800ms ease 200ms 1 normal forwards;
-  aspect-ratio: 100/90;
-  border-radius: 10px;
-  box-shadow: main.$hover-shadow;
+  aspect-ratio: 2/1;
+  //border-radius: 10px;
+  //box-shadow: main.$hover-shadow;
   object-fit: cover;
   object-position: top;
   // animation will fill this in;
   opacity: 0%;
 
   @media (min-width: main.$tablet) {
-    width: 90%;
+    height: 100%;
     margin-top: main.space(6);
     margin-right: 0;
     margin-left: auto;
-    aspect-ratio: 1/2;
+    aspect-ratio: none;
     grid-area: art;
   }
 
   @media (min-width: main.$desktop) {
-    width: 100%;
-
+    //animation: slide 800ms ease 200ms 1 normal forwards;
+    height: 100%;
     margin-top: -80px;
     margin-right: 0;
     margin-left: auto;
-    animation: slide 800ms ease 200ms 1 normal forwards;
-    aspect-ratio: 100/95;
   }
 }
 
@@ -107,7 +244,34 @@
     opacity: 0%;
   }
   100% {
-    margin-top: main.space(6);
+    margin-top: main.space(3);
     opacity: 100%;
   }
+}
+
+.logo {
+  display: grid;
+  gap: 4px;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+
+.ultra {
+  aspect-ratio: 1/1;
+  background-color: main.$ultra;
+}
+
+.azure {
+  aspect-ratio: 1/1;
+  background-color: main.$azure;
+}
+
+.indigo {
+  aspect-ratio: 1/1;
+  background-color: main.$azure;
+}
+
+.folly {
+  aspect-ratio: 1/1;
+  background-color: main.$folly;
 }

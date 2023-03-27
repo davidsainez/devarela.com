@@ -1,15 +1,44 @@
 import { Panel } from 'components/Panel';
+import { useInView, animated } from '@react-spring/web';
 import styles from './index.module.scss';
 
+// slow scale
+// then quickly fade into white
+// then glare burst
+// finish sclaing
+
 export const Welcome = () => {
+  const [ref, springs] = useInView(
+    () => ({
+      from: {
+        filter: 'opacity(0)',
+        transform: 'scale(2)',
+      },
+      to: {
+        filter: 'opacity(1)',
+        transform: 'scale(1)',
+      },
+      config: {
+        frequency: 2,
+      },
+    }),
+    {
+      once: true,
+    }
+  );
+
   return (
-    <Panel>
+    <Panel color={3}>
       <div className={styles.container}>
-        <h1 className={styles.heading}>
-          Relentless
-          <br />
-          Refinement.
-        </h1>
+        <p className={styles.pre}>A philosophy of</p>
+        <div className={styles.title}>
+          <div id={styles.titleTop} data-text="Relentless">
+            Relentless
+          </div>
+          <div id={styles.titleBottom} data-text="Refinement.">
+            Refinement
+          </div>
+        </div>
         <div className={styles.aboutBox}>
           <p className={styles.about}>
             The act of creation serves as the only reliable source of truth. We
@@ -25,19 +54,8 @@ export const Welcome = () => {
             refinement. I offer my writing here so that it may be of service to
             you as well.
           </p>
-          <p className={styles.about}>
-            If you find this content useful, I welcome a chat through{' '}
-            <a href="https://twitter.com/davidsainez" className={styles.link}>
-              twitter
-            </a>{' '}
-            or{' '}
-            <a href="mailto:david@sainez.io" className={styles.link}>
-              email
-            </a>
-            .
-          </p>
         </div>
-        <img src="bw2.png" alt="watercolor" className={styles.art} />
+        <img src="bw2.png" className={styles.art} />
       </div>
     </Panel>
   );

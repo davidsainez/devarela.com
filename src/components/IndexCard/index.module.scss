@@ -3,29 +3,60 @@
 .box {
   @include main.full-width;
 
-  display: flex;
-  flex-direction: column;
-  margin-bottom: main.space(7);
+  display: grid;
+  margin-top: main.space(7);
+  grid-template-areas:
+    'date'
+    'title'
+    'tags'
+    'description'
+    'read';
+  grid-template-columns: 1fr;
 
   @media (min-width: main.$tablet) {
-    margin-bottom: main.space(8);
+    margin-top: main.space(8);
+    grid-template-areas:
+      'date tags'
+      '.    title'
+      '.    description'
+      '.    read';
+    grid-template-columns: 1fr 3fr;
   }
 
   @media (min-width: main.$desktop) {
-    margin-bottom: main.space(10);
+    margin-top: main.space(12);
   }
 }
 
-.meta {
-  display: flex;
-  flex-direction: row;
+.date {
   margin-bottom: main.space(1);
-  color: hsl(0, 0, 30);
-
   font-family: main.$mono;
   font-size: 12px;
   font-weight: 400;
-  gap: main.space(6);
+  grid-area: date;
+}
+
+/*
+.meta {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: main.space(2);
+
+  height: min-content;
+}
+*/
+
+.block {
+  height: 6px;
+  aspect-ratio: 1/1;
+  background-color: main.$ultra;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: main.space(1);
 }
 
 #title {
@@ -33,23 +64,24 @@
   font-family: main.$sans;
   font-size: 24px;
   font-weight: 500;
-  letter-spacing: -0.03em;
+  grid-area: title;
 
   a {
     text-decoration: none;
-    //text-decoration-thickness: from-font;
   }
 
   @media (min-width: main.$tablet) {
+    margin-bottom: main.space(2);
     font-size: 32px;
   }
 }
 
-.summary {
-  color: hsl(0, 0, 30);
+.description {
+  color: main.$dark-gray;
   font-family: main.$sans;
   font-size: 16px;
   font-weight: 400;
+  grid-area: description;
   line-height: 1.4;
 
   @media (min-width: main.$tablet) {
@@ -57,16 +89,28 @@
   }
 
   @media (min-width: main.$desktop) {
+    width: 80%;
     font-size: 18px;
   }
 }
 
-.tag {
-  text-transform: uppercase;
-}
-
 .tags {
   display: flex;
-  color: hsl(0, 0, 30);
+  margin-bottom: main.space(1);
+  font-family: main.$mono;
+  font-size: 12px;
   gap: main.space(1);
+  grid-area: tags;
+}
+
+.read {
+  display: flex;
+  align-items: center;
+  margin-top: main.space(1);
+  color: main.$ultra;
+  font-family: main.$mono;
+  font-size: 14px;
+  font-weight: 500;
+  gap: main.space(1);
+  grid-area: read;
 }

@@ -69,10 +69,14 @@ export const Code: FC<CodeProps> = ({ children }) => {
   const className = classes.join(' ');
 
   return (
-    <div>
+    <div className={styles.container}>
       <div className={className}>
         <div className={styles.scrollHack}>
-          <Refractor language="ts" value={rawText} markers={refractorMarkers} />
+          <Refractor
+            language="typescript"
+            value={rawText}
+            markers={refractorMarkers}
+          />
         </div>
       </div>
     </div>

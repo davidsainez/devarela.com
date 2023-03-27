@@ -6,7 +6,11 @@ type HeadingProps = {
 };
 
 export const Heading: FC<HeadingProps> = ({ children }) => {
-  return <h2 className={styles.heading}>{children}</h2>;
+  return (
+    <div className={styles.container}>
+      <h2 className={styles.heading}>{children}</h2>
+    </div>
+  );
 };
 
 type ParagraphProps = {
@@ -14,5 +18,9 @@ type ParagraphProps = {
 };
 
 export const Paragraph: FC<ParagraphProps> = ({ children }) => {
-  return <p className={styles.paragraph}>{children}</p>;
+  return (
+    <div className={styles.container}>
+      <p className={styles.paragraph}>{children}</p>
+    </div>
+  );
 };

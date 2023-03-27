@@ -3,7 +3,7 @@ import styles from './index.module.scss';
 
 export const Hook = () => {
   return (
-    <Panel color={3}>
+    <Panel color={2}>
       <div className={styles.container}>
         <div className={styles.connect}>
           <h2 className={styles.title}>Interested in working together?</h2>

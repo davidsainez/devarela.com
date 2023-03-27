@@ -2,12 +2,23 @@
 @use './code.scss';
 
 /* BASICS */
+a {
+  color: hsl(0, 0, 0);
+  text-decoration: none;
+}
+
 html {
   font-size: 16px;
 
   p {
     font-weight: 300;
     line-height: 1.47;
+
+    a {
+      text-decoration: underline;
+      text-decoration-color: hsl(240, 100, 65);
+      text-decoration-thickness: 2px;
+    }
   }
 
   @media (min-width: 1024px) {
@@ -24,16 +35,13 @@ article {
 }
 
 code {
-  background-color: hsl(0, 0, 10);
+  padding-right: 4px;
+  padding-left: 4px;
+  background-color: hsl(0, 0, 90);
   font-family: 'IBM Plex Mono', monospace;
 }
 
 ::selection {
   background-color: hsla(0, 0, 0, 0.8);
   color: hsl(0, 0, 100);
-}
-
-a {
-  color: hsl(0, 0, 0);
-  text-decoration: none;
 }

@@ -1,3 +1,5 @@
+@use './main.scss';
+
 .token.comment,
 .token.prolog,
 .token.doctype,
@@ -6,7 +8,7 @@
 }
 
 .token.punctuation {
-  color: hsl(0, 0, 75);
+  color: main.$light-gray;
 }
 
 .namespace {
@@ -16,7 +18,7 @@
 .token.property,
 .token.keyword,
 .token.tag {
-  color: hsl(0, 0, 100);
+  color: main.$indigo-light;
 }
 
 .token.class-name {
@@ -44,7 +46,7 @@
 .token.char,
 .token.builtin,
 .token.inserted {
-  color: hsl(15, 100, 80);
+  color: main.$azure-light;
 }
 
 .token.variable {
@@ -52,11 +54,11 @@
 }
 
 .token.operator {
-  color: hsl(0, 0, 70);
+  color: main.$folly-light;
 }
 
 .token.function {
-  color: hsl(215, 100, 80);
+  color: main.$ultra-light;
 }
 
 .token.regex {

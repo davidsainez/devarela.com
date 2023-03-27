@@ -1,26 +1,36 @@
 @use '~/scss/main.scss';
 
+.container {
+  @include main.full-width;
+}
+
 .box {
   position: relative;
   padding-top: main.space(2);
   padding-bottom: main.space(1);
   margin-top: main.space(4);
-  background-color: hsl(240, 45, 18);
-  border-radius: 8px;
+  //background-color: hsl(290, 35, 15);
+  //background-color: hsl(290, 70, 11);
+  background-color: main.$black;
+  //border-radius: 8px;
   color: main.$white;
   font-family: main.$mono;
-  line-height: 1.4;
+  line-height: 1.5;
   overflow-x: auto;
 
   @media (min-width: main.$tablet) {
-    padding-top: main.space(2);
-    padding-bottom: main.space(1);
-    margin-top: main.space(6);
+    padding-top: main.space(1);
+    padding-bottom: 0;
+    margin-top: main.space(4);
   }
 }
 
 .compact {
-  @include main.container;
+  width: 100%;
+
+  @media (min-width: main.$tablet) {
+    width: 75%;
+  }
 }
 
 .full {
@@ -65,11 +75,13 @@
 }
 
 .line {
-  padding-right: main.space(2);
-  padding-left: main.space(2);
+  padding-right: main.space(1);
+  padding-left: main.space(1);
   font-size: 13px;
 
   @media (min-width: main.$tablet) {
+    padding-right: main.space(1);
+    padding-left: main.space(1);
     font-size: 14px;
   }
 }
