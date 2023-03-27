@@ -29,6 +29,11 @@
 .dark {
   background-color: main.$black;
   color: main.$white;
+
+  ::selection {
+    background-color: hsl(0, 0, 100);
+    color: hsl(0, 0, 0);
+  }
 }
 
 .half {

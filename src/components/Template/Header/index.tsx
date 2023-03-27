@@ -11,7 +11,7 @@ export const Header: FC<HeaderProps> = ({ white }) => {
     <div className={white ? styles.whitePanel : styles.colorPanel}>
       <div className={styles.container}>
         <div className={styles.brand}>
-          <Link href="/">sainez</Link>
+          <Link href="/">sainez.io</Link>
         </div>
         <div className={styles.nav}>
           <Link href="/">Writing</Link>

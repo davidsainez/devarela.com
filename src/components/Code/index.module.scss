@@ -35,7 +35,11 @@
 }
 
 .full {
-  @include main.breakout-container;
+  width: 100%;
+
+  @media (min-width: main.$tablet) {
+    width: 75%;
+  }
 }
 
 .controls {
