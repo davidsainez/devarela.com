@@ -89,7 +89,7 @@ export const Essay: FC<EssayProps> = ({ metadata, children }) => {
             <div className={styles.date}>{metadata.formated_date}</div>
             {children}
             <Link href="/" className={styles.read}>
-              <RiArrowLeftLine /> Read more
+              <RiArrowLeftLine /> Read more essays
             </Link>
           </div>
         </Panel>
