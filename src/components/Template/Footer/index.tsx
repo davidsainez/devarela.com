@@ -14,23 +14,27 @@ export const Footer = () => {
         </div>
         <div id={styles.links}>
           <div className={styles.heading}>Contact</div>
-          <div>
-            <a href="mailto:david@sainez.io">Email</a>
-          </div>
-          <div>
-            <a href="https://twitter.com/davidsainez">Twitter</a>
-          </div>
-          <div>
-            <a href="https://github.com/davidsainez">GitHub</a>
-          </div>
-          <div>
-            <a href="https://news.ycombinator.com/user?id=sainez">HackerNews</a>
-          </div>
-          <div>
-            <a href="https://stackoverflow.com/users/7077117/david-sainez">
-              StackOverflow
-            </a>
-          </div>
+          <a id={styles.linkItem} href="mailto:david@sainez.io">
+            Email
+          </a>
+          <a id={styles.linkItem} href="https://twitter.com/davidsainez">
+            Twitter
+          </a>
+          <a id={styles.linkItem} href="https://github.com/davidsainez">
+            GitHub
+          </a>
+          <a
+            id={styles.linkItem}
+            href="https://news.ycombinator.com/user?id=sainez"
+          >
+            HackerNews
+          </a>
+          <a
+            id={styles.linkItem}
+            href="https://stackoverflow.com/users/7077117/david-sainez"
+          >
+            StackOverflow
+          </a>
         </div>
         <div className={styles.copyright}>© 2023 David Sainez</div>
       </div>

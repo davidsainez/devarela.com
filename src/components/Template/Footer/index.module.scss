@@ -46,12 +46,10 @@
   margin-top: main.space(4);
   font-family: main.$sans;
   font-size: 14px;
-  gap: main.space(2);
   grid-area: links;
+  row-gap: main.space(1);
 
   a {
-    padding-top: 4px;
-    padding-bottom: 4px;
     color: main.$gray-light;
     text-decoration: none;
   }
@@ -60,6 +58,11 @@
     margin-top: 0;
     gap: main.space(2);
   }
+}
+
+#linkItem {
+  padding-top: 4px;
+  padding-bottom: 4px;
 }
 
 .copyright {
