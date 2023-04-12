@@ -35,7 +35,7 @@
     "react-dom": "latest",
     "react-icons": "^4.7.1",
     "react-refractor": "^2.1.7",
-    "sass": "^1.43.4"
+    "sass": "^1.62.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^13.2.1",
