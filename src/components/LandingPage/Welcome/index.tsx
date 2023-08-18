@@ -8,14 +8,15 @@ import styles from './index.module.scss';
 // finish sclaing
 
 const INTRO_1 = `
-These writings represent a lifelong endeavor to understand the world, technology, and human nature.
-I write as a means of exploration, a way to clarify ideas and navigate the complexities our rapidly-evolving landscape.
+I learn by doing. In the pursuit of better solutions, I unearth fresh ideas. I've created this space to share them, hoping you will find them useful.
 `;
 
+/*
 const INTRO_2 = `
 My aim in sharing these writings is to stimulate conversation and engage with like-minded thinkers.
 I hope that, as you delve into these pages, you'll find yourself in a thought-provoking dialogue — one that challenges, enlightens, and ultimately brings us closer to the truth.
 `;
+*/
 
 export const Welcome = () => {
   const [ref, springs] = useInView(
@@ -40,18 +41,28 @@ export const Welcome = () => {
   return (
     <Panel color={3}>
       <div className={styles.container}>
-        <p className={styles.pre}>Musings on</p>
         <div className={styles.title}>
-          <div id={styles.titleTop} data-text="Mind and Machine.">
-            Mind and Machine.
+          <div id={styles.titleTop} data-text="On Mind and Machine.">
+            On Mind and Machine.
           </div>
         </div>
         <div className={styles.aboutBox}>
-          <p className={styles.about}>{INTRO_1}</p>
-          <p className={styles.about}>{INTRO_2}</p>
+          <p className={styles.about}>
+            {INTRO_1} The best way to reach me is by{' '}
+            <a href="mailto:david@sainez.io">email</a>.
+          </p>
+          {/*
+          <p className={styles.about}>
+            The best way to reach me is by <a href="">email</a>.
+          </p>
+	   */}
         </div>
-        <img src="bw2.png" className={styles.art} />
+        {/* <img src="bw2.png" className={styles.art} /> */}
       </div>
     </Panel>
   );
 };
+
+//  I learn by doing. In the pursuit of better solutions, I unearth fresh ideas. I've created this space to share them, hoping you will find them useful.
+
+// These writings are born of my pursuit to be a better engineer. Rather than be discarded, they might find purpose in others' hands.

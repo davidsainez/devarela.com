@@ -14,8 +14,8 @@ export const Header: FC<HeaderProps> = ({ white }) => {
           <Link href="/">sainez.io</Link>
         </div>
         <div className={styles.nav}>
-          <Link href="/">Writing</Link>
-          <Link href="/me">Me</Link>
+          <Link href="/">Home</Link>
+          <Link href="/essays/me">About</Link>
         </div>
       </div>
     </div>
